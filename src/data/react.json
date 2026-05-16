@@ -1,0 +1,1378 @@
+[
+  {
+    "question": "What is React?",
+    "answer": {
+    "definition": "React.js is an open-source JavaScript library used to build fast and interactive user interfaces.",
+    "points": [
+      "Used for single-page applications",
+      "Component-based architecture",
+      "Reusable UI components",
+      "Easy to maintain",
+      "Developed by Jordan Walke",
+      "Maintained by Meta"
+    ]
+  }
+
+  },
+  {
+  "question": "What is the history behind React evolution?",
+  "answer": {
+    "definition": "React was created by Facebook to build fast and dynamic user interfaces.",
+    "points": [
+      "Started from XHP in 2010",
+      "Jordan Walke created first prototype called FaxJS",
+      "React introduced Virtual DOM for fast rendering",
+      "Open sourced by Facebook in 2013",
+      "React Native launched for mobile apps",
+      "Hooks introduced in React 16.8",
+      "React 18 added concurrent rendering and performance improvements"
+    ]
+  }
+},{
+  "question": "What are the major features of React?",
+  "answer": {
+    "definition": "React is a JavaScript library used to build fast, reusable, and interactive user interfaces.",
+    "points": [
+      "Component-based architecture",
+      "Uses Virtual DOM for fast rendering",
+      "JSX syntax for easy UI writing",
+      "One-way data binding",
+      "Reusable components",
+      "React Hooks for state management",
+      "Supports Server-Side Rendering (SSR)",
+      "Easy to maintain and debug"
+    ]
+  }
+},
+{
+  "question": "What is JSX?",
+  "answer": {
+    "definition": "JSX stands for JavaScript XML. It is a syntax extension used in React to write HTML-like code inside JavaScript.",
+    "points": [
+      "Makes code easy to read and write",
+      "Used to create React elements",
+      "Combines HTML and JavaScript",
+      "Converted into React.createElement()",
+      "Helps build UI faster",
+      "JSX is stricter than HTML"
+    ]
+  }
+},
+{
+  "question": "How to create components in React?",
+  "answer": {
+    "definition": "Components are reusable building blocks used to create UI in React.",
+    "points": [
+      "React components can be created in two ways",
+      "Function Components use JavaScript functions",
+      "Class Components use ES6 classes",
+      "Function components are simple and mostly used",
+      "Class components use render() method",
+      "Components can accept props and return JSX"
+    ]
+  }
+},
+{
+  "question": "When to use a Class Component over a Function Component?",
+  "answer": {
+    "definition": "Function components are preferred in modern React, but class components are used in some special cases.",
+    "points": [
+      "Use Function Components in most cases",
+      "Hooks allow state and lifecycle features in function components",
+      "Function components are simple and readable",
+      "Use Class Components for older React projects",
+      "Class components are still used for Error Boundaries",
+      "Useful for backward compatibility with old code"
+    ]
+  }
+},
+{
+  "question": "What are Pure Components?",
+  "answer": {
+    "definition": "Pure Components are components that re-render only when props or state change.",
+    "points": [
+      "Used for performance optimization",
+      "Prevents unnecessary re-rendering",
+      "Compares old and new props using shallow comparison",
+      "Function components use React.memo()",
+      "Class components use React.PureComponent",
+      "Helps improve application speed and efficiency"
+    ]
+  }
+},
+{
+  "question": "What is state in React?",
+  "answer": {
+    "definition": "State is an object that stores data or information that can change inside a component.",
+    "points": [
+      "State is managed inside the component",
+      "When state changes, component re-renders",
+      "Used to create dynamic and interactive UI",
+      "In function components, state is managed using useState hook",
+      "In class components, state is managed using this.state",
+      "State is private to the component"
+    ]
+  }
+},
+{
+  "question": "What is state in React?",
+  "answer": {
+    "definition": "State is used to store and manage dynamic data inside a React component.",
+    "points": [
+      "State can change over time",
+      "When state updates, component re-renders",
+      "Used for dynamic UI updates",
+      "Managed using useState in function components",
+      "Managed using this.state in class components",
+      "State is private to the component"
+    ]
+  }
+},
+{
+  "question": "What are inline conditional expressions in React?",
+  "answer": {
+    "definition": "Inline conditional expressions are used to render content conditionally inside JSX.",
+    "points": [
+      "Uses JavaScript conditions inside JSX",
+      "Commonly uses ternary operator ( ? : )",
+      "Can also use logical AND operator (&&)",
+      "Helps render UI based on conditions",
+      "Makes JSX code short and readable",
+      "Mostly used for conditional rendering"
+    ]
+  }
+},
+{
+  "question": "What is the difference between state and props?",
+  "answer": {
+    "definition": "State is managed inside component while props are passed from parent component.",
+
+    "comparisonTitle1": "State",
+    "comparisonTitle2": "Props",
+
+    "comparison": [
+      {
+        "feature": "Managed By",
+        "first": "Component itself",
+        "second": "Parent component"
+      },
+      {
+        "feature": "Mutable",
+        "first": "Yes",
+        "second": "No"
+      },
+      {
+        "feature": "Scope",
+        "first": "Local to component",
+        "second": "Parent to child"
+      },
+      {
+        "feature": "Usage",
+        "first": "Store changing data",
+        "second": "Pass data and configuration"
+      },
+      {
+        "feature": "Update",
+        "first": "Using setState/useState",
+        "second": "Cannot update directly"
+      },
+      {
+        "feature": "Purpose",
+        "first": "Manage dynamic UI",
+        "second": "Reusable component communication"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between HTML and React event handling?",
+  "answer": {
+    "definition": "HTML and React handle events differently in syntax and behavior.",
+
+    "comparisonTitle1": "HTML",
+    "comparisonTitle2": "React",
+
+    "comparison": [
+      {
+        "feature": "Event Naming",
+        "first": "Uses lowercase",
+        "second": "Uses camelCase"
+      },
+      {
+        "feature": "Example",
+        "first": "onclick",
+        "second": "onClick"
+      },
+      {
+        "feature": "Prevent Default",
+        "first": "return false",
+        "second": "event.preventDefault()"
+      },
+      {
+        "feature": "Function Call",
+        "first": "Uses function()",
+        "second": "Uses function reference"
+      },
+      {
+        "feature": "Syntax",
+        "first": "String based",
+        "second": "JavaScript function based"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between Shadow DOM and Virtual DOM?",
+  "answer": {
+    "definition": "Shadow DOM is used for encapsulation in web components while Virtual DOM is used for efficient UI rendering.",
+
+    "comparisonTitle1": "Shadow DOM",
+    "comparisonTitle2": "Virtual DOM",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Web component encapsulation",
+        "second": "Efficient UI updates"
+      },
+      {
+        "feature": "Managed By",
+        "first": "Browser",
+        "second": "React or JS libraries"
+      },
+      {
+        "feature": "DOM Type",
+        "first": "Real DOM part",
+        "second": "In-memory copy"
+      },
+      {
+        "feature": "Encapsulation",
+        "first": "Yes",
+        "second": "No"
+      },
+      {
+        "feature": "Use Case",
+        "first": "Scoped styling",
+        "second": "Fast rendering"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between createElement and cloneElement?",
+  "answer": {
+    "definition": "createElement creates a new React element while cloneElement copies and updates an existing element.",
+
+    "comparisonTitle1": "createElement",
+    "comparisonTitle2": "cloneElement",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Creates new element",
+        "second": "Clones existing element"
+      },
+      {
+        "feature": "Usage",
+        "first": "Build UI from scratch",
+        "second": "Modify existing element"
+      },
+      {
+        "feature": "Input",
+        "first": "Type, props, children",
+        "second": "Existing element and new props"
+      },
+      {
+        "feature": "Props Handling",
+        "first": "Adds fresh props",
+        "second": "Overrides old props"
+      },
+      {
+        "feature": "Common Use",
+        "first": "JSX conversion",
+        "second": "Enhancing child components"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between React and ReactDOM?",
+  "answer": {
+    "definition": "React is used to create components and ReactDOM is used to render components in browser DOM.",
+
+    "comparisonTitle1": "React",
+    "comparisonTitle2": "ReactDOM",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Build UI components",
+        "second": "Render UI to DOM"
+      },
+      {
+        "feature": "Package",
+        "first": "react",
+        "second": "react-dom"
+      },
+      {
+        "feature": "Main Functions",
+        "first": "createElement, Component",
+        "second": "render, hydrate"
+      },
+      {
+        "feature": "Usage",
+        "first": "Component logic",
+        "second": "DOM interaction"
+      },
+      {
+        "feature": "Environment",
+        "first": "Universal library",
+        "second": "Browser specific"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between mapStateToProps() and mapDispatchToProps()?",
+  "answer": {
+    "definition": "mapStateToProps gets data from Redux store while mapDispatchToProps sends actions to Redux store.",
+
+    "comparisonTitle1": "mapStateToProps",
+    "comparisonTitle2": "mapDispatchToProps",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Reads state data",
+        "second": "Dispatches actions"
+      },
+      {
+        "feature": "Usage",
+        "first": "Get Redux store values",
+        "second": "Update Redux store"
+      },
+      {
+        "feature": "Input",
+        "first": "state",
+        "second": "dispatch"
+      },
+      {
+        "feature": "Returns",
+        "first": "State as props",
+        "second": "Functions as props"
+      },
+      {
+        "feature": "Main Work",
+        "first": "Connect UI with state",
+        "second": "Trigger actions"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between React Context and React Redux?",
+  "answer": {
+    "definition": "React Context is used for sharing data between components while React Redux is used for advanced global state management.",
+
+    "comparisonTitle1": "React Context",
+    "comparisonTitle2": "React Redux",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Share data across components",
+        "second": "Manage global state"
+      },
+      {
+        "feature": "Complexity",
+        "first": "Simple",
+        "second": "More powerful"
+      },
+      {
+        "feature": "Features",
+        "first": "Basic data sharing",
+        "second": "Middleware, DevTools, reducers"
+      },
+      {
+        "feature": "Performance",
+        "first": "Less optimized for large apps",
+        "second": "Better optimized"
+      },
+      {
+        "feature": "Usage",
+        "first": "Small to medium apps",
+        "second": "Large applications"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between component and container in React Redux?",
+  "answer": {
+    "definition": "Component handles UI rendering while Container connects components with Redux store.",
+
+    "comparisonTitle1": "Component",
+    "comparisonTitle2": "Container",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Display UI",
+        "second": "Manage Redux connection"
+      },
+      {
+        "feature": "Focus",
+        "first": "Presentation",
+        "second": "Business logic"
+      },
+      {
+        "feature": "Redux Access",
+        "first": "No direct access",
+        "second": "Connected to Redux store"
+      },
+      {
+        "feature": "Rendering",
+        "first": "Renders DOM elements",
+        "second": "Usually passes data to components"
+      },
+      {
+        "feature": "Usage",
+        "first": "Reusable UI",
+        "second": "State handling and dispatch"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between call() and put() in redux-saga?",
+  "answer": {
+    "definition": "call() is used to execute async functions while put() is used to dispatch actions to Redux store.",
+
+    "comparisonTitle1": "call()",
+    "comparisonTitle2": "put()",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Calls API or async function",
+        "second": "Dispatches Redux action"
+      },
+      {
+        "feature": "Usage",
+        "first": "Handle side effects",
+        "second": "Update Redux store"
+      },
+      {
+        "feature": "Returns",
+        "first": "Promise result",
+        "second": "Action dispatch effect"
+      },
+      {
+        "feature": "Middleware Work",
+        "first": "Executes function",
+        "second": "Sends action to store"
+      },
+      {
+        "feature": "Common Use",
+        "first": "API calls",
+        "second": "Success or failure actions"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between redux-saga and redux-thunk?",
+  "answer": {
+    "definition": "Redux Thunk uses promises for async actions while Redux Saga uses generators for complex side effects.",
+
+    "comparisonTitle1": "redux-thunk",
+    "comparisonTitle2": "redux-saga",
+
+    "comparison": [
+      {
+        "feature": "Async Handling",
+        "first": "Uses Promises",
+        "second": "Uses Generators"
+      },
+      {
+        "feature": "Complexity",
+        "first": "Simple",
+        "second": "More powerful"
+      },
+      {
+        "feature": "Learning Curve",
+        "first": "Easy to learn",
+        "second": "Needs generator knowledge"
+      },
+      {
+        "feature": "Best Use Case",
+        "first": "Simple async logic",
+        "second": "Complex side effects"
+      },
+      {
+        "feature": "Control Flow",
+        "first": "Limited control",
+        "second": "Better async flow control"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between React Native and React?",
+  "answer": {
+    "definition": "React is used for building web applications while React Native is used for building mobile applications.",
+
+    "comparisonTitle1": "React",
+    "comparisonTitle2": "React Native",
+
+    "comparison": [
+      {
+        "feature": "Platform",
+        "first": "Web applications",
+        "second": "Mobile applications"
+      },
+      {
+        "feature": "Rendering",
+        "first": "Uses HTML DOM",
+        "second": "Uses native mobile components"
+      },
+      {
+        "feature": "Purpose",
+        "first": "Build websites",
+        "second": "Build Android and iOS apps"
+      },
+      {
+        "feature": "Styling",
+        "first": "CSS",
+        "second": "StyleSheet API"
+      },
+      {
+        "feature": "Environment",
+        "first": "Browser",
+        "second": "Mobile devices"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between Flow and PropTypes?",
+  "answer": {
+    "definition": "Flow is a static type checking tool while PropTypes is a runtime props validation tool.",
+
+    "comparisonTitle1": "Flow",
+    "comparisonTitle2": "PropTypes",
+
+    "comparison": [
+      {
+        "feature": "Type Checking",
+        "first": "Static checking",
+        "second": "Runtime checking"
+      },
+      {
+        "feature": "Purpose",
+        "first": "Check whole project types",
+        "second": "Check component props"
+      },
+      {
+        "feature": "Error Detection",
+        "first": "Compile time",
+        "second": "Runtime warnings"
+      },
+      {
+        "feature": "Usage",
+        "first": "Large applications",
+        "second": "React component validation"
+      },
+      {
+        "feature": "Flexibility",
+        "first": "More powerful",
+        "second": "Basic validation"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between React and Angular?",
+  "answer": {
+    "definition": "React is a JavaScript library for UI while Angular is a complete frontend framework.",
+
+    "comparisonTitle1": "React",
+    "comparisonTitle2": "Angular",
+
+    "comparison": [
+      {
+        "feature": "Type",
+        "first": "Library",
+        "second": "Framework"
+      },
+      {
+        "feature": "Architecture",
+        "first": "View layer only",
+        "second": "Complete MVC"
+      },
+      {
+        "feature": "Data Binding",
+        "first": "One-way binding",
+        "second": "Two-way binding"
+      },
+      {
+        "feature": "Rendering",
+        "first": "Supports server-side rendering",
+        "second": "Client-side and SSR"
+      },
+      {
+        "feature": "Syntax",
+        "first": "Uses JSX",
+        "second": "Uses HTML templates"
+      },
+      {
+        "feature": "Mobile Apps",
+        "first": "React Native",
+        "second": "Ionic"
+      },
+      {
+        "feature": "Debugging",
+        "first": "Easy",
+        "second": "More complex"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between Flux and Redux?",
+  "answer": {
+    "definition": "Flux uses multiple mutable stores while Redux uses a single immutable store.",
+
+    "comparisonTitle1": "Flux",
+    "comparisonTitle2": "Redux",
+
+    "comparison": [
+      {
+        "feature": "State",
+        "first": "Mutable",
+        "second": "Immutable"
+      },
+      {
+        "feature": "Store",
+        "first": "Multiple stores",
+        "second": "Single store"
+      },
+      {
+        "feature": "Logic",
+        "first": "Store contains logic",
+        "second": "Reducers handle logic"
+      },
+      {
+        "feature": "Dispatcher",
+        "first": "Uses dispatcher",
+        "second": "No dispatcher"
+      },
+      {
+        "feature": "Structure",
+        "first": "Flat stores",
+        "second": "Hierarchical reducers"
+      },
+      {
+        "feature": "Component Connection",
+        "first": "Components subscribe directly",
+        "second": "Uses connect function"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between Real DOM and Virtual DOM?",
+  "answer": {
+    "definition": "Real DOM directly updates browser UI while Virtual DOM updates UI efficiently using in-memory representation.",
+
+    "comparisonTitle1": "Real DOM",
+    "comparisonTitle2": "Virtual DOM",
+
+    "comparison": [
+      {
+        "feature": "Update Speed",
+        "first": "Slow",
+        "second": "Fast"
+      },
+      {
+        "feature": "DOM Manipulation",
+        "first": "Expensive",
+        "second": "Easy and optimized"
+      },
+      {
+        "feature": "HTML Update",
+        "first": "Direct update possible",
+        "second": "Indirect update through React"
+      },
+      {
+        "feature": "Memory Usage",
+        "first": "More memory usage",
+        "second": "Less memory wastage"
+      },
+      {
+        "feature": "Update Process",
+        "first": "Creates new DOM updates",
+        "second": "Updates only changed parts"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between Redux and MobX?",
+  "answer": {
+    "definition": "Redux is a predictable state management library while MobX is a reactive state management library.",
+
+    "comparisonTitle1": "Redux",
+    "comparisonTitle2": "MobX",
+
+    "comparison": [
+      {
+        "feature": "Definition",
+        "first": "State management library",
+        "second": "Reactive state management library"
+      },
+      {
+        "feature": "Programming",
+        "first": "Mostly ES6",
+        "second": "JavaScript ES5"
+      },
+      {
+        "feature": "Data Store",
+        "first": "Single store",
+        "second": "Multiple stores"
+      },
+      {
+        "feature": "Usage",
+        "first": "Large complex apps",
+        "second": "Simple applications"
+      },
+      {
+        "feature": "Performance",
+        "first": "Needs optimization",
+        "second": "Better performance"
+      },
+      {
+        "feature": "Data Storage",
+        "first": "Uses JavaScript objects",
+        "second": "Uses observables"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between async mode and concurrent mode?",
+  "answer": {
+    "definition": "Async Mode and Concurrent Mode are the same React feature with different names.",
+
+    "comparisonTitle1": "Async Mode",
+    "comparisonTitle2": "Concurrent Mode",
+
+    "comparison": [
+      {
+        "feature": "Meaning",
+        "first": "Old terminology",
+        "second": "Updated terminology"
+      },
+      {
+        "feature": "Purpose",
+        "first": "Async rendering",
+        "second": "Priority based rendering"
+      },
+      {
+        "feature": "Focus",
+        "first": "Asynchronous tasks",
+        "second": "Concurrent work handling"
+      },
+      {
+        "feature": "Usage",
+        "first": "Previously used by React",
+        "second": "Currently used by React"
+      },
+      {
+        "feature": "Functionality",
+        "first": "Same behavior",
+        "second": "Same behavior"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between Imperative and Declarative in React?",
+  "answer": {
+    "definition": "Imperative approach tells how to update UI while Declarative approach tells what UI should look like.",
+
+    "comparisonTitle1": "Imperative",
+    "comparisonTitle2": "Declarative",
+
+    "comparison": [
+      {
+        "feature": "Approach",
+        "first": "Focuses on how",
+        "second": "Focuses on what"
+      },
+      {
+        "feature": "UI Handling",
+        "first": "Manual DOM updates",
+        "second": "React handles UI updates"
+      },
+      {
+        "feature": "Code Complexity",
+        "first": "More complex",
+        "second": "Simpler and cleaner"
+      },
+      {
+        "feature": "State Handling",
+        "first": "Manually checks changes",
+        "second": "Uses state-based rendering"
+      },
+      {
+        "feature": "Readability",
+        "first": "Harder to maintain",
+        "second": "Easy to understand"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between useState and useRef hook?",
+  "answer": {
+    "definition": "useState is used for state updates and re-rendering while useRef is used for storing mutable values without re-rendering.",
+
+    "comparisonTitle1": "useState",
+    "comparisonTitle2": "useRef",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Manage component state",
+        "second": "Store mutable values"
+      },
+      {
+        "feature": "Re-render",
+        "first": "Triggers re-render",
+        "second": "Does not trigger re-render"
+      },
+      {
+        "feature": "Usage",
+        "first": "Update UI data",
+        "second": "Access DOM elements"
+      },
+      {
+        "feature": "Value Storage",
+        "first": "Stores state values",
+        "second": "Stores values in current property"
+      },
+      {
+        "feature": "Performance",
+        "first": "Can cause extra renders",
+        "second": "Better for persistent values"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between useEffect and useLayoutEffect hooks?",
+  "answer": {
+    "definition": "useEffect runs after browser paint while useLayoutEffect runs before browser paint.",
+
+    "comparisonTitle1": "useEffect",
+    "comparisonTitle2": "useLayoutEffect",
+
+    "comparison": [
+      {
+        "feature": "Timing",
+        "first": "Runs after paint",
+        "second": "Runs before paint"
+      },
+      {
+        "feature": "Browser Paint",
+        "first": "May cause flicker",
+        "second": "Avoids flicker"
+      },
+      {
+        "feature": "Execution",
+        "first": "Asynchronous",
+        "second": "Synchronous"
+      },
+      {
+        "feature": "Best Use Case",
+        "first": "API calls and side effects",
+        "second": "Layout measurements"
+      },
+      {
+        "feature": "Performance",
+        "first": "More performant",
+        "second": "Can block rendering"
+      },
+      {
+        "feature": "Error Handling",
+        "first": "Safer error handling",
+        "second": "Errors may crash app"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between Functional and Class Components?",
+  "answer": {
+    "definition": "Functional components are simple JavaScript functions while Class components are ES6 classes used to create React components.",
+
+    "comparisonTitle1": "Functional Component",
+    "comparisonTitle2": "Class Component",
+
+    "comparison": [
+      {
+        "feature": "Syntax",
+        "first": "Uses functions",
+        "second": "Uses ES6 classes"
+      },
+      {
+        "feature": "State Handling",
+        "first": "Uses useState hook",
+        "second": "Uses this.state and setState"
+      },
+      {
+        "feature": "Props Access",
+        "first": "Uses props directly",
+        "second": "Uses this.props"
+      },
+      {
+        "feature": "Lifecycle Methods",
+        "first": "Uses hooks",
+        "second": "Uses lifecycle methods"
+      },
+      {
+        "feature": "Complexity",
+        "first": "Simple and clean",
+        "second": "More complex"
+      },
+      {
+        "feature": "Performance",
+        "first": "Generally faster",
+        "second": "Slightly heavier"
+      }
+    ]
+  }
+},
+{
+  "question": "How is useReducer Different from useState?",
+  "answer": {
+    "definition": "useState is used for simple state management while useReducer is used for complex state logic.",
+
+    "comparisonTitle1": "useState",
+    "comparisonTitle2": "useReducer",
+
+    "comparison": [
+      {
+        "feature": "State Complexity",
+        "first": "Simple state",
+        "second": "Complex state"
+      },
+      {
+        "feature": "Update Style",
+        "first": "Direct state update",
+        "second": "Uses dispatch actions"
+      },
+      {
+        "feature": "Logic Handling",
+        "first": "Inside component",
+        "second": "Inside reducer function"
+      },
+      {
+        "feature": "Reusability",
+        "first": "Less reusable",
+        "second": "Highly reusable"
+      },
+      {
+        "feature": "Testing",
+        "first": "Basic testing",
+        "second": "Easy to test"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between page router and app router in Next.js?",
+  "answer": {
+    "definition": "Page Router is the traditional routing system while App Router is the modern routing system introduced in Next.js 13.",
+
+    "comparisonTitle1": "Page Router",
+    "comparisonTitle2": "App Router",
+
+    "comparison": [
+      {
+        "feature": "Directory",
+        "first": "Uses pages/",
+        "second": "Uses app/"
+      },
+      {
+        "feature": "Components",
+        "first": "Client Components by default",
+        "second": "Server Components by default"
+      },
+      {
+        "feature": "Layouts",
+        "first": "Uses _app.js",
+        "second": "Uses layout.js"
+      },
+      {
+        "feature": "Data Fetching",
+        "first": "getServerSideProps and getStaticProps",
+        "second": "Async await with fetch"
+      },
+      {
+        "feature": "Loading State",
+        "first": "Manual implementation",
+        "second": "Built-in loading.js"
+      },
+      {
+        "feature": "Error Handling",
+        "first": "Uses _error.js",
+        "second": "Uses error.js"
+      },
+      {
+        "feature": "Streaming",
+        "first": "Limited support",
+        "second": "Built-in streaming support"
+      },
+      {
+        "feature": "Server Actions",
+        "first": "Not available",
+        "second": "Supported"
+      },
+      {
+        "feature": "Recommendation",
+        "first": "Older approach",
+        "second": "Recommended for new apps"
+      }
+    ]
+  }
+},
+{
+  "question": "How is useMemo different from useCallback?",
+  "answer": {
+    "definition": "useMemo memoizes computed values while useCallback memoizes function references.",
+
+    "comparisonTitle1": "useMemo",
+    "comparisonTitle2": "useCallback",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Caches computed value",
+        "second": "Caches function reference"
+      },
+      {
+        "feature": "Returns",
+        "first": "Value",
+        "second": "Function"
+      },
+      {
+        "feature": "Primary Use",
+        "first": "Avoid expensive calculations",
+        "second": "Prevent function recreation"
+      },
+      {
+        "feature": "Common Scenario",
+        "first": "Filtering or sorting data",
+        "second": "Passing callbacks to child components"
+      },
+      {
+        "feature": "Recompute",
+        "first": "When dependencies change",
+        "second": "When dependencies change"
+      },
+      {
+        "feature": "Returned Type",
+        "first": "Any value",
+        "second": "Always function"
+      },
+      {
+        "feature": "Performance",
+        "first": "Optimizes calculations",
+        "second": "Optimizes function rendering"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the useTransition hook and how does it differ from useDeferredValue?",
+  "answer": {
+    "definition": "useTransition is used for non-urgent state updates while useDeferredValue delays updating a value for better performance.",
+
+    "comparisonTitle1": "useTransition",
+    "comparisonTitle2": "useDeferredValue",
+
+    "comparison": [
+      {
+        "feature": "Controls",
+        "first": "State updates",
+        "second": "Values"
+      },
+      {
+        "feature": "Use Case",
+        "first": "When updating state",
+        "second": "When handling slow values"
+      },
+      {
+        "feature": "Returns",
+        "first": "isPending and startTransition",
+        "second": "Deferred value"
+      },
+      {
+        "feature": "Pending State",
+        "first": "Built-in isPending",
+        "second": "Manual comparison needed"
+      },
+      {
+        "feature": "Primary Purpose",
+        "first": "Keep UI responsive during updates",
+        "second": "Delay rendering expensive values"
+      },
+      {
+        "feature": "Common Usage",
+        "first": "Tab switching or navigation",
+        "second": "Search filtering or typing input"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between useEffect and useEvent (experimental)?",
+  "answer": {
+    "definition": "useEffect is used for side effects while useEvent is used for stable event callbacks with latest state and props.",
+
+    "comparisonTitle1": "useEffect",
+    "comparisonTitle2": "useEvent",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Run side effects",
+        "second": "Create stable callbacks"
+      },
+      {
+        "feature": "Execution",
+        "first": "Runs after render",
+        "second": "Creates function during render"
+      },
+      {
+        "feature": "Returns",
+        "first": "Cleanup function",
+        "second": "Stable event handler"
+      },
+      {
+        "feature": "Closure Behavior",
+        "first": "Captures old values",
+        "second": "Always gets latest values"
+      },
+      {
+        "feature": "Dependencies",
+        "first": "Needs dependency array",
+        "second": "No dependency issue"
+      },
+      {
+        "feature": "Best Use Case",
+        "first": "API calls and subscriptions",
+        "second": "Stable event handlers"
+      }
+    ]
+  }
+},
+{
+  "question": "What are the differences between useEffect and useEvent (experimental)?",
+  "answer": {
+    "definition": "useEffect is used for side effects while useEvent is used for stable event callbacks with latest state and props.",
+
+    "comparisonTitle1": "useEffect",
+    "comparisonTitle2": "useEvent",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Run side effects",
+        "second": "Create stable callbacks"
+      },
+      {
+        "feature": "Execution",
+        "first": "Runs after render",
+        "second": "Creates function during render"
+      },
+      {
+        "feature": "Returns",
+        "first": "Cleanup function",
+        "second": "Stable event handler"
+      },
+      {
+        "feature": "Closure Behavior",
+        "first": "Captures old values",
+        "second": "Always gets latest values"
+      },
+      {
+        "feature": "Dependencies",
+        "first": "Needs dependency array",
+        "second": "No dependency issue"
+      },
+      {
+        "feature": "Best Use Case",
+        "first": "API calls and subscriptions",
+        "second": "Stable event handlers"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between super() and super(props) in React using ES6 classes?",
+  "answer": {
+    "definition": "super(props) allows access to this.props inside constructor while super() does not.",
+
+    "comparisonTitle1": "super()",
+    "comparisonTitle2": "super(props)",
+
+    "comparison": [
+      {
+        "feature": "Props Access in Constructor",
+        "first": "this.props is undefined",
+        "second": "this.props is available"
+      },
+      {
+        "feature": "Purpose",
+        "first": "Calls parent constructor",
+        "second": "Calls parent constructor with props"
+      },
+      {
+        "feature": "Usage",
+        "first": "When props are not needed",
+        "second": "When props are needed in constructor"
+      },
+      {
+        "feature": "Inside Constructor",
+        "first": "Cannot access props directly",
+        "second": "Can access props directly"
+      },
+      {
+        "feature": "Outside Constructor",
+        "first": "Props work normally",
+        "second": "Props work normally"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between setState() and replaceState() methods?",
+  "answer": {
+    "definition": "setState() merges new state with existing state while replaceState() completely replaces the old state.",
+
+    "comparisonTitle1": "setState()",
+    "comparisonTitle2": "replaceState()",
+
+    "comparison": [
+      {
+        "feature": "State Handling",
+        "first": "Merges state",
+        "second": "Replaces entire state"
+      },
+      {
+        "feature": "Old State",
+        "first": "Keeps previous values",
+        "second": "Removes previous values"
+      },
+      {
+        "feature": "Usage",
+        "first": "Commonly used",
+        "second": "Rarely used"
+      },
+      {
+        "feature": "Data Update",
+        "first": "Partial update",
+        "second": "Full update"
+      },
+      {
+        "feature": "Best Use Case",
+        "first": "Updating few properties",
+        "second": "Resetting complete state"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between try catch block and error boundaries?",
+  "answer": {
+    "definition": "try catch handles errors in imperative code while Error Boundaries handle errors in React component rendering.",
+
+    "comparisonTitle1": "try catch",
+    "comparisonTitle2": "Error Boundaries",
+
+    "comparison": [
+      {
+        "feature": "Purpose",
+        "first": "Handle JavaScript errors",
+        "second": "Handle React UI errors"
+      },
+      {
+        "feature": "Code Type",
+        "first": "Imperative code",
+        "second": "Declarative React code"
+      },
+      {
+        "feature": "Usage",
+        "first": "Inside functions or blocks",
+        "second": "Wrap React components"
+      },
+      {
+        "feature": "Error Scope",
+        "first": "Specific code block",
+        "second": "Component tree"
+      },
+      {
+        "feature": "Best Use Case",
+        "first": "Async and logic errors",
+        "second": "UI rendering errors"
+      }
+    ]
+  }
+},
+{
+  "question": "What is the difference between an Element and a Component?",
+  "answer": {
+    "definition": "Element is a simple object that describes UI while Component is a function or class that returns UI elements.",
+
+    "comparisonTitle1": "Element",
+    "comparisonTitle2": "Component",
+
+    "comparison": [
+      {
+        "feature": "Definition",
+        "first": "Describes UI",
+        "second": "Returns UI elements"
+      },
+      {
+        "feature": "Type",
+        "first": "JavaScript object",
+        "second": "Function or Class"
+      },
+      {
+        "feature": "Reusable",
+        "first": "No",
+        "second": "Yes"
+      },
+      {
+        "feature": "State Handling",
+        "first": "No state",
+        "second": "Can manage state"
+      },
+      {
+        "feature": "Purpose",
+        "first": "UI description",
+        "second": "UI logic and structure"
+      },
+      {
+        "feature": "Rendering",
+        "first": "Rendered by React DOM",
+        "second": "Returns elements to render"
+      }
+    ]
+  }
+}
+
+]

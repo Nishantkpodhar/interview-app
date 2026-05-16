@@ -1,0 +1,25 @@
+
+
+[
+  {
+    "question": "What is React?",
+    "answer": {
+      "definition": "React is a JavaScript library used for building user interfaces.",
+      "points": [
+        "Created by Facebook",
+        "Component based architecture",
+        "Uses Virtual DOM",
+        "Reusable components",
+        "Fast rendering"
+      ]
+    }
+  },
+  {
+    "question": "What is JSX?",
+    "answer": {
+      "definition": "JSX is a syntax extension that allows writing HTML inside JavaScript."
+    }
+  }
+  
+
+]
