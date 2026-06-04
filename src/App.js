@@ -12,6 +12,9 @@ import Dropdown from "./components/Dropdown";
 import SearchBar from "./components/SearchBar";
 import QuestionTable from "./components/QuestionTable";
 import TestReport from "./components/TestReport";
+import Navigation from "./components/Navigation";
+import Introduction from "./components/Introduction";
+import LastProject from "./components/LastProject";
 
 function App() {
   const [selectedFile, setSelectedFile] = useState("all");
@@ -19,6 +22,7 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [darkTheme, setDarkTheme] = useState(true);
   const [showComparisonOnly, setShowComparisonOnly] = useState(false);
+  const [activeSection, setActiveSection] = useState("questions");
 
   const dropdownOptions = useMemo(
     () =>
@@ -89,6 +93,11 @@ function App() {
     []
   );
 
+  const handleSectionChange = useCallback(
+    (section) => setActiveSection(section),
+    []
+  );
+
   return (
     <div className={`app-container ${darkTheme ? "dark" : "light"}`}>
       {showReport ? (
@@ -106,34 +115,44 @@ function App() {
             </button>
           </div>
 
-          <div className="top-section">
-            <div className="filter-section">
-              <Dropdown
-                options={dropdownOptions}
-                selectedFile={selectedFile}
-                onChange={handleSelectedFileChange}
-              />
+          <Navigation activeSection={activeSection} onSectionChange={handleSectionChange} />
 
-              <SearchBar
-                searchText={searchText}
-                onChange={handleSearchTextChange}
-              />
+          {activeSection === "intro" ? (
+            <Introduction />
+          ) : activeSection === "project" ? (
+            <LastProject />
+          ) : (
+            <>
+              <div className="top-section">
+                <div className="filter-section">
+                  <Dropdown
+                    options={dropdownOptions}
+                    selectedFile={selectedFile}
+                    onChange={handleSelectedFileChange}
+                  />
 
-              <button
-                type="button"
-                className={`filter-btn ${showComparisonOnly ? "active" : ""}`}
-                onClick={handleComparisonToggle}
-              >
-                Difference Between
-              </button>
-            </div>
+                  <SearchBar
+                    searchText={searchText}
+                    onChange={handleSearchTextChange}
+                  />
 
-            <button className="theme-btn" onClick={handleThemeToggle}>
-              {darkTheme ? "☀ Light" : "🌙 Dark"}
-            </button>
-          </div>
+                  <button
+                    type="button"
+                    className={`filter-btn ${showComparisonOnly ? "active" : ""}`}
+                    onClick={handleComparisonToggle}
+                  >
+                    Difference Between
+                  </button>
+                </div>
 
-          <QuestionTable data={filteredData} />
+                <button className="theme-btn" onClick={handleThemeToggle}>
+                  {darkTheme ? "☀ Light" : "🌙 Dark"}
+                </button>
+              </div>
+
+              <QuestionTable data={filteredData} />
+            </>
+          )}
         </>
       )}
     </div>
