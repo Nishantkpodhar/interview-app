@@ -1,7 +1,7 @@
 // App.js
 
 import React, {
-  useEffect,
+  useCallback,
   useMemo,
   useState,
 } from "react";
@@ -14,59 +14,55 @@ import QuestionTable from "./components/QuestionTable";
 import TestReport from "./components/TestReport";
 
 function App() {
-  const [selectedFile, setSelectedFile] =
-    useState("all");
+  const [selectedFile, setSelectedFile] = useState("all");
   const [showReport, setShowReport] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [darkTheme, setDarkTheme] = useState(true);
 
-  const [searchText, setSearchText] =
-    useState("");
-
-  const [tableData, setTableData] = useState(
+  const dropdownOptions = useMemo(
+    () =>
+      Object.keys(jsonFiles).map((key) => ({
+        value: key,
+        label:
+          key === "all"
+            ? "All"
+            : `${key[0].toUpperCase()}${key.slice(1)}.json`,
+      })),
     []
   );
 
-  const [darkTheme, setDarkTheme] =
-    useState(true);
+  const tableData = useMemo(
+    () => jsonFiles[selectedFile] || [],
+    [selectedFile]
+  );
 
-  useEffect(() => {
-    setTableData(jsonFiles[selectedFile]);
-  }, [selectedFile]);
-
-  // SEARCH FILTER
-  const dropdownOptions = Object.keys(jsonFiles).map((key) => ({
-    value: key,
-    label:
-      key === "all"
-        ? "All"
-        : `${key[0].toUpperCase()}${key.slice(1)}.json`,
-  }));
+  const normalizedSearchText = useMemo(
+    () => searchText.trim().toLowerCase(),
+    [searchText]
+  );
 
   const filteredData = useMemo(() => {
-    return tableData.filter((item) => {
-      const search = searchText.toLowerCase();
+    if (!normalizedSearchText) {
+      return tableData;
+    }
 
+    return tableData.filter((item) => {
+      const search = normalizedSearchText;
       const questionMatch = item.question
         ?.toLowerCase()
         .includes(search);
-
       const definitionMatch =
         item.answer?.definition
           ?.toLowerCase()
           .includes(search);
-
       const pointsMatch =
         item.answer?.points?.some((point) =>
-          point
-            .toLowerCase()
-            .includes(search)
+          point.toLowerCase().includes(search)
         );
-
       const comparisonMatch =
         item.answer?.comparison?.some((row) =>
           Object.values(row).some((value) =>
-            value
-              .toLowerCase()
-              .includes(search)
+            String(value).toLowerCase().includes(search)
           )
         );
 
@@ -77,77 +73,66 @@ function App() {
         comparisonMatch
       );
     });
-  }, [searchText, tableData]);
+  }, [normalizedSearchText, tableData]);
+
+  const handleReportToggle = useCallback(
+    () => setShowReport((current) => !current),
+    []
+  );
+
+  const handleSelectedFileChange = useCallback(
+    (event) => setSelectedFile(event.target.value),
+    []
+  );
+
+  const handleSearchTextChange = useCallback(
+    (event) => setSearchText(event.target.value),
+    []
+  );
+
+  const handleThemeToggle = useCallback(
+    () => setDarkTheme((current) => !current),
+    []
+  );
 
   return (
-    <div
-      className={`app-container ${
-        darkTheme ? "dark" : "light"
-      }`}
-    >
+    <div className={`app-container ${darkTheme ? "dark" : "light"}`}>
       {showReport ? (
-        <TestReport onBack={() => setShowReport(false)} />
+        <TestReport onBack={handleReportToggle} />
       ) : (
         <>
-          {/* HEADER */}
-
           <div className="header-section">
             <div>
-              <h1>
-                Frontend Interview Questions
-              </h1>
-              <p>
-                React.js • JavaScript • Next.js •
-                CSS • Node.js
-              </p>
+              <h1>Frontend Interview Questions</h1>
+              <p>React.js • JavaScript • Next.js • CSS • Node.js</p>
             </div>
 
-            <button
-              className="report-btn"
-              onClick={() => setShowReport(true)}
-            >
+            <button className="report-btn" onClick={handleReportToggle}>
               View Test Report
             </button>
           </div>
 
-      {/* FILTER SECTION */}
+          <div className="top-section">
+            <div className="filter-section">
+              <Dropdown
+                options={dropdownOptions}
+                selectedFile={selectedFile}
+                onChange={handleSelectedFileChange}
+              />
 
-      <div className="top-section">
-        <div className="filter-section">
-          <Dropdown
-            options={dropdownOptions}
-            selectedFile={selectedFile}
-            onChange={(e) =>
-              setSelectedFile(e.target.value)
-            }
-          />
+              <SearchBar
+                searchText={searchText}
+                onChange={handleSearchTextChange}
+              />
+            </div>
 
-          <SearchBar
-            searchText={searchText}
-            onChange={(e) =>
-              setSearchText(e.target.value)
-            }
-          />
-        </div>
+            <button className="theme-btn" onClick={handleThemeToggle}>
+              {darkTheme ? "☀ Light" : "🌙 Dark"}
+            </button>
+          </div>
 
-        {/* THEME BUTTON */}
-
-        <button
-          className="theme-btn"
-          onClick={() =>
-            setDarkTheme(!darkTheme)
-          }
-        >
-          {darkTheme
-            ? "☀ Light"
-            : "🌙 Dark"}
-        </button>
-      </div>
-
-      {/* TABLE */}
-
-      <QuestionTable data={filteredData} />
-    </>
+          <QuestionTable data={filteredData} />
+        </>
       )}
     </div>
   );

@@ -16,4 +16,4 @@ function Dropdown({ options, selectedFile, onChange }) {
   );
 }
 
-export default Dropdown;
+export default React.memo(Dropdown);

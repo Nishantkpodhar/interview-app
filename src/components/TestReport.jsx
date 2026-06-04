@@ -66,4 +66,4 @@ function TestReport({ onBack }) {
   );
 }
 
-export default TestReport;
+export default React.memo(TestReport);
