@@ -1,74 +1,74 @@
-<<<<<<< HEAD
-# interview-app
-=======
-# Getting Started with Create React App
+# Interview App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based interview question viewer for frontend topics. The app loads question and answer data from JSON files and supports category filtering, search, and theme toggling.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Category filter: All, React, JavaScript, Next.js, CSS, Node.js
+- Search across questions, answer definitions, answer points, and comparison rows
+- Dark / light theme toggle
+- Question list and answer display built from `src/data/*.json`
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Open a terminal in the project directory:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   cd interview-app
+   ```
 
-### `npm test`
+2. Install dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+## Run locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then open:
 
-### `npm run eject`
+```text
+http://localhost:3000
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app reloads automatically when you save changes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Build for production
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create an optimized production build:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run build
+```
 
-## Learn More
+The output is written to the `build` folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Git commit and push
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+After editing files, save and run:
 
-### Code Splitting
+```bash
+git add .
+git commit -m "Describe your changes"
+git push origin main
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If GitHub rejects the push because of email privacy, use your GitHub no-reply email and rewrite the commit author before pushing:
 
-### Analyzing the Bundle Size
+```bash
+git config user.email "<your-github-username>@users.noreply.github.com"
+git commit --amend --reset-author --no-edit
+git push --force-with-lease origin main
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Notes
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 43ad488 (Initialize project using Create React App)
+- This project uses Create React App and React 19.
+- Data files are located in `src/data/` and aggregated in `src/data/jsonFiles.js`.
+- Use `npm test` to run the built-in CRA test suite.
