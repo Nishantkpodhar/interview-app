@@ -2,6 +2,18 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  animation: fadeInUp 0.6s ease-out 0.3s backwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 table {
@@ -11,10 +23,45 @@ table {
 
 .question-row {
   background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  animation: rowSlide 0.4s ease-out backwards;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.question-row:nth-child(1) {
+  animation-delay: 0s;
+}
+.question-row:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.question-row:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.question-row:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.question-row:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+@keyframes rowSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.question-row:hover {
+  transform: translateX(4px) scale(1.01);
+  box-shadow: inset 4px 0 0 var(--accent-start);
 }
 
 .question-row td {
   padding: 24px;
+  transition: all 0.2s ease;
 }
 
 .serial-no {
@@ -23,6 +70,18 @@ table {
   font-size: 20px;
   font-weight: bold;
   color: #facc15;
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .question-cell {
@@ -30,6 +89,18 @@ table {
   font-weight: 700;
   text-align: left;
   padding-left: 50px;
+  animation: slideInText 0.5s ease-out backwards;
+}
+
+@keyframes slideInText {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .question-cell-content {
@@ -49,39 +120,100 @@ table {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
+  background: var(--label-bg);
+  color: var(--text-color);
+  animation: badgeGlow 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes badgeGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.question-label:hover {
+  transform: scale(1.05);
 }
 
 .answer-row {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--answer-bg);
+  animation: expandHeight 0.4s ease-out backwards;
+  max-height: 500px;
+  transition: all 0.3s ease;
+}
+
+@keyframes expandHeight {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+}
+
+.answer-row:hover {
+  background: var(--answer-bg);
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.05);
 }
 
 .answer-row td {
   padding: 30px;
+  animation: fadeInUp 0.5s ease-out 0.1s backwards;
 }
 
 .answer-cell {
   text-align: left;
   padding-left: 50px;
+  animation: slideInText 0.6s ease-out 0.15s backwards;
 }
 
 .definition-box,
 .points-box,
 .comparison-section {
   margin-bottom: 28px;
+  animation: slideInContent 0.5s ease-out backwards;
+}
+
+@keyframes slideInContent {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .definition-box h3,
 .points-box h3,
 .comparison-section h3 {
   margin-bottom: 15px;
-  color: #38bdf8;
+  color: var(--accent-start);
+  animation: titleGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  }
 }
 
 .definition-box p {
   line-height: 1.9;
   font-size: 16px;
+  animation: fadeInUp 0.6s ease-out 0.2s backwards;
 }
 
 .points-box ol {
@@ -91,6 +223,13 @@ table {
 .points-box li {
   margin-bottom: 10px;
   line-height: 1.8;
+  animation: slideInText 0.5s ease-out backwards;
+  transition: all 0.2s ease;
+}
+
+.points-box li:hover {
+  transform: translateX(4px);
+  color: var(--accent-start);
 }
 
 .comparison-table {
@@ -98,18 +237,37 @@ table {
   margin-top: 15px;
   border-radius: 14px;
   overflow: hidden;
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
 .comparison-table th {
-  background: linear-gradient(to right, #2563eb, #7c3aed);
+  background: linear-gradient(to right, var(--accent-start), var(--accent-end));
   color: white;
   padding: 16px;
   text-align: left;
+  animation: slideDown 0.4s ease-out backwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .comparison-table td {
   padding: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--input-border);
+  animation: fadeInUp 0.5s ease-out backwards;
+  transition: all 0.2s ease;
+}
+
+.comparison-table td:hover {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .no-data {
@@ -117,6 +275,16 @@ table {
   padding: 30px;
   font-size: 22px;
   color: #f87171;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @media (max-width: 768px) {
