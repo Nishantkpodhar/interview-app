@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Dropdown from './Dropdown';
+import Dropdown from './index';
 
 describe('Dropdown', () => {
   const options = [

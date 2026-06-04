@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import SearchBar from './SearchBar';
+import SearchBar from './index';
 
 describe('SearchBar', () => {
   test('renders input and calls onChange', () => {

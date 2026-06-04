@@ -18,6 +18,7 @@ function App() {
   const [showReport, setShowReport] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [darkTheme, setDarkTheme] = useState(true);
+  const [showComparisonOnly, setShowComparisonOnly] = useState(false);
 
   const dropdownOptions = useMemo(
     () =>
@@ -42,38 +43,26 @@ function App() {
   );
 
   const filteredData = useMemo(() => {
-    if (!normalizedSearchText) {
-      return tableData;
+    const search = normalizedSearchText;
+    const comparisonFilter = (item) =>
+      item.answer?.comparison?.length > 0;
+
+    const normalizedData = showComparisonOnly
+      ? tableData.filter(comparisonFilter)
+      : tableData;
+
+    if (!search) {
+      return normalizedData;
     }
 
-    return tableData.filter((item) => {
-      const search = normalizedSearchText;
+    return normalizedData.filter((item) => {
       const questionMatch = item.question
         ?.toLowerCase()
         .includes(search);
-      const definitionMatch =
-        item.answer?.definition
-          ?.toLowerCase()
-          .includes(search);
-      const pointsMatch =
-        item.answer?.points?.some((point) =>
-          point.toLowerCase().includes(search)
-        );
-      const comparisonMatch =
-        item.answer?.comparison?.some((row) =>
-          Object.values(row).some((value) =>
-            String(value).toLowerCase().includes(search)
-          )
-        );
 
-      return (
-        questionMatch ||
-        definitionMatch ||
-        pointsMatch ||
-        comparisonMatch
-      );
+      return questionMatch;
     });
-  }, [normalizedSearchText, tableData]);
+  }, [normalizedSearchText, tableData, showComparisonOnly]);
 
   const handleReportToggle = useCallback(
     () => setShowReport((current) => !current),
@@ -87,6 +76,11 @@ function App() {
 
   const handleSearchTextChange = useCallback(
     (event) => setSearchText(event.target.value),
+    []
+  );
+
+  const handleComparisonToggle = useCallback(
+    () => setShowComparisonOnly((current) => !current),
     []
   );
 
@@ -124,6 +118,14 @@ function App() {
                 searchText={searchText}
                 onChange={handleSearchTextChange}
               />
+
+              <button
+                type="button"
+                className={`filter-btn ${showComparisonOnly ? "active" : ""}`}
+                onClick={handleComparisonToggle}
+              >
+                Difference Between
+              </button>
             </div>
 
             <button className="theme-btn" onClick={handleThemeToggle}>

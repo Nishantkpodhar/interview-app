@@ -1,4 +1,5 @@
 import React from "react";
+import "./QuestionTable.css";
 
 function QuestionTable({ data }) {
   if (!data || data.length === 0) {

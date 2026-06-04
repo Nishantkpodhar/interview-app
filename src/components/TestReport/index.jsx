@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
-import testReportData from "../data/testReportData";
+import testReportData from "../../data/testReportData";
+import "./TestReport.css";
 
 function TestReport({ onBack }) {
   const summary = useMemo(() => {

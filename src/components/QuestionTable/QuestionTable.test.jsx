@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import QuestionTable from './QuestionTable';
+import QuestionTable from './index';
 
 describe('QuestionTable', () => {
   test('renders no data message when list is empty', () => {
