@@ -36,4 +36,26 @@ describe('QuestionTable', () => {
     expect(screen.getByText(/Component-based/i)).toBeInTheDocument();
     expect(screen.getByText(/One-way/i)).toBeInTheDocument();
   });
+
+  test('renders comparison table when comparison data exists', () => {
+    const data = [
+      {
+        question: 'How do React and Vue differ?',
+        category: 'javascript',
+        answer: {
+          comparisonTitle1: 'React',
+          comparisonTitle2: 'Vue',
+          comparison: [
+            { feature: 'Rendering', first: 'JSX', second: 'Templates' },
+          ],
+        },
+      },
+    ];
+
+    render(<QuestionTable data={data} />);
+
+    expect(screen.getByText(/differences table/i)).toBeInTheDocument();
+    expect(screen.getByText(/jsX/i)).toBeInTheDocument();
+    expect(screen.getByText(/templates/i)).toBeInTheDocument();
+  });
 });

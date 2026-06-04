@@ -15,4 +15,15 @@ describe('SearchBar', () => {
     fireEvent.change(input, { target: { value: 'React' } });
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
+
+  test('displays the controlled search text value', () => {
+    const handleChange = jest.fn();
+
+    render(
+      <SearchBar searchText="JavaScript" onChange={handleChange} />
+    );
+
+    const input = screen.getByDisplayValue(/javascript/i);
+    expect(input).toBeInTheDocument();
+  });
 });

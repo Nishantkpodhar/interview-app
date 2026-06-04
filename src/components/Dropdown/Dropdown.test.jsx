@@ -25,4 +25,18 @@ describe('Dropdown', () => {
     fireEvent.change(select, { target: { value: 'react' } });
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
+
+  test('shows the selected option value', () => {
+    const handleChange = jest.fn();
+
+    render(
+      <Dropdown
+        options={options}
+        selectedFile="react"
+        onChange={handleChange}
+      />
+    );
+
+    expect(screen.getByRole('combobox').value).toBe('react');
+  });
 });

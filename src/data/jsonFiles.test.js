@@ -19,4 +19,11 @@ describe('jsonFiles data module', () => {
       expect(typeof item.category).toBe('string');
     });
   });
+
+  test('all items use a valid category key', () => {
+    const validCategories = Object.keys(jsonFiles);
+    jsonFiles.all.forEach((item) => {
+      expect(validCategories).toContain(item.category);
+    });
+  });
 });
