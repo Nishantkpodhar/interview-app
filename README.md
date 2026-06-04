@@ -39,6 +39,16 @@ http://localhost:3000
 
 The app reloads automatically when you save changes.
 
+## View the test report page
+
+After the app loads, click the `View Test Report` button in the header to open the test tracking page. The page shows:
+
+- test case IDs
+- test case names
+- source file paths
+- pass/fail status
+- execution log messages
+
 ## Build for production
 
 Create an optimized production build:

@@ -4,24 +4,33 @@ import nextjsData from "./nextjs.json";
 import cssData from "./css.json";
 import nodeData from "./node.json";
 
+const addCategory = (data, category) =>
+  data.map((item) => ({ ...item, category }));
+
+const reactItems = addCategory(reactData, "react");
+const javascriptItems = addCategory(javascriptData, "javascript");
+const nextjsItems = addCategory(nextjsData, "nextjs");
+const cssItems = addCategory(cssData, "css");
+const nodeItems = addCategory(nodeData, "node");
+
 const jsonFiles = {
   all: [
-    ...reactData,
-    ...javascriptData,
-    ...nextjsData,
-    ...cssData,
-    ...nodeData,
+    ...reactItems,
+    ...javascriptItems,
+    ...nextjsItems,
+    ...cssItems,
+    ...nodeItems,
   ],
 
-  react: reactData,
+  react: reactItems,
 
-  javascript: javascriptData,
+  javascript: javascriptItems,
 
-  nextjs: nextjsData,
+  nextjs: nextjsItems,
 
-  css: cssData,
+  css: cssItems,
 
-  node: nodeData,
+  node: nodeItems,
 };
 
 export default jsonFiles;
