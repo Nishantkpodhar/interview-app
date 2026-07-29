@@ -1,0 +1,753 @@
+[
+  {
+    "category": "Python",
+    "question": "What are the key features of Python?",
+    "answer": {
+      "definition": "Python is a high-level, interpreted, multi-paradigm programming language known for its simple syntax, readability, and extensive standard library.",
+      "points": [
+        "Interpreted and interactive.",
+        "Simple and readable syntax.",
+        "Cross-platform compatibility.",
+        "Modular and scalable architecture.",
+        "Massive library ecosystem (PyPI).",
+        "Supports AI, Web Development, Automation, and Data Science.",
+        "Automatic memory management.",
+        "Dynamically typed with optional type hints.",
+        "Supports Object-Oriented, Functional, and Procedural programming.",
+        "Can be extended using C, C++, or Rust."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "def add_numbers(a: int, b: int) -> int:\n    return a + b",
+      "syntax": [],
+      "notes": [
+        "Python emphasizes readability and developer productivity."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "How is Python executed?",
+    "answer": {
+      "definition": "Python follows a hybrid execution model where source code is first compiled into bytecode and then executed by the Python Virtual Machine (PVM).",
+      "points": [
+        "Source code is compiled into bytecode.",
+        "Bytecode is executed by the Python Virtual Machine (PVM).",
+        "Compilation phases include lexical analysis, parsing, semantic analysis, and bytecode generation.",
+        "Python 3.11 introduced the Specializing Adaptive Interpreter.",
+        "Python 3.13 includes an experimental Just-In-Time (JIT) compiler."
+      ],
+      "comparisonTitle1": "Python",
+      "comparisonTitle2": "C++",
+      "comparison": [
+        {
+          "feature": "Compilation Target",
+          "first": "Bytecode",
+          "second": "Machine Code"
+        },
+        {
+          "feature": "Execution",
+          "first": "Python Virtual Machine",
+          "second": "Direct CPU Execution"
+        },
+        {
+          "feature": "Portability",
+          "first": "High",
+          "second": "Platform Specific"
+        }
+      ],
+      "example": "import dis\n\ndef example_func():\n    return 15 * 20\n\ndis.dis(example_func)",
+      "syntax": [],
+      "notes": [
+        "Python source code is compiled before execution, but not directly into machine code."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "What is PEP 8 and why is it important?",
+    "answer": {
+      "definition": "PEP 8 is the official Python style guide that defines coding conventions to improve readability, consistency, and maintainability.",
+      "points": [
+        "Uses 4 spaces for indentation.",
+        "Maximum recommended line length is 79 characters.",
+        "Uses snake_case for functions and variables.",
+        "Uses PascalCase for classes.",
+        "Uses UPPER_CASE for constants.",
+        "Encourages meaningful comments and docstrings."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "class DirectoryScanner:\n    def scan_files(self):\n        pass",
+      "syntax": [],
+      "notes": [
+        "PEP 8 improves collaboration and code quality."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "How is memory allocation and garbage collection handled in Python?",
+    "answer": {
+      "definition": "Python automatically manages memory using the Python Memory Manager through reference counting and a generational garbage collector.",
+      "points": [
+        "Objects are stored in the heap.",
+        "Small objects use the obmalloc allocator.",
+        "Large objects use the system malloc().",
+        "Reference counting is the primary memory management mechanism.",
+        "Generational Garbage Collection handles circular references.",
+        "Objects move through Generation 0, Generation 1, and Generation 2."
+      ],
+      "comparisonTitle1": "Python",
+      "comparisonTitle2": "C",
+      "comparison": [
+        {
+          "feature": "Memory Management",
+          "first": "Automatic",
+          "second": "Manual"
+        },
+        {
+          "feature": "Garbage Collection",
+          "first": "Available",
+          "second": "Not Available"
+        },
+        {
+          "feature": "Developer Responsibility",
+          "first": "Low",
+          "second": "High"
+        }
+      ],
+      "example": "import sys\n\na = [1, 2, 3]\nprint(sys.getrefcount(a))",
+      "syntax": [],
+      "notes": [
+        "Reference counting immediately frees objects with zero references.",
+        "The gc module detects and removes cyclic references."
+      ]
+    }
+  },
+   {
+    "category": "Python",
+    "question": "What are the built-in data types in Python?",
+    "answer": {
+      "definition": "Python provides several built-in data types for storing and manipulating data. These data types are broadly categorized into immutable and mutable types.",
+      "points": [
+        "Immutable: int, float, complex, bool, str, tuple, frozenset, bytes, range, NoneType.",
+        "Mutable: list, set, dict, bytearray, memoryview.",
+        "Additional mutable types include array.array, collections.deque, object, types.SimpleNamespace, and types.FunctionType.",
+        "Each data type is optimized for specific use cases such as sequences, mappings, binary data, or numeric operations."
+      ],
+      "comparisonTitle1": "Immutable Types",
+      "comparisonTitle2": "Mutable Types",
+      "comparison": [
+        {
+          "feature": "Modification",
+          "first": "Cannot Be Changed",
+          "second": "Can Be Modified"
+        },
+        {
+          "feature": "Examples",
+          "first": "int, str, tuple",
+          "second": "list, dict, set"
+        }
+      ],
+      "example": "num = 10\ntext = 'Python'\nitems = [1, 2, 3]\ninfo = {'name': 'John'}",
+      "syntax": [],
+      "notes": [
+        "Choosing the appropriate data type improves performance and memory usage."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "What is the difference between mutable and immutable objects in Python?",
+    "answer": {
+      "definition": "Mutable objects can be modified after creation, whereas immutable objects cannot be changed. Any modification to an immutable object creates a new object.",
+      "points": [
+        "Mutable objects preserve the same object identity after modification.",
+        "Immutable objects create a new object when modified.",
+        "Mutable examples: list, dict, set, bytearray.",
+        "Immutable examples: int, float, str, tuple, bytes, bool.",
+        "Immutable objects are hashable and can be used as dictionary keys."
+      ],
+      "comparisonTitle1": "Mutable Objects",
+      "comparisonTitle2": "Immutable Objects",
+      "comparison": [
+        {
+          "feature": "Modification",
+          "first": "Allowed",
+          "second": "Not Allowed"
+        },
+        {
+          "feature": "Object Identity",
+          "first": "Remains Same",
+          "second": "New Object Created"
+        },
+        {
+          "feature": "Hashable",
+          "first": "Usually No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Examples",
+          "first": "list, dict, set",
+          "second": "int, str, tuple"
+        }
+      ],
+      "example": "numbers = [1, 2, 3]\nnumbers.append(4)\n\ntext = 'Hello'\ntext = text + ' World'",
+      "syntax": [],
+      "notes": [
+        "Python uses pass-by-assignment when passing objects to functions."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "How do you handle exceptions in Python?",
+    "answer": {
+      "definition": "Python handles runtime errors using exception handling with try, except, else, and finally blocks, allowing programs to recover gracefully from errors.",
+      "points": [
+        "try contains code that may raise an exception.",
+        "except handles specific exceptions.",
+        "else executes if no exception occurs.",
+        "finally always executes for cleanup.",
+        "Use raise to throw custom exceptions.",
+        "Context managers (with) automatically release resources.",
+        "Python 3.11 introduced ExceptionGroup and except* for handling multiple exceptions."
+      ],
+      "comparisonTitle1": "try/except",
+      "comparisonTitle2": "with Statement",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Handle Exceptions",
+          "second": "Manage Resources Automatically"
+        },
+        {
+          "feature": "Cleanup",
+          "first": "Uses finally",
+          "second": "Automatic"
+        }
+      ],
+      "example": "try:\n    value = int(input())\nexcept ValueError:\n    print('Invalid input')\nelse:\n    print(value)\nfinally:\n    print('Finished')",
+      "syntax": [
+        "try:\n    ...\nexcept Exception:\n    ...\nelse:\n    ...\nfinally:\n    ..."
+      ],
+      "notes": [
+        "Catch specific exceptions instead of using a generic except block.",
+        "Use finally or with to ensure resources are properly released."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "What is the difference between a list and a tuple in Python?",
+    "answer": {
+      "definition": "Lists and tuples are both ordered collections in Python, but lists are mutable while tuples are immutable.",
+      "points": [
+        "Lists can be modified after creation.",
+        "Tuples cannot be modified after creation.",
+        "Tuples use less memory than lists.",
+        "Tuples are generally faster to create and iterate.",
+        "Tuples are hashable (if all elements are hashable) and can be used as dictionary keys.",
+        "Lists are ideal for frequently changing data, while tuples are suitable for fixed data."
+      ],
+      "comparisonTitle1": "List",
+      "comparisonTitle2": "Tuple",
+      "comparison": [
+        {
+          "feature": "Mutability",
+          "first": "Mutable",
+          "second": "Immutable"
+        },
+        {
+          "feature": "Memory Usage",
+          "first": "Higher",
+          "second": "Lower"
+        },
+        {
+          "feature": "Performance",
+          "first": "Slightly Slower",
+          "second": "Slightly Faster"
+        },
+        {
+          "feature": "Hashable",
+          "first": "No",
+          "second": "Yes (If Elements Are Hashable)"
+        },
+        {
+          "feature": "Best Use",
+          "first": "Frequently Modified Data",
+          "second": "Fixed Data"
+        }
+      ],
+      "example": "my_list = ['apple', 'banana']\nmy_list.append('cherry')\n\nmy_tuple = (1, 2, 3)\na, b, c = my_tuple",
+      "syntax": [
+        "my_list = [1, 2, 3]",
+        "my_tuple = (1, 2, 3)"
+      ],
+      "notes": [
+        "Use tuples when data should remain constant."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "How do you create a dictionary in Python?",
+    "answer": {
+      "definition": "A dictionary is a mutable collection of key-value pairs that provides fast lookups and preserves insertion order (Python 3.7+).",
+      "points": [
+        "Keys must be unique and hashable.",
+        "Values can be of any data type.",
+        "Dictionaries are mutable.",
+        "Average lookup, insertion, and deletion complexity is O(1).",
+        "Can be created using literals, dict(), comprehensions, zip(), or fromkeys()."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "student = {\n    'name': 'John',\n    'age': 21\n}\n\nsquares = {x: x**2 for x in range(1, 6)}",
+      "syntax": [
+        "{'key': 'value'}",
+        "dict(name='John', age=21)",
+        "{k: v for k, v in iterable}"
+      ],
+      "notes": [
+        "Since Python 3.7, dictionaries preserve insertion order."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "What is the difference between == and is in Python?",
+    "answer": {
+      "definition": "The == operator compares object values, whereas the is operator compares object identity (memory location).",
+      "points": [
+        "== checks whether two objects have equal values.",
+        "is checks whether two variables reference the same object.",
+        "Use == for value comparison.",
+        "Use is mainly for comparing with None."
+      ],
+      "comparisonTitle1": "==",
+      "comparisonTitle2": "is",
+      "comparison": [
+        {
+          "feature": "Comparison",
+          "first": "Value Equality",
+          "second": "Object Identity"
+        },
+        {
+          "feature": "Checks",
+          "first": "__eq__ Method",
+          "second": "Memory Address"
+        },
+        {
+          "feature": "Common Usage",
+          "first": "Numbers, Strings, Collections",
+          "second": "None and Singleton Objects"
+        }
+      ],
+      "example": "a = [1, 2, 3]\nb = [1, 2, 3]\nc = a\n\nprint(a == b)  # True\nprint(a is b)  # False\nprint(a is c)  # True",
+      "syntax": [
+        "a == b",
+        "a is b"
+      ],
+      "notes": [
+        "Use 'is None' instead of '== None'."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "How does a Python function work?",
+    "answer": {
+      "definition": "A Python function is a first-class object that encapsulates reusable logic. When called, Python creates an execution frame, binds arguments to parameters, executes bytecode, and returns a value.",
+      "points": [
+        "Functions are defined using the def keyword.",
+        "Functions are first-class objects and can be passed or returned.",
+        "A new frame is created for each function call.",
+        "Arguments are passed using pass-by-object-reference (pass-by-assignment).",
+        "Python resolves variables using the LEGB rule.",
+        "Functions support closures and decorators."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "def outer(x):\n    y = 10\n\n    def inner(z):\n        return x + y + z\n\n    return inner\n\nclosure = outer(5)\nprint(closure(3))",
+      "syntax": [
+        "def function_name(parameters):\n    return value"
+      ],
+      "notes": [
+        "LEGB stands for Local, Enclosing, Global, and Built-in scopes.",
+        "Functions implicitly return None if no return statement is provided."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "What is a lambda function, and where would you use it?",
+    "answer": {
+      "definition": "A lambda function is a small anonymous function created using the lambda keyword. It consists of a single expression whose result is returned automatically.",
+      "points": [
+        "Defined using the lambda keyword.",
+        "Does not require a function name.",
+        "Contains only a single expression.",
+        "Returns the evaluated expression implicitly.",
+        "Useful for short-lived operations and inline functions.",
+        "Commonly used with map(), filter(), sorted(), min(), and max()."
+      ],
+      "comparisonTitle1": "Lambda Function",
+      "comparisonTitle2": "Regular Function (def)",
+      "comparison": [
+        {
+          "feature": "Name",
+          "first": "Anonymous",
+          "second": "Named"
+        },
+        {
+          "feature": "Body",
+          "first": "Single Expression",
+          "second": "Multiple Statements Allowed"
+        },
+        {
+          "feature": "Return",
+          "first": "Implicit",
+          "second": "Uses return Statement"
+        },
+        {
+          "feature": "Best Use",
+          "first": "Simple One-Line Logic",
+          "second": "Complex Business Logic"
+        }
+      ],
+      "example": "numbers = [1, 2, 3, 4]\nsquared = list(map(lambda x: x**2, numbers))\n\nstudents = [{'name': 'Alice', 'age': 30}, {'name': 'Bob', 'age': 25}]\nsorted_students = sorted(students, key=lambda x: x['age'])",
+      "syntax": [
+        "lambda arguments: expression"
+      ],
+      "notes": [
+        "PEP 8 recommends using def instead of assigning a lambda to a variable.",
+        "Lambda functions cannot contain multiple statements or docstrings."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "Explain *args and **kwargs in Python.",
+    "answer": {
+      "definition": "*args and **kwargs allow a function to accept a variable number of arguments. *args collects extra positional arguments into a tuple, while **kwargs collects extra keyword arguments into a dictionary.",
+      "points": [
+        "*args stores extra positional arguments as a tuple.",
+        "**kwargs stores extra keyword arguments as a dictionary.",
+        "Useful when the number of arguments is unknown.",
+        "Commonly used in decorators, inheritance, and wrapper functions.",
+        "Python requires the order: positional arguments, *args, keyword-only arguments, **kwargs."
+      ],
+      "comparisonTitle1": "*args",
+      "comparisonTitle2": "**kwargs",
+      "comparison": [
+        {
+          "feature": "Accepts",
+          "first": "Positional Arguments",
+          "second": "Keyword Arguments"
+        },
+        {
+          "feature": "Stored As",
+          "first": "Tuple",
+          "second": "Dictionary"
+        },
+        {
+          "feature": "Syntax",
+          "first": "*args",
+          "second": "**kwargs"
+        }
+      ],
+      "example": "def sum_all(*args):\n    return sum(args)\n\nprint(sum_all(1, 2, 3))\n\ndef print_info(**kwargs):\n    for key, value in kwargs.items():\n        print(key, value)\n\nprint_info(name='John', age=25)",
+      "syntax": [
+        "def func(*args): ...",
+        "def func(**kwargs): ...",
+        "def func(a, b, *args, mode='fast', **kwargs): ..."
+      ],
+      "notes": [
+        "The names args and kwargs are conventions; only * and ** are required."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "What are decorators in Python?",
+    "answer": {
+      "definition": "A decorator is a function that modifies or extends the behavior of another function or class without changing its source code.",
+      "points": [
+        "Decorators are higher-order functions.",
+        "They use closures to wrap another function.",
+        "Applied using the @decorator syntax.",
+        "Commonly used for logging, authentication, caching, validation, and rate limiting.",
+        "functools.wraps preserves the original function's metadata."
+      ],
+      "comparisonTitle1": "@decorator Syntax",
+      "comparisonTitle2": "Manual Wrapping",
+      "comparison": [
+        {
+          "feature": "Syntax",
+          "first": "@my_decorator",
+          "second": "func = my_decorator(func)"
+        },
+        {
+          "feature": "Behavior",
+          "first": "Cleaner and More Readable",
+          "second": "Equivalent Functionality"
+        }
+      ],
+      "example": "from functools import wraps\n\ndef my_decorator(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        print('Before')\n        result = func(*args, **kwargs)\n        print('After')\n        return result\n    return wrapper\n\n@my_decorator\ndef greet():\n    print('Hello')",
+      "syntax": [
+        "@decorator\ndef function():\n    ...",
+        "function = decorator(function)"
+      ],
+      "notes": [
+        "Decorators can also accept arguments by using a decorator factory.",
+        "Always use functools.wraps when writing production decorators."
+      ]
+    }
+  },
+
+  {
+    "category": "Python",
+    "question": "Explain exception handling in Python.",
+    "answer": {
+      "definition": "Exception handling is a mechanism in Python that allows a program to handle runtime errors gracefully without stopping the normal flow of execution.",
+      "points": [
+        "The try block contains code that may raise an exception.",
+        "The except block handles a specific exception.",
+        "The else block executes only if no exception occurs.",
+        "The finally block always executes, regardless of whether an exception occurs.",
+        "Exception handling improves program reliability and prevents unexpected termination."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "try:\n    result = 10 / 2\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')\nelse:\n    print(result)\nfinally:\n    print('Execution completed')",
+      "syntax": [
+        "try:\n    ...\nexcept ExceptionType:\n    ...\nelse:\n    ...\nfinally:\n    ..."
+      ],
+      "notes": [
+        "Common exceptions include TypeError, ValueError, ImportError, KeyError, IndexError, NameError, PermissionError, EOFError, ZeroDivisionError, and StopIteration."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "Explain some changes introduced in Python 3.8.",
+    "answer": {
+      "definition": "Python 3.8 introduced several language enhancements, including positional-only parameters and improvements to f-strings using the assignment expression (walrus operator).",
+      "points": [
+        "Supports positional-only parameters using the / symbol in function definitions.",
+        "Introduced the assignment expression (:=), also known as the walrus operator.",
+        "The walrus operator can be used inside f-strings to assign and display values in a single expression."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "def sum(a, b, /, c=10):\n    return a + b + c\n\nsum(10, 12, c=12)\n\na, b = 10, 12\nf'Sum of a and b is {a + b}'\nf'Value of c is {(c := a + b)}'",
+      "syntax": [
+        "def func(a, b, /, c=10): ...",
+        "(variable := expression)"
+      ],
+      "notes": [
+        "The / symbol specifies that parameters before it are positional-only.",
+        "The walrus operator allows assignment within an expression."
+      ]
+    }
+  },{
+    "category": "Python",
+    "question": "How would you load a large data file in Python?",
+    "answer": {
+      "definition": "Large files should be processed in chunks or streamed line by line instead of loading the entire file into memory. This reduces memory usage and improves performance.",
+      "points": [
+        "Use Pandas read_csv() with the chunksize parameter.",
+        "Enable iterator=True for iterative reading.",
+        "Use a context manager (with open()) to process files line by line.",
+        "Chunk processing is suitable for very large CSV files."
+      ],
+      "comparisonTitle1": "Chunk Processing",
+      "comparisonTitle2": "Line-by-Line Reading",
+      "comparison": [
+        {
+          "feature": "Best For",
+          "first": "Large CSV Files",
+          "second": "Text Files"
+        },
+        {
+          "feature": "Memory Usage",
+          "first": "Low",
+          "second": "Very Low"
+        }
+      ],
+      "example": "for chunk in pd.read_csv('file.csv', chunksize=1000):\n    process(chunk)\n\nwith open('log.txt') as file:\n    for line in file:\n        process(line)",
+      "syntax": [
+        "pd.read_csv('file.csv', chunksize=1000)",
+        "with open('file.txt') as file:"
+      ],
+      "notes": [
+        "Reading files in chunks prevents excessive memory consumption."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "Explain generators and their use cases in Python.",
+    "answer": {
+      "definition": "A generator is a function that uses the yield keyword to return values one at a time instead of returning all values at once. It produces an iterator and generates values lazily.",
+      "points": [
+        "Generator functions use the yield statement.",
+        "Calling a generator returns a generator object.",
+        "Values are generated only when requested.",
+        "Generators are memory-efficient for large datasets.",
+        "A generator can be iterated only once.",
+        "When all values are exhausted, StopIteration is raised."
+      ],
+      "comparisonTitle1": "Generator",
+      "comparisonTitle2": "Regular Function",
+      "comparison": [
+        {
+          "feature": "Returns",
+          "first": "Iterator",
+          "second": "Value"
+        },
+        {
+          "feature": "Execution",
+          "first": "Lazy",
+          "second": "Immediate"
+        },
+        {
+          "feature": "Memory Usage",
+          "first": "Low",
+          "second": "Higher"
+        }
+      ],
+      "example": "def search_result(keyword):\n    while keyword in dataset:\n        yield matched_data\n\nsearch = search_result('python')\nnext(search)",
+      "syntax": [
+        "def generator():\n    yield value"
+      ],
+      "notes": [
+        "Generators do not store all values in memory.",
+        "Generator expressions use the syntax: (x*x for x in range(3))."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "Is there a sequence in defining exceptions in the except block?",
+    "answer": {
+      "definition": "Yes. Multiple exception types can be grouped in a tuple, and Python matches the raised exception from left to right.",
+      "points": [
+        "Multiple exceptions can be handled in a single except block.",
+        "Exceptions are specified inside parentheses as a tuple.",
+        "The matching exception type is handled."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "try:\n    pass\nexcept (TypeError, IndexError, RuntimeError) as error:\n    print(error)",
+      "syntax": [
+        "except (Exception1, Exception2) as error:"
+      ],
+      "notes": [
+        "Grouping related exceptions reduces duplicate exception-handling code."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "Explain closures in Python.",
+    "answer": {
+      "definition": "A closure is a nested function that remembers and accesses variables from its enclosing function even after the outer function has finished executing.",
+      "points": [
+        "A closure requires a nested function.",
+        "The nested function accesses variables from the enclosing scope.",
+        "The enclosing function returns the nested function.",
+        "Closures are widely used in decorators.",
+        "Closures combine a function with its captured data."
+      ],
+      "comparisonTitle1": "Object",
+      "comparisonTitle2": "Closure",
+      "comparison": [
+        {
+          "feature": "Contains",
+          "first": "Data and Methods",
+          "second": "Function and Captured Data"
+        }
+      ],
+      "example": "def outer(value):\n    def inner():\n        return value + 10\n    return inner\n\nfunc = outer(20)\nprint(func())",
+      "syntax": [
+        "def outer():\n    def inner():\n        ...\n    return inner"
+      ],
+      "notes": [
+        "Closures retain access to enclosing variables after the outer function exits."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "How do you make a chain of function decorators in Python?",
+    "answer": {
+      "definition": "Decorator chaining applies multiple decorators to a function. The decorator closest to the function executes first, and the outer decorator executes last.",
+      "points": [
+        "Multiple decorators can be stacked using @ syntax.",
+        "Decorators are applied from bottom to top.",
+        "The output of one decorator becomes the input of the next."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "def make_bold(fn):\n    def wrapper():\n        return '<b>' + fn() + '</b>'\n    return wrapper\n\ndef make_italic(fn):\n    def wrapper():\n        return '<i>' + fn() + '</i>'\n    return wrapper\n\n@make_bold\n@make_italic\ndef index():\n    return 'hello world'",
+      "syntax": [
+        "@decorator1",
+        "@decorator2",
+        "def function(): ..."
+      ],
+      "notes": [
+        "The decorator nearest the function is executed first."
+      ]
+    }
+  },
+  {
+    "category": "Python",
+    "question": "What are three ways to fetch every 3rd item of a list in Python?",
+    "answer": {
+      "definition": "Every third element of a list can be retrieved using slicing, list comprehension, or a while loop.",
+      "points": [
+        "Slicing is the shortest and most efficient approach.",
+        "List comprehension filters elements based on their index.",
+        "A while loop provides manual iteration control."
+      ],
+      "comparisonTitle1": "Method",
+      "comparisonTitle2": "Description",
+      "comparison": [
+        {
+          "feature": "Slicing",
+          "first": "Simple and Fast",
+          "second": "Uses Step Value"
+        },
+        {
+          "feature": "List Comprehension",
+          "first": "Readable",
+          "second": "Uses Index Condition"
+        },
+        {
+          "feature": "While Loop",
+          "first": "Manual Control",
+          "second": "Updates Index Explicitly"
+        }
+      ],
+      "example": "numbers = [0, 1, 2, 3, 4, 5, 6]\n\nnumbers[::3]\n\n[x for x in numbers if numbers.index(x) % 3 == 0]\n\ni = 0\nwhile i < len(numbers):\n    print(numbers[i])\n    i += 3",
+      "syntax": [
+        "list_name[::3]"
+      ],
+      "notes": [
+        "List slicing is generally the preferred approach for this task."
+      ]
+    }
+  }
+
+]

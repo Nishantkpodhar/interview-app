@@ -4500,6 +4500,7 @@
     "importantNote": "Objects and arrays must be updated immutably because React compares references, not deep values."
   }
 },
+
 {
   "question": "What happens if you call useState conditionally?",
   "category": "React Hooks Rules",
