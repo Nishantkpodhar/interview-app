@@ -1,101 +1,432 @@
-# Interview App
+<div align="center">
 
-A small React application that displays frontend interview questions by topic. The app is data-driven (JSON files) and includes dynamic filtering, search, comparison-mode, theming, and a test-report view.
+# 🚀 Frontend Interview Master
 
-## Quick Start
+### 💼 The Ultimate React.js & Frontend Interview Preparation Platform
 
-Install dependencies and run locally:
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" />
+<img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript" />
+<img src="https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript" />
+<img src="https://img.shields.io/badge/Next.js-Supported-000000?style=for-the-badge&logo=next.js" />
+<img src="https://img.shields.io/badge/Redux-Toolkit-764ABC?style=for-the-badge&logo=redux" />
+<img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge" />
+
+---
+
+### 🎯 Practice • Learn • Compare • Crack Frontend Interviews
+
+A modern, data-driven React application designed for **Frontend Developers** to prepare for interviews with **500+ interview questions**, detailed explanations, comparison tables, test reports, search, dark mode, and much more.
+
+🌐 **Built using React.js + JSON + Reusable Components**
+
+</div>
+
+---
+
+# ✨ Features
+
+## 📚 500+ Interview Questions
+
+Practice interview questions from multiple frontend technologies.
+
+- React.js
+- JavaScript
+- TypeScript
+- HTML
+- CSS
+- Node.js
+- Next.js
+- Redux Toolkit
+- React Hooks
+- System Design
+- Performance Optimization
+- Web APIs
+- Browser Internals
+
+---
+
+## 🔍 Smart Search
+
+Search instantly across interview questions.
+
+✔ Real-time filtering
+
+✔ Lightning fast
+
+✔ Easy navigation
+
+---
+
+## 📂 Dynamic Categories
+
+Questions are completely JSON-driven.
+
+Simply add a new JSON file to create a new interview category.
+
+Example
+
+```
+src/data/react.json
+src/data/javascript.json
+src/data/typescript.json
+```
+
+No React code changes required.
+
+---
+
+## ⚖️ Difference Between Mode
+
+Special interview mode to prepare comparison questions like
+
+- var vs let vs const
+- useMemo vs useCallback
+- React vs Angular
+- Promise vs Async Await
+- LocalStorage vs SessionStorage
+
+Beautiful side-by-side comparison tables.
+
+---
+
+## 🌙 Dark / Light Theme
+
+Switch between
+
+- 🌞 Light Mode
+- 🌙 Dark Mode
+
+without reloading the application.
+
+---
+
+## 📊 Interview Test Report
+
+View
+
+- Test Results
+- Progress
+- Accuracy
+- Category-wise Performance
+- Score Summary
+
+---
+
+## 📱 Fully Responsive
+
+Works perfectly on
+
+- 💻 Desktop
+- 📱 Mobile
+- 📟 Tablet
+
+---
+
+# 🏗 Project Architecture
+
+```
+src
+│
+├── components
+│   ├── Dropdown
+│   ├── Header
+│   ├── Introduction
+│   ├── LastProject
+│   ├── QuestionTable
+│   ├── SearchBar
+│   ├── TestReport
+│   └── ...
+│
+├── data
+│   ├── react.json
+│   ├── javascript.json
+│   ├── typescript.json
+│   ├── node.json
+│   ├── css.json
+│   ├── html.json
+│   ├── jsonFiles.js
+│   └── testReportData.js
+│
+├── App.js
+├── index.js
+└── package.json
+```
+
+---
+
+# 🚀 Live Features
+
+✅ Dynamic JSON Data
+
+✅ Smart Search
+
+✅ Category Filter
+
+✅ Difference Comparison
+
+✅ Responsive Layout
+
+✅ Dark Theme
+
+✅ Test Report Dashboard
+
+✅ Modular Components
+
+✅ Reusable Architecture
+
+✅ Easy Scalability
+
+---
+
+# ⚙️ Tech Stack
+
+| Technology | Usage |
+|------------|------|
+| ⚛ React.js | UI Development |
+| 📘 JavaScript (ES6+) | Application Logic |
+| 🔷 TypeScript | Supported Questions |
+| 🎨 CSS3 | Styling |
+| 🌐 HTML5 | Structure |
+| 🔄 React Hooks | State Management |
+| 📦 JSON | Dynamic Data |
+| 🧪 Jest | Unit Testing |
+| ✅ React Testing Library | Component Testing |
+
+---
+
+# 📂 Data Driven Architecture
+
+Every interview topic is loaded dynamically.
+
+Example
+
+```json
+{
+  "category": "React",
+  "question": "What is React?",
+  "answer": {
+    "definition": "...",
+    "points": [],
+    "comparison": []
+  }
+}
+```
+
+Adding a new interview topic requires only
+
+```
+Create JSON File
+
+↓
+
+Export in jsonFiles.js
+
+↓
+
+Done ✅
+```
+
+No UI changes.
+
+---
+
+# 🖥 Screens
+
+## Home
+
+- Dynamic Dropdown
+- Search Bar
+- Theme Toggle
+- Question Table
+
+---
+
+## Question Details
+
+- Definition
+- Key Points
+- Syntax
+- Examples
+- Notes
+- Comparison Table
+
+---
+
+## Test Report
+
+- Overall Score
+- Statistics
+- Performance Table
+
+---
+
+# ⚡ Performance Optimizations
+
+✔ React.memo
+
+✔ useMemo
+
+✔ useCallback
+
+✔ Dynamic Rendering
+
+✔ Component Reusability
+
+✔ JSON Driven UI
+
+✔ Lazy Rendering
+
+✔ Modular Architecture
+
+---
+
+# 📦 Installation
+
+Clone Repository
+
+```bash
+git clone https://github.com/yourusername/frontend-interview-master.git
+```
+
+Go to project
+
+```bash
+cd frontend-interview-master
+```
+
+Install Packages
 
 ```bash
 npm install
+```
+
+Run Project
+
+```bash
 npm start
 ```
 
-Open http://localhost:3000
+Open
 
-Run tests:
+```
+http://localhost:3000
+```
+
+---
+
+# 🧪 Run Tests
 
 ```bash
 npm test
 ```
 
-Build production bundle:
+---
+
+# 📦 Production Build
 
 ```bash
 npm run build
 ```
 
-## Dynamic features (how they work)
+---
 
-- Topic dropdown: options are derived from `src/data/jsonFiles.js`. Add a JSON file under `src/data/` and export it in `jsonFiles.js` to expose a new topic.
-- Search: searches only the question text (controlled by `App` state `searchText`) and filters the `tableData` computed from selected topic.
-- Difference Between toggle: when active, `App` restricts the source set to items with `answer.comparison` before applying search. This produces a comparison-only list.
-- Theme toggle: toggles the CSS theme class on the root `.app-container` between `dark` and `light`.
-- Test Report: shows data from `src/data/testReportData.js` (stats + table). This is a UI-only report for demonstration.
+# ➕ Adding New Questions
 
-## Component layout
+Create
 
-Each component is contained in a folder under `src/components/` with the pattern:
+```
+src/data/vue.json
+```
 
-- `index.jsx` — component entry
-- `*.css` — styles for the component
-- `*.test.jsx` — component tests (when present)
+Export
 
-Current components:
+```javascript
+import vue from "./vue.json";
 
-- `src/components/Dropdown/` — topic selector
-- `src/components/SearchBar/` — search input
-- `src/components/QuestionTable/` — list renderer for questions and answers
-- `src/components/TestReport/` — test report page
-
-This structure makes components portable and their styles local to the component.
-
-## Data format
-
-Each question item in the JSON files follows this shape (examples in `src/data/react.json`):
-
-```json
-{
-   "question": "What is React?",
-   "answer": {
-      "definition": "React.js is...",
-      "points": ["..."],
-      "comparisonTitle1": "HTML",
-      "comparisonTitle2": "React",
-      "comparison": [ { "feature": "Event Naming", "first": "lowercase", "second": "camelCase" } ]
-   }
+export default {
+  ...
+  vue
 }
 ```
 
-Add new items by editing the specific topic JSON file. Each item should include a `question` string; `answer` can have `definition`, `points`, or `comparison` (for difference tables).
+Done 🎉
 
-## Tests
-
-- Component tests are colocated under each component folder.
-- `npm test` runs all tests — tests were updated to reference components' `index.jsx` exports after the refactor.
-
-## Maintenance tips
-
-- To add a component: create a new folder under `src/components/<ComponentName>/` with `index.jsx`, `<ComponentName>.css`, and preferably a `<ComponentName>.test.jsx`.
-- Keep data in `src/data/` and update `src/data/jsonFiles.js` to include new topic exports.
-
-## Where to look in the code
-
-- App root: `src/App.js`
-- Data aggregation: `src/data/jsonFiles.js`
-- Example data: `src/data/react.json`, `src/data/javascript.json`, etc.
-- Components: `src/components/*/index.jsx`
-
-## Next improvements (optional)
-
-- Add Storybook for visual testing of components.
-- Add CI to run `npm test` on PRs.
-- Add a small admin UI or script to add questions safely to JSON files.
+The dropdown updates automatically.
 
 ---
 
-If you want I can:
+# 📸 Future Improvements
 
-- Add STORYBOOK configuration.
-- Add CONTRIBUTING and CHANGELOG templates.
-- Create a small script to validate JSON entries before commit.
+- ✅ AI Interview Assistant
+- ✅ Voice Interview Practice
+- ✅ Coding Challenges
+- ✅ Mock Interviews
+- ✅ Authentication
+- ✅ User Progress Tracking
+- ✅ Firebase Integration
+- ✅ Backend API
+- ✅ Admin Dashboard
+- ✅ Bookmark Questions
+- ✅ Favorites
+- ✅ Notes
+- ✅ PDF Export
+- ✅ Interview Timer
+- ✅ Difficulty Levels
+
+---
+
+# 🤝 Contributing
+
+Contributions are always welcome!
+
+1. Fork Repository
+
+2. Create Feature Branch
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push
+
+```bash
+git push origin feature/new-feature
+```
+
+5. Open Pull Request
+
+---
+
+# ⭐ Support
+
+If this project helped you,
+
+⭐ Star this repository
+
+🍴 Fork it
+
+🛠 Contribute
+
+📢 Share with others
+
+---
+
+<div align="center">
+
+# 👨‍💻 Developed by
+
+## Nishant Kumar
+
+### Senior React.js Frontend Developer
+
+💙 React.js • TypeScript • Next.js • Redux Toolkit • JavaScript
+
+⭐ If you like this project, don't forget to Star the repository ⭐
+
+</div>
