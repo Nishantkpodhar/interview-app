@@ -101,6 +101,11 @@ function App() {
 
   const handleSearchClear = useCallback(() => setSearchText(""), []);
 
+  const handleVoiceSearchResult = useCallback(
+    (transcript) => setSearchText(transcript),
+    []
+  );
+
   const handleComparisonToggle = useCallback(
     () => setShowComparisonOnly((current) => !current),
     []
@@ -175,6 +180,7 @@ function App() {
                         searchText={searchText}
                         onChange={handleSearchTextChange}
                         onClear={handleSearchClear}
+                        onVoiceResult={handleVoiceSearchResult}
                       />
 
                       <button

@@ -41,4 +41,10 @@ describe('SearchBar', () => {
     fireEvent.click(screen.getByRole('button', { name: /clear search/i }));
     expect(handleClear).toHaveBeenCalledTimes(1);
   });
+
+  test('renders a voice-search control', () => {
+    render(<SearchBar searchText="" onChange={jest.fn()} onClear={jest.fn()} />);
+
+    expect(screen.getByRole('button', { name: /search by voice/i })).toBeInTheDocument();
+  });
 });
