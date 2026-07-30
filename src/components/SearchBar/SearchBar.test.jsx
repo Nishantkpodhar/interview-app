@@ -26,4 +26,19 @@ describe('SearchBar', () => {
     const input = screen.getByDisplayValue(/javascript/i);
     expect(input).toBeInTheDocument();
   });
+
+  test('shows a clear button and calls onClear when search text exists', () => {
+    const handleClear = jest.fn();
+
+    render(
+      <SearchBar
+        searchText="JavaScript"
+        onChange={jest.fn()}
+        onClear={handleClear}
+      />
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: /clear search/i }));
+    expect(handleClear).toHaveBeenCalledTimes(1);
+  });
 });

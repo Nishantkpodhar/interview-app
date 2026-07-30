@@ -1,7 +1,10 @@
-import jsonFiles from './jsonFiles';
+import jsonFiles, {
+  categoryOptionsByTechnology,
+  technologyOptions,
+} from './jsonFiles';
 
 describe('jsonFiles data module', () => {
-  test('exports category groups and all array', () => {
+  test('exports technology groups and all questions', () => {
     expect(jsonFiles).toHaveProperty('all');
     expect(jsonFiles).toHaveProperty('react');
     expect(jsonFiles).toHaveProperty('javascript');
@@ -20,10 +23,17 @@ describe('jsonFiles data module', () => {
     });
   });
 
-  test('all items use a valid category key', () => {
-    const validCategories = Object.keys(jsonFiles);
-    jsonFiles.all.forEach((item) => {
-      expect(validCategories).toContain(item.category);
+  test('creates unique category lists from each technology JSON file', () => {
+    technologyOptions.slice(1).forEach(({ value }) => {
+      const categories = categoryOptionsByTechnology[value];
+      const normalizedCategories = categories.map(({ value: category }) =>
+        category.toLowerCase()
+      );
+
+      expect(new Set(normalizedCategories).size).toBe(normalizedCategories.length);
+      expect(categories.reduce((total, category) => total + category.count, 0)).toBe(
+        jsonFiles[value].length
+      );
     });
   });
 });

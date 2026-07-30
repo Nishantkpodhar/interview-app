@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import App from './App';
 
 describe('App', () => {
@@ -11,10 +11,26 @@ describe('App', () => {
       })
     ).toBeInTheDocument();
 
-    expect(screen.getByRole('combobox')).toBeInTheDocument();
-    expect(screen.getByText(/react\.json/i)).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: /technology/i })).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: /question category/i })).toBeDisabled();
+    expect(screen.getByText(/react \(\d+\)/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/search question or answer/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /difference between/i })).toBeInTheDocument();
+  });
+
+  test('shows categories for the selected technology', () => {
+    render(<App />);
+
+    const technologyDropdown = screen.getByRole('combobox', { name: /technology/i });
+    const categoryDropdown = screen.getByRole('combobox', { name: /question category/i });
+
+    fireEvent.change(technologyDropdown, { target: { value: 'javascript' } });
+
+    expect(categoryDropdown).toBeEnabled();
+    expect(categoryDropdown).toHaveValue('all');
+    expect(
+      within(categoryDropdown).getByRole('option', { name: /javascript \(\d+\)/i })
+    ).toBeInTheDocument();
   });
 
   test('toggles theme text when theme button is clicked', () => {

@@ -1,6 +1,6 @@
 .dropdown {
-  width: 220px;
-  min-width: 160px;
+  width: 180px;
+  min-width: 140px;
   padding: 12px 16px;
   border-radius: 12px;
   border: none;
@@ -15,6 +15,10 @@
               filter 0.25s ease;
   cursor: pointer;
   animation: fadeInLeft 0.5s ease-out 0.15s backwards;
+}
+
+.filter-section .dropdown {
+  flex: 0 1 180px;
 }
 
 @keyframes fadeInLeft {
@@ -33,6 +37,17 @@
   background: var(--input-bg);
   filter: brightness(1.15);
   box-shadow: inset 0 0 0 1px var(--input-border), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.dropdown:disabled:hover {
+  transform: none;
+  filter: none;
+  box-shadow: inset 0 0 0 1px var(--input-border);
 }
 
 .dropdown:focus {

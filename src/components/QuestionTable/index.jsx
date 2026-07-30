@@ -3,6 +3,21 @@ import "./QuestionTable.css";
 
 function QuestionTable({ data }) {
   const [activeExample, setActiveExample] = useState(null);
+  const [expandedAnswers, setExpandedAnswers] = useState(() => new Set());
+
+  const toggleAnswer = (questionKey) => {
+    setExpandedAnswers((current) => {
+      const next = new Set(current);
+
+      if (next.has(questionKey)) {
+        next.delete(questionKey);
+      } else {
+        next.add(questionKey);
+      }
+
+      return next;
+    });
+  };
 
   if (!data || data.length === 0) {
     return <div className="no-data">No Question Found</div>;
@@ -17,26 +32,35 @@ function QuestionTable({ data }) {
             const answer = item.answer ?? {};
             const points = Array.isArray(answer.points) ? answer.points : [];
             const comparison = Array.isArray(answer.comparison) ? answer.comparison : [];
+            const isExpanded = expandedAnswers.has(questionKey);
+            const answerId = `answer-${index}`;
 
             return (
               <React.Fragment key={questionKey}>
                 <tr className="question-row">
                   <td className="serial-no">{index + 1}</td>
                   <td colSpan="2" className="question-cell">
-                    <div className="question-cell-content">
+                    <button
+                      type="button"
+                      className="question-cell-content question-toggle"
+                      aria-expanded={isExpanded}
+                      aria-controls={answerId}
+                      onClick={() => toggleAnswer(questionKey)}
+                    >
                       <span>{item.question}</span>
                       {item.category && (
                         <span className="question-label">
                           {item.category}
                         </span>
                       )}
-                    </div>
+                    </button>
                   </td>
                 </tr>
 
-                <tr className="answer-row">
-                  <td />
-                  <td colSpan="2" className="answer-cell">
+                {isExpanded && (
+                  <tr className="answer-row" id={answerId}>
+                    <td />
+                    <td colSpan="2" className="answer-cell">
                     {answer.definition && (
                       <div className="definition-box">
                         <h3>Definition</h3>
@@ -120,8 +144,9 @@ function QuestionTable({ data }) {
                         </table>
                       </div>
                     )}
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                )}
               </React.Fragment>
             );
           })}

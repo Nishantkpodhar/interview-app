@@ -1,7 +1,6 @@
 .table-wrapper {
   width: 100%;
   display: flex;
-  justify-content: center;
   animation: fadeInUp 0.6s ease-out 0.3s backwards;
 }
 
@@ -17,7 +16,7 @@
 }
 
 table {
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -105,9 +104,26 @@ table {
 
 .question-cell-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
+}
+
+.question-toggle {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.question-toggle:focus-visible {
+  outline: 2px solid var(--accent-start);
+  outline-offset: 6px;
+  border-radius: 8px;
 }
 
 .question-label {
