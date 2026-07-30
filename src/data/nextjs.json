@@ -1,1 +1,1805 @@
-[]
+[
+    {
+    "category": "Next.js",
+    "question": "What is the purpose of the pages or app directory in Next.js?",
+    "answer": {
+      "definition": "The pages or app directory is where you create your application's pages. Next.js automatically creates routes based on the file and folder names inside these directories.",
+      "points": [
+        "Contains React components.",
+        "Each file becomes a route automatically.",
+        "No need to configure routing manually.",
+        "The app directory is used in the App Router.",
+        "The pages directory is used in the Pages Router."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "app/page.js → /\napp/about/page.js → /about\npages/contact.js → /contact",
+      "syntax": "app/\n ├── page.js\n ├── about/\n │    └── page.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is file-based routing in Next.js?",
+    "answer": {
+      "definition": "File-based routing means Next.js automatically creates URLs based on the file and folder structure inside the pages or app directory.",
+      "points": [
+        "No routing configuration is needed.",
+        "Each file represents a route.",
+        "Folders create nested routes.",
+        "Dynamic routes use square brackets.",
+        "Makes routing simple and easy."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "app/page.js → /\napp/about/page.js → /about\napp/blog/[id]/page.js → /blog/101",
+      "syntax": "app/\n ├── page.js\n ├── about/page.js\n └── blog/[id]/page.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What are the key features of Next.js?",
+    "answer": {
+      "definition": "Next.js is a React framework that provides built-in features for better performance, SEO, routing, and full-stack development.",
+      "points": [
+        "Server-Side Rendering (SSR).",
+        "Static Site Generation (SSG).",
+        "Client-Side Rendering (CSR).",
+        "File-based Routing.",
+        "API Routes.",
+        "Image Optimization.",
+        "Automatic Code Splitting.",
+        "TypeScript Support.",
+        "Incremental Static Regeneration (ISR).",
+        "Fast Refresh for development.",
+        "Better SEO.",
+        "High performance."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export default function Home() {\n  return <h1>Welcome to Next.js</h1>;\n}",
+      "syntax": "npx create-next-app@latest"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the difference between Next.js and React.js?",
+    "answer": {
+      "definition": "React.js is a JavaScript library for building user interfaces, while Next.js is a React framework that provides routing, SSR, SSG, API routes, and many built-in features.",
+      "points": [
+        "React builds UI components.",
+        "Next.js extends React with extra features.",
+        "Next.js provides better SEO.",
+        "Next.js supports SSR and SSG.",
+        "React mainly uses CSR."
+      ],
+      "comparisonTitle1": "Next.js",
+      "comparisonTitle2": "React.js",
+      "comparison": [
+        {
+          "feature": "Rendering",
+          "first": "SSR, SSG and CSR",
+          "second": "CSR only by default"
+        },
+        {
+          "feature": "Routing",
+          "first": "Built-in file-based routing",
+          "second": "Needs React Router"
+        },
+        {
+          "feature": "SEO",
+          "first": "Excellent",
+          "second": "Limited"
+        },
+        {
+          "feature": "Performance",
+          "first": "Faster initial load",
+          "second": "Client-side rendering"
+        },
+        {
+          "feature": "Configuration",
+          "first": "Minimal",
+          "second": "Manual setup"
+        },
+        {
+          "feature": "API Routes",
+          "first": "Built-in",
+          "second": "Not available"
+        },
+        {
+          "feature": "Code Splitting",
+          "first": "Automatic",
+          "second": "Manual or lazy loading"
+        },
+        {
+          "feature": "Image Optimization",
+          "first": "Built-in Image component",
+          "second": "Requires third-party libraries"
+        },
+        {
+          "feature": "Deployment",
+          "first": "Optimized for Vercel",
+          "second": "Requires extra configuration"
+        }
+      ],
+      "example": "React → Build UI only\nNext.js → React + Routing + SSR + API + SEO",
+      "syntax": "npx create-next-app@latest"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the difference between Client-Side Rendering (CSR) and Server-Side Rendering (SSR) in Next.js?",
+    "answer": {
+      "definition": "In CSR, the browser renders the page after downloading JavaScript. In SSR, the server renders the HTML before sending it to the browser.",
+      "points": [
+        "CSR renders in the browser.",
+        "SSR renders on the server.",
+        "SSR improves SEO.",
+        "SSR provides faster first page load.",
+        "CSR is suitable for interactive applications."
+      ],
+      "comparisonTitle1": "CSR",
+      "comparisonTitle2": "SSR",
+      "comparison": [
+        {
+          "feature": "Rendering Location",
+          "first": "Browser",
+          "second": "Server"
+        },
+        {
+          "feature": "Initial Load",
+          "first": "Slower",
+          "second": "Faster"
+        },
+        {
+          "feature": "SEO",
+          "first": "Limited",
+          "second": "Excellent"
+        },
+        {
+          "feature": "JavaScript Required",
+          "first": "Yes",
+          "second": "Minimal"
+        },
+        {
+          "feature": "Best For",
+          "first": "Interactive apps",
+          "second": "SEO websites"
+        }
+      ],
+      "example": "CSR → React SPA\nSSR → Next.js page rendered on server",
+      "syntax": "export async function getServerSideProps() {}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the Link component in Next.js?",
+    "answer": {
+      "definition": "The Link component is used for client-side navigation between pages without reloading the entire page.",
+      "points": [
+        "Provides fast page navigation.",
+        "Preloads linked pages automatically.",
+        "Avoids full page refresh.",
+        "Improves user experience.",
+        "Used instead of the HTML anchor tag for internal routes."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import Link from 'next/link';\n\n<Link href='/'>Home</Link>\n<Link href='/about'>About</Link>",
+      "syntax": "<Link href='/about'>About</Link>"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the metadata export in the App Router?",
+    "answer": {
+      "definition": "The metadata export is used to define page metadata such as title, description, Open Graph tags, and robots information for a route.",
+      "points": [
+        "Sets page title.",
+        "Adds page description.",
+        "Supports Open Graph tags.",
+        "Supports robots metadata.",
+        "Can export a static object or async function."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export const metadata = {\n  title: 'Blog Post',\n  description: 'A useful blog post'\n};",
+      "syntax": "export const metadata = {\n  title: '',\n  description: ''\n};"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is generateStaticParams() and when should you use it?",
+    "answer": {
+      "definition": "generateStaticParams() is used in the App Router to generate dynamic pages at build time for Static Site Generation (SSG).",
+      "points": [
+        "Used with dynamic routes.",
+        "Runs during build time.",
+        "Returns an array of route parameters.",
+        "Helps pre-render pages.",
+        "Improves performance and SEO."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export async function generateStaticParams() {\n  const posts = await fetch('https://api.example.com/posts').then(res => res.json());\n\n  return posts.map(post => ({\n    slug: post.slug\n  }));\n}",
+      "syntax": "export async function generateStaticParams() {\n  return [{ slug: 'post-1' }];\n}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do fetch cache options work in the App Router?",
+    "answer": {
+      "definition": "In the App Router, the fetch() API supports built-in caching. You can control whether data is always fetched from the server, cached, or automatically revalidated.",
+      "points": [
+        "cache: 'no-store' always fetches fresh data.",
+        "cache: 'force-cache' uses cached data when available.",
+        "next.revalidate refreshes cached data after a specified number of seconds.",
+        "Caching works in Server Components.",
+        "It helps improve performance and control data freshness."
+      ],
+      "comparisonTitle1": "no-store",
+      "comparisonTitle2": "force-cache",
+      "comparison": [
+        {
+          "feature": "Caching",
+          "first": "No caching",
+          "second": "Uses cached response"
+        },
+        {
+          "feature": "Fresh Data",
+          "first": "Always latest data",
+          "second": "May use cached data"
+        },
+        {
+          "feature": "Performance",
+          "first": "Slower",
+          "second": "Faster"
+        },
+        {
+          "feature": "Best For",
+          "first": "Real-time data",
+          "second": "Static or rarely changing data"
+        }
+      ],
+      "example": "const res = await fetch('https://api.example.com/data', {\n  cache: 'no-store'\n});\n\nconst res2 = await fetch('/api/data', {\n  next: { revalidate: 60 }\n});",
+      "syntax": "fetch(url, {\n  cache: 'no-store' | 'force-cache',\n  next: { revalidate: 60 }\n})"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What does the dynamic export do in the App Router?",
+    "answer": {
+      "definition": "The dynamic export controls how a page is rendered. It lets you force a page to be dynamic, static, or allow Next.js to decide automatically.",
+      "points": [
+        "Controls page rendering behavior.",
+        "Supports 'force-dynamic'.",
+        "Supports 'force-static'.",
+        "Supports 'auto' mode.",
+        "Useful when you want to override Next.js default behavior."
+      ],
+      "comparisonTitle1": "force-dynamic",
+      "comparisonTitle2": "force-static",
+      "comparison": [
+        {
+          "feature": "Rendering",
+          "first": "Rendered on every request",
+          "second": "Generated once and reused"
+        },
+        {
+          "feature": "Performance",
+          "first": "Slower",
+          "second": "Faster"
+        },
+        {
+          "feature": "Best For",
+          "first": "Dynamic data",
+          "second": "Static content"
+        }
+      ],
+      "example": "export const dynamic = 'force-dynamic';",
+      "syntax": "export const dynamic = 'force-dynamic';\nexport const dynamic = 'force-static';\nexport const dynamic = 'auto';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you set head metadata per route with head.js or head.tsx?",
+    "answer": {
+      "definition": "You can create a head.js or head.tsx file inside a route to define page-specific metadata such as title, description, and meta tags.",
+      "points": [
+        "Sets metadata for a specific route.",
+        "Can define title and description.",
+        "Supports meta and link tags.",
+        "Works inside the App Router.",
+        "Useful for SEO."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export default function Head() {\n  return (\n    <>\n      <title>About Us</title>\n      <meta name='description' content='About page' />\n    </>\n  );\n}",
+      "syntax": "app/about/head.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the useRouter hook in Next.js?",
+    "answer": {
+      "definition": "The useRouter hook lets you navigate between pages programmatically inside Client Components.",
+      "points": [
+        "Provides access to the router object.",
+        "Used for programmatic navigation.",
+        "Works only in Client Components.",
+        "Can navigate without page refresh.",
+        "Supports push(), replace(), back(), refresh() and more."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "'use client';\n\nimport { useRouter } from 'next/navigation';\n\nconst router = useRouter();\nrouter.push('/dashboard');",
+      "syntax": "const router = useRouter();"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the difference between push() and replace() in useRouter?",
+    "answer": {
+      "definition": "Both methods are used for navigation. push() adds a new page to the browser history, while replace() replaces the current page without creating a new history entry.",
+      "points": [
+        "push() creates a new history entry.",
+        "replace() updates the current history entry.",
+        "push() allows users to go back.",
+        "replace() prevents going back to the previous page.",
+        "Both methods perform client-side navigation."
+      ],
+      "comparisonTitle1": "push()",
+      "comparisonTitle2": "replace()",
+      "comparison": [
+        {
+          "feature": "Browser History",
+          "first": "Adds new entry",
+          "second": "Replaces current entry"
+        },
+        {
+          "feature": "Back Button",
+          "first": "Returns to previous page",
+          "second": "Cannot return to replaced page"
+        },
+        {
+          "feature": "Use Case",
+          "first": "Normal navigation",
+          "second": "Redirect after login/logout"
+        }
+      ],
+      "example": "'use client';\n\nconst router = useRouter();\n\nrouter.push('/dashboard');\nrouter.replace('/login');",
+      "syntax": "router.push('/route');\nrouter.replace('/route');"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you navigate programmatically in Next.js?",
+    "answer": {
+      "definition": "You can navigate programmatically by using the useRouter() hook. It allows you to change routes using JavaScript instead of clicking a link.",
+      "points": [
+        "Uses the useRouter() hook.",
+        "Works inside Client Components.",
+        "router.push() navigates to another page.",
+        "Can navigate after a button click or API response.",
+        "Supports options like scroll behavior."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "'use client';\n\nimport { useRouter } from 'next/navigation';\n\nconst router = useRouter();\n\nfunction handleClick() {\n  router.push('/path');\n}\n\n<button onClick={handleClick}>Go There</button>",
+      "syntax": "router.push('/path', { scroll: true });"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you enable TypeScript in a Next.js project?",
+    "answer": {
+      "definition": "You can enable TypeScript by adding a tsconfig.json file to your project. Next.js automatically detects and configures TypeScript.",
+      "points": [
+        "Add a tsconfig.json file.",
+        "Install TypeScript if required.",
+        "Next.js detects TypeScript automatically.",
+        "Supports .ts and .tsx files.",
+        "Provides type checking and IntelliSense."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "touch tsconfig.json",
+      "syntax": "tsconfig.json"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What are API Routes in Next.js?",
+    "answer": {
+      "definition": "API Routes allow you to create backend API endpoints inside a Next.js project using the pages/api or app/api directory.",
+      "points": [
+        "Create backend APIs inside Next.js.",
+        "No separate backend server is required.",
+        "Supports GET, POST, PUT and DELETE requests.",
+        "Uses Request and Response objects.",
+        "Useful for authentication and database operations."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "app/api/users/route.js\n\nexport async function GET() {\n  return Response.json({ message: 'Success' });\n}",
+      "syntax": "app/api/users/route.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the public folder in Next.js?",
+    "answer": {
+      "definition": "The public folder stores static files that can be accessed directly from the root URL.",
+      "points": [
+        "Stores images, icons and static files.",
+        "Files are publicly accessible.",
+        "No import statement is needed.",
+        "Useful for favicon, robots.txt and images.",
+        "Served from the application root."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "public/\n ├── favicon.ico\n ├── robots.txt\n └── images/profile.jpg\n\n<img src='/images/profile.jpg' />",
+      "syntax": "public/images/logo.png"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is dynamic import in Next.js?",
+    "answer": {
+      "definition": "Dynamic import loads a component only when it is needed. This improves application performance by reducing the initial bundle size.",
+      "points": [
+        "Loads components on demand.",
+        "Improves page performance.",
+        "Reduces JavaScript bundle size.",
+        "Useful for large components.",
+        "Supports lazy loading."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import dynamic from 'next/dynamic';\n\nconst Component = dynamic(() => import('../components/A'));",
+      "syntax": "const Component = dynamic(() => import('../components/A'));"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you handle environment variables in Next.js?",
+    "answer": {
+      "definition": "Environment variables are stored in .env.local and accessed using process.env.",
+      "points": [
+        "Store secrets in .env.local.",
+        "Access values using process.env.",
+        "NEXT_PUBLIC_ variables are available on the client.",
+        "Other variables remain server-side.",
+        "Keeps sensitive information secure."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "API_URL=https://api.example.com\n\nconsole.log(process.env.API_URL);",
+      "syntax": ".env.local\nprocess.env.VARIABLE_NAME"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the default port for a Next.js application?",
+    "answer": {
+      "definition": "By default, a Next.js application runs on port 3000.",
+      "points": [
+        "Default development port is 3000.",
+        "Accessible at http://localhost:3000.",
+        "Can be changed if needed."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "http://localhost:3000",
+      "syntax": "next dev"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you change the default port in Next.js?",
+    "answer": {
+      "definition": "You can change the default port by adding the -p option in the npm scripts.",
+      "points": [
+        "Use the -p option.",
+        "Works for development and production.",
+        "Any available port can be used."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "\"scripts\": {\n  \"dev\": \"next dev -p 8080\",\n  \"start\": \"next start -p 8080\"\n}",
+      "syntax": "next dev -p 8080"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is Fast Refresh in Next.js?",
+    "answer": {
+      "definition": "Fast Refresh automatically updates the browser when you save code changes without losing the component state.",
+      "points": [
+        "Updates changes instantly.",
+        "Keeps application state.",
+        "Improves developer productivity.",
+        "Works during development only.",
+        "Similar to hot reloading."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Edit a React component and save the file. The browser updates automatically.",
+      "syntax": "Runs automatically in development mode."
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is next.config.js?",
+    "answer": {
+      "definition": "next.config.js is the configuration file used to customize the behavior of a Next.js application.",
+      "points": [
+        "Stores project configuration.",
+        "Configure images and redirects.",
+        "Enable experimental features.",
+        "Customize webpack settings.",
+        "Loaded automatically by Next.js."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const nextConfig = {\n  reactStrictMode: true\n};\n\nmodule.exports = nextConfig;",
+      "syntax": "module.exports = {\n  reactStrictMode: true\n};"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you add component-level CSS in Next.js?",
+    "answer": {
+      "definition": "Component-level CSS is added using CSS Modules with the .module.css extension.",
+      "points": [
+        "Uses .module.css files.",
+        "CSS is scoped to the component.",
+        "Avoids class name conflicts.",
+        "Easy to maintain.",
+        "Imported directly into the component."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import styles from './styles.module.css';\n\n<div className={styles.example}>Hello</div>",
+      "syntax": "import styles from './styles.module.css';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you add global CSS in Next.js?",
+    "answer": {
+      "definition": "Global CSS is added by importing the CSS file in the application's main entry file.",
+      "points": [
+        "Applies styles to the entire application.",
+        "Imported only once.",
+        "Useful for resets and common styles.",
+        "Available across all pages."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import './globals.css';",
+      "syntax": "import './globals.css';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you use Tailwind CSS in Next.js?",
+    "answer": {
+      "definition": "Install Tailwind CSS, configure it, and import the Tailwind CSS file into your application.",
+      "points": [
+        "Install Tailwind CSS packages.",
+        "Create tailwind.config.js.",
+        "Configure content paths.",
+        "Import Tailwind CSS.",
+        "Use utility classes in components."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "npm install tailwindcss postcss autoprefixer\nnpx tailwindcss init -p",
+      "syntax": "className=\"bg-blue-500 text-white p-4 rounded\""
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is Server-Side Rendering (SSR) in Next.js?",
+    "answer": {
+      "definition": "Server-Side Rendering (SSR) generates the HTML on the server every time a user requests the page.",
+      "points": [
+        "Page is rendered on every request.",
+        "Provides fresh data.",
+        "Improves SEO.",
+        "Useful for frequently changing content.",
+        "Uses getServerSideProps in the Pages Router."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export async function getServerSideProps() {\n  return { props: {} };\n}",
+      "syntax": "export async function getServerSideProps() {}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is Static Site Generation (SSG) in Next.js?",
+    "answer": {
+      "definition": "Static Site Generation (SSG) creates the HTML during build time and serves the same page to every user.",
+      "points": [
+        "Generated during build time.",
+        "Very fast page loading.",
+        "Improves SEO.",
+        "Ideal for blogs and documentation.",
+        "Uses getStaticProps in the Pages Router."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export async function getStaticProps() {\n  return { props: {} };\n}",
+      "syntax": "export async function getStaticProps() {}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the difference between Static Site Generation (SSG) and Server-Side Rendering (SSR)?",
+    "answer": {
+      "definition": "SSG generates pages during build time, while SSR generates pages every time a user requests them.",
+      "points": [
+        "SSG builds pages once.",
+        "SSR renders pages on every request.",
+        "SSG is faster.",
+        "SSR always shows fresh data.",
+        "Both improve SEO."
+      ],
+      "comparisonTitle1": "SSG",
+      "comparisonTitle2": "SSR",
+      "comparison": [
+        {
+          "feature": "Rendering Time",
+          "first": "Build time",
+          "second": "Every request"
+        },
+        {
+          "feature": "Performance",
+          "first": "Very fast",
+          "second": "Slightly slower"
+        },
+        {
+          "feature": "Data",
+          "first": "Mostly static",
+          "second": "Always fresh"
+        },
+        {
+          "feature": "SEO",
+          "first": "Excellent",
+          "second": "Excellent"
+        },
+        {
+          "feature": "Best For",
+          "first": "Blogs, documentation",
+          "second": "Dashboards, user-specific pages"
+        }
+      ],
+      "example": "SSG → getStaticProps()\nSSR → getServerSideProps()",
+      "syntax": "getStaticProps()\ngetServerSideProps()"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is pre-rendering in Next.js?",
+    "answer": {
+      "definition": "Pre-rendering means Next.js generates the HTML for a page before a user requests it. This improves performance and SEO because the page is ready before it reaches the browser.",
+      "points": [
+        "Generates HTML in advance.",
+        "Improves page loading speed.",
+        "Provides better SEO.",
+        "Can use Static Site Generation (SSG) or Server-Side Rendering (SSR).",
+        "Users receive ready-to-display HTML."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export async function getStaticProps() {\n  const res = await fetch('https://api.github.com/repos/vercel/next.js');\n  const repo = await res.json();\n\n  return {\n    props: { repo }\n  };\n}\n\nexport default function Page({ repo }) {\n  return <p>{repo.stargazers_count} Stars</p>;\n}",
+      "syntax": "export async function getStaticProps() {\n  return {\n    props: {}\n  };\n}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is Incremental Static Regeneration (ISR) in Next.js?",
+    "answer": {
+      "definition": "Incremental Static Regeneration (ISR) allows static pages to be updated automatically after deployment without rebuilding the entire application.",
+      "points": [
+        "Updates static pages automatically.",
+        "Does not require a full rebuild.",
+        "Uses the revalidate option.",
+        "Pages are regenerated in the background.",
+        "Combines the benefits of SSG and dynamic data.",
+        "Improves performance and SEO."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export async function getStaticProps() {\n  const res = await fetch('https://api.github.com/repos/vercel/next.js');\n  const repo = await res.json();\n\n  return {\n    props: { repo },\n    revalidate: 60\n  };\n}",
+      "syntax": "export async function getStaticProps() {\n  return {\n    props: {},\n    revalidate: 60\n  };\n}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the Image component in Next.js?",
+    "answer": {
+      "definition": "The Image component is a built-in Next.js component that automatically optimizes images for better performance and faster loading.",
+      "points": [
+        "Optimizes image size automatically.",
+        "Supports lazy loading.",
+        "Improves website performance.",
+        "Reduces layout shift.",
+        "Supports responsive images.",
+        "Provides automatic image optimization."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import Image from 'next/image';\nimport profilePic from '../public/profile.jpg';\n\n<Image\n  src={profilePic}\n  alt='Profile Picture'\n/>",
+      "syntax": "<Image\n  src={image}\n  alt='Description'\n  width={500}\n  height={500}\n/>"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you deploy a Next.js application to Vercel?",
+    "answer": {
+      "definition": "You can deploy a Next.js application by connecting your GitHub, GitLab, or Bitbucket repository to Vercel and starting the deployment.",
+      "points": [
+        "Push your code to Git.",
+        "Connect the repository to Vercel.",
+        "Vercel automatically builds the application.",
+        "Deployment happens automatically.",
+        "Future Git commits trigger new deployments."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "GitHub Repository → Connect to Vercel → Deploy",
+      "syntax": "vercel"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you handle redirects in Next.js?",
+    "answer": {
+      "definition": "Redirects are configured in next.config.js to automatically send users from one URL to another.",
+      "points": [
+        "Configured in next.config.js.",
+        "Supports permanent and temporary redirects.",
+        "Improves SEO.",
+        "Useful when URLs change.",
+        "Runs before rendering the page."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "module.exports = {\n  async redirects() {\n    return [\n      {\n        source: '/about',\n        destination: '/about-us',\n        permanent: true,\n      },\n    ];\n  },\n};",
+      "syntax": "async redirects() {\n  return [];\n}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the Head component in Next.js?",
+    "answer": {
+      "definition": "The Head component is used to add or modify HTML head elements such as the page title, meta tags, and favicon.",
+      "points": [
+        "Sets the page title.",
+        "Adds meta tags.",
+        "Supports favicon links.",
+        "Improves SEO.",
+        "Works on a per-page basis."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import Head from 'next/head';\n\n<Head>\n  <title>My Page</title>\n  <meta name='description' content='My page description' />\n</Head>",
+      "syntax": "<Head>\n  <title>Page Title</title>\n</Head>"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the next/head package used for?",
+    "answer": {
+      "definition": "The next/head package is used to manage the HTML head section of a page, including the title, meta tags, description, and Open Graph tags.",
+      "points": [
+        "Updates the page title.",
+        "Adds meta description.",
+        "Supports Open Graph tags.",
+        "Improves SEO.",
+        "Allows page-specific head elements."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import Head from 'next/head';\n\n<Head>\n  <title>Home</title>\n  <meta name='description' content='Home page' />\n</Head>",
+      "syntax": "import Head from 'next/head';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you add custom headers in Next.js?",
+    "answer": {
+      "definition": "Custom HTTP headers can be added by configuring the headers() function inside next.config.js.",
+      "points": [
+        "Configured in next.config.js.",
+        "Applies custom HTTP headers.",
+        "Useful for security.",
+        "Can add caching headers.",
+        "Supports multiple routes."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "module.exports = {\n  async headers() {\n    return [];\n  },\n};",
+      "syntax": "async headers() {\n  return [];\n}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the use of the next export command?",
+    "answer": {
+      "definition": "The next export command generates a fully static version of a Next.js application that can be hosted on any static hosting service.",
+      "points": [
+        "Creates static HTML files.",
+        "No server is required.",
+        "Useful for static websites.",
+        "Easy to deploy.",
+        "Works well with static hosting providers."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "next export",
+      "syntax": "next export"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you optimize fonts in Next.js?",
+    "answer": {
+      "definition": "Next.js provides built-in font optimization using the next/font package, which improves loading speed and reduces layout shifts.",
+      "points": [
+        "Uses the next/font package.",
+        "Automatically optimizes fonts.",
+        "Improves performance.",
+        "Reduces layout shift.",
+        "Supports Google Fonts and local fonts."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import { Inter } from 'next/font/google';\n\nconst inter = Inter({ subsets: ['latin'] });",
+      "syntax": "import { Inter } from 'next/font/google';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you configure Webpack in Next.js?",
+    "answer": {
+      "definition": "You can customize the default Webpack configuration by adding a webpack() function inside next.config.js.",
+      "points": [
+        "Customize the default Webpack configuration.",
+        "Add custom plugins and loaders.",
+        "Modify build behavior.",
+        "Works for both client and server builds.",
+        "Always return the modified config object."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "module.exports = {\n  webpack: (config, { webpack }) => {\n    config.plugins.push(new webpack.IgnorePlugin(/\\/__tests__\\//));\n    return config;\n  },\n};",
+      "syntax": "module.exports = {\n  webpack: (config, options) => {\n    return config;\n  },\n};"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you configure a custom Babel setup in Next.js?",
+    "answer": {
+      "definition": "Create a babel.config.js file in the project root to customize Babel settings.",
+      "points": [
+        "Create babel.config.js.",
+        "Customize Babel presets.",
+        "Add Babel plugins.",
+        "Override the default Babel configuration.",
+        "Useful for advanced JavaScript transformations."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "module.exports = {\n  presets: ['next/babel'],\n  plugins: []\n};",
+      "syntax": "babel.config.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the purpose of next-env.d.ts?",
+    "answer": {
+      "definition": "next-env.d.ts is a TypeScript declaration file that provides type definitions for Next.js projects.",
+      "points": [
+        "Automatically created by Next.js.",
+        "Contains Next.js TypeScript definitions.",
+        "Should not be edited manually.",
+        "Helps TypeScript recognize Next.js types.",
+        "Required for TypeScript projects."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "/// <reference types='next' />\n/// <reference types='next/image-types/global' />",
+      "syntax": "next-env.d.ts"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the purpose of next-compose-plugins?",
+    "answer": {
+      "definition": "next-compose-plugins is a utility that allows you to combine multiple Next.js plugins into a single configuration.",
+      "points": [
+        "Combines multiple plugins.",
+        "Makes configuration cleaner.",
+        "Reduces repetitive code.",
+        "Easy to manage plugin settings.",
+        "Useful in large projects."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const withPlugins = require('next-compose-plugins');",
+      "syntax": "module.exports = withPlugins([plugin1, plugin2]);"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you add polyfills in Next.js?",
+    "answer": {
+      "definition": "Polyfills can be added by importing them in the application's entry file or by using libraries such as next-polyfill.",
+      "points": [
+        "Import polyfills before application code.",
+        "Supports older browsers.",
+        "Can use third-party polyfill libraries.",
+        "Improves browser compatibility.",
+        "Usually imported in the application's entry file."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import 'core-js/stable';\nimport 'regenerator-runtime/runtime';",
+      "syntax": "import 'core-js/stable';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is Static Optimization in Next.js?",
+    "answer": {
+      "definition": "Static Optimization is a feature where Next.js automatically generates static HTML for pages that do not require server-side data.",
+      "points": [
+        "Automatically detects static pages.",
+        "Improves page performance.",
+        "Reduces server workload.",
+        "No manual configuration is required.",
+        "Pages are generated during build time."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "A page without getServerSideProps() is automatically statically optimized.",
+      "syntax": "No special syntax required."
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you handle internationalization (i18n) in Next.js?",
+    "answer": {
+      "definition": "Internationalization (i18n) is configured in next.config.js to support multiple languages in the application.",
+      "points": [
+        "Configure locales in next.config.js.",
+        "Set a default language.",
+        "Supports multiple languages.",
+        "Automatically handles localized routes.",
+        "Improves global user experience."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "module.exports = {\n  i18n: {\n    locales: ['en', 'fr'],\n    defaultLocale: 'en'\n  }\n};",
+      "syntax": "i18n: {\n  locales: ['en', 'fr'],\n  defaultLocale: 'en'\n}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is React Strict Mode in Next.js?",
+    "answer": {
+      "definition": "React Strict Mode is a development-only feature that helps identify potential problems such as unsafe lifecycle methods and deprecated APIs.",
+      "points": [
+        "Works only during development.",
+        "Helps find coding issues.",
+        "Detects deprecated APIs.",
+        "Improves application quality.",
+        "Enabled by default in the App Router."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "module.exports = {\n  reactStrictMode: true\n};",
+      "syntax": "reactStrictMode: true"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is a singleton router in Next.js?",
+    "answer": {
+      "definition": "A singleton router is a single router instance that can be accessed throughout the entire Next.js application.",
+      "points": [
+        "Only one router instance exists.",
+        "Accessible across the application.",
+        "Used for navigation.",
+        "Maintains routing state.",
+        "Simplifies route management."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import Router from 'next/router';\n\nRouter.push('/dashboard');",
+      "syntax": "import Router from 'next/router';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is Middleware in Next.js?",
+    "answer": {
+      "definition": "Middleware lets you run code before a request is completed. It can modify the request or response, redirect users, rewrite URLs, or add headers before the page is served.",
+      "points": [
+        "Runs before a request is completed.",
+        "Can redirect users.",
+        "Can rewrite URLs.",
+        "Can modify request headers.",
+        "Can modify response headers.",
+        "Can respond directly without reaching the page.",
+        "Useful for authentication, authorization and localization.",
+        "Configured using the matcher option."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import { NextResponse } from 'next/server';\n\nexport function middleware(request) {\n  return NextResponse.redirect(new URL('/home', request.url));\n}\n\nexport const config = {\n  matcher: '/about/:path*',\n};",
+      "syntax": "export function middleware(request) {\n  return NextResponse.next();\n}"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is a custom server in Next.js?",
+    "answer": {
+      "definition": "A custom server allows you to control how the Next.js server handles requests. It is commonly used with servers like Express or Node.js.",
+      "points": [
+        "Provides custom server-side behavior.",
+        "Can be used with Express.",
+        "Can customize request handling.",
+        "Useful for advanced routing.",
+        "Allows full control over the server."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import next from 'next';\nimport { createServer } from 'http';\n\nconst app = next({ dev: true });\nconst handle = app.getRequestHandler();\n\napp.prepare().then(() => {\n  createServer((req, res) => {\n    handle(req, res);\n  }).listen(3000);\n});",
+      "syntax": "const app = next({ dev });\napp.prepare();"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you perform client-side data fetching in Next.js?",
+    "answer": {
+      "definition": "Client-side data fetching loads data in the browser after the page has rendered. It is commonly done using useEffect with fetch, Axios, or SWR.",
+      "points": [
+        "Runs in the browser.",
+        "Uses useEffect().",
+        "Can use fetch().",
+        "Can use Axios.",
+        "Can use SWR.",
+        "Useful for frequently changing data.",
+        "Does not block page rendering."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import { useEffect, useState } from 'react';\n\nfunction Profile() {\n  const [data, setData] = useState(null);\n\n  useEffect(() => {\n    fetch('/api/profile')\n      .then(res => res.json())\n      .then(data => setData(data));\n  }, []);\n}",
+      "syntax": "useEffect(() => {\n  fetch('/api/data')\n    .then(res => res.json())\n    .then(data => setData(data));\n}, []);"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you set up GraphQL in Next.js?",
+    "answer": {
+      "definition": "GraphQL can be used in Next.js by installing Apollo Client or another GraphQL client and wrapping the application with ApolloProvider.",
+      "points": [
+        "Install Apollo Client and GraphQL.",
+        "Create an ApolloClient instance.",
+        "Configure the GraphQL endpoint.",
+        "Wrap the application with ApolloProvider.",
+        "Use GraphQL queries inside components."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import {\n  ApolloClient,\n  InMemoryCache,\n  ApolloProvider,\n} from '@apollo/client';\n\nconst client = new ApolloClient({\n  uri: 'https://your-api.com/graphql',\n  cache: new InMemoryCache(),\n});\n\n<ApolloProvider client={client}>\n  <App />\n</ApolloProvider>",
+      "syntax": "npm install @apollo/client graphql"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you handle routing in a Next.js application?",
+    "answer": {
+      "definition": "Next.js uses file-based routing. Every file inside the pages or app directory automatically becomes a route.",
+      "points": [
+        "Uses file-based routing.",
+        "No need to configure routes manually.",
+        "Each file represents a page.",
+        "Folders create nested routes.",
+        "Supports dynamic routes using square brackets.",
+        "Works with both Pages Router and App Router."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "app/\n├── page.js          // /\n├── about/\n│   └── page.js      // /about\n└── blog/\n    └── [id]/page.js // /blog/123",
+      "syntax": "app/\n ├── page.js\n ├── about/page.js\n └── blog/[id]/page.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you configure next-i18next in Next.js?",
+    "answer": {
+      "definition": "next-i18next is a library used for internationalization (i18n). It allows your application to support multiple languages by configuring locales and wrapping the application with appWithTranslation().",
+      "points": [
+        "Install next-i18next.",
+        "Create a next-i18next.config.js file.",
+        "Configure defaultLocale and locales.",
+        "Wrap the application using appWithTranslation().",
+        "Supports multiple languages.",
+        "Provides translation support throughout the application."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "// next-i18next.config.js\nmodule.exports = {\n  i18n: {\n    defaultLocale: 'en',\n    locales: ['en', 'fr'],\n  },\n};\n\n// _app.js\nimport { appWithTranslation } from 'next-i18next';\nimport nextI18NextConfig from '../next-i18next.config';\n\nfunction MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />;\n}\n\nexport default appWithTranslation(MyApp, nextI18NextConfig);",
+      "syntax": "module.exports = {\n  i18n: {\n    defaultLocale: 'en',\n    locales: ['en', 'fr']\n  }\n};"
+    }
+  },
+  {
+  "category": "Next.js",
+  "question": "What is ssr: false in dynamic import?",
+  "answer": {
+    "definition": "The ssr: false option disables Server-Side Rendering (SSR) for a dynamically imported component. The component is loaded only in the browser (client-side).",
+    "points": [
+      "Disables Server-Side Rendering (SSR).",
+      "Loads the component only in the browser.",
+      "Useful for browser-only libraries.",
+      "Prevents errors caused by window or document on the server.",
+      "Can improve the initial server render.",
+      "Works with Next.js dynamic imports."
+    ],
+    "comparisonTitle1": "ssr: true (Default)",
+    "comparisonTitle2": "ssr: false",
+    "comparison": [
+      {
+        "feature": "Rendering",
+        "first": "Server and Client",
+        "second": "Client only"
+      },
+      {
+        "feature": "Browser APIs",
+        "first": "May cause errors if using window or document",
+        "second": "Safe to use window and document"
+      },
+      {
+        "feature": "SEO",
+        "first": "Better SEO",
+        "second": "Limited SEO"
+      },
+      {
+        "feature": "Use Case",
+        "first": "General components",
+        "second": "Charts, Maps, Editors, Browser-only libraries"
+      }
+    ],
+    "example": "import dynamic from 'next/dynamic';\n\nconst DynamicComponent = dynamic(() => import('../components/hello'), {\n  ssr: false,\n});\n\nexport default function Home() {\n  return (\n    <section>\n      <Header />\n      <DynamicComponent />\n      <Footer />\n    </section>\n  );\n}",
+    "syntax": "const Component = dynamic(() => import('./Component'), {\n  ssr: false,\n});"
+  }
+},
+{
+  "category": "Next.js",
+  "question": "How do you consider security in the Next.js App Router?",
+  "answer": {
+    "definition": "Security in the Next.js App Router means protecting your application, users, and data from common security threats by following secure coding and deployment practices.",
+    "points": [
+      "Always use HTTPS to encrypt data between the client and server.",
+      "Implement authentication and authorization for protected routes.",
+      "Validate and sanitize user input to prevent XSS and injection attacks.",
+      "Store API keys and secrets in environment variables (.env.local).",
+      "Never expose sensitive server-side environment variables to the client.",
+      "Use Content Security Policy (CSP) headers to reduce XSS attacks.",
+      "Use secure cookies with HttpOnly, Secure, and SameSite attributes.",
+      "Protect API routes with authentication and authorization.",
+      "Keep Next.js and dependencies updated to fix security vulnerabilities.",
+      "Avoid exposing sensitive information in error messages.",
+      "Use middleware to protect private routes before rendering.",
+      "Validate all incoming request data on the server."
+    ],
+    "comparisonTitle1": "Secure Practice",
+    "comparisonTitle2": "Insecure Practice",
+    "comparison": [
+      {
+        "feature": "Protocol",
+        "first": "HTTPS",
+        "second": "HTTP"
+      },
+      {
+        "feature": "API Keys",
+        "first": "Store in .env.local",
+        "second": "Hardcode in source code"
+      },
+      {
+        "feature": "Authentication",
+        "first": "Protect routes",
+        "second": "Allow unrestricted access"
+      },
+      {
+        "feature": "Cookies",
+        "first": "HttpOnly, Secure",
+        "second": "Regular cookies"
+      },
+      {
+        "feature": "User Input",
+        "first": "Validate and sanitize",
+        "second": "Trust user input"
+      },
+      {
+        "feature": "Dependencies",
+        "first": "Update regularly",
+        "second": "Use outdated packages"
+      }
+    ],
+    "example": "// Middleware example\nimport { NextResponse } from 'next/server';\n\nexport function middleware(request) {\n  const token = request.cookies.get('token');\n\n  if (!token) {\n    return NextResponse.redirect(new URL('/login', request.url));\n  }\n\n  return NextResponse.next();\n}",
+    "syntax": "HTTPS\n.env.local\nmiddleware.ts\nContent-Security-Policy\nHttpOnly cookies"
+  }
+},
+{
+    "category": "Next.js",
+    "question": "List some common performance optimization techniques in Next.js.",
+    "answer": {
+      "definition": "Next.js provides several built-in features to improve application performance, loading speed, and user experience.",
+      "points": [
+        "Use Static Site Generation (SSG) whenever possible.",
+        "Use Incremental Static Regeneration (ISR) for dynamic content.",
+        "Use the next/image component for optimized images.",
+        "Use dynamic imports to lazy load large components.",
+        "Enable automatic code splitting.",
+        "Remove unused JavaScript with tree shaking.",
+        "Optimize CSS using CSS Modules or other optimized styling solutions.",
+        "Cache API responses when appropriate.",
+        "Use the App Router caching features.",
+        "Optimize fonts using next/font."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import dynamic from 'next/dynamic';\n\nconst Chart = dynamic(() => import('./Chart'));",
+      "syntax": "dynamic(() => import('./Component'))"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "Are there any limitations of Next.js?",
+    "answer": {
+      "definition": "Although Next.js is powerful, it has some limitations depending on the project requirements.",
+      "points": [
+        "Limited support for non-React libraries.",
+        "SSR requires a Node.js runtime.",
+        "Some features are not compatible with fully static websites.",
+        "Learning curve for beginners.",
+        "Advanced routing and rendering concepts require experience."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Applications requiring server-side rendering need a Node.js environment.",
+      "syntax": "No specific syntax."
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "Is Next.js suitable for large-scale applications?",
+    "answer": {
+      "definition": "Yes. Next.js is well suited for large-scale applications because it provides performance optimization, routing, rendering strategies, and backend capabilities.",
+      "points": [
+        "Supports Server-Side Rendering (SSR).",
+        "Supports Static Site Generation (SSG).",
+        "Supports Incremental Static Regeneration (ISR).",
+        "Supports API Routes.",
+        "Automatic code splitting.",
+        "Dynamic imports.",
+        "Excellent performance and SEO.",
+        "Easy to scale."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Large applications like e-commerce platforms and dashboards commonly use Next.js.",
+      "syntax": "No special syntax."
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "Why is Next.js considered a full-stack framework?",
+    "answer": {
+      "definition": "Next.js is called a full-stack framework because it allows you to build both the frontend and backend in a single project.",
+      "points": [
+        "Build frontend using React.",
+        "Create backend APIs using API Routes.",
+        "Supports database integration.",
+        "Supports authentication.",
+        "Supports Server-Side Rendering (SSR).",
+        "Supports Static Site Generation (SSG).",
+        "Single codebase for frontend and backend."
+      ],
+      "comparisonTitle1": "Next.js",
+      "comparisonTitle2": "React.js",
+      "comparison": [
+        {
+          "feature": "Frontend",
+          "first": "Yes",
+          "second": "Yes"
+        },
+        {
+          "feature": "Backend APIs",
+          "first": "Built-in",
+          "second": "Requires separate backend"
+        },
+        {
+          "feature": "SSR",
+          "first": "Supported",
+          "second": "Not built-in"
+        },
+        {
+          "feature": "Database Integration",
+          "first": "Supported",
+          "second": "Needs external backend"
+        }
+      ],
+      "example": "app/\napi/\ncomponents/\nlib/\n\nOne project handles both frontend and backend.",
+      "syntax": "app/api/users/route.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you handle global styles in the App Router?",
+    "answer": {
+      "definition": "Global styles are defined in globals.css and imported into the root layout file so they are available throughout the application.",
+      "points": [
+        "Create app/globals.css.",
+        "Import it in app/layout.js or app/layout.tsx.",
+        "Applies styles globally.",
+        "Useful for resets and common styles.",
+        "Loaded once for the entire application."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "// app/layout.js\nimport './globals.css';\n\nexport default function RootLayout({ children }) {\n  return (\n    <html>\n      <body>{children}</body>\n    </html>\n  );\n}",
+      "syntax": "import './globals.css';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you use the Edge Runtime for API Routes?",
+    "answer": {
+      "definition": "The Edge Runtime allows API routes to run closer to users on edge servers, reducing response time.",
+      "points": [
+        "Runs on Edge infrastructure.",
+        "Uses Web Request and Response APIs.",
+        "Lower latency.",
+        "Faster global response times.",
+        "Enabled by setting runtime to 'edge'."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export const runtime = 'edge';\n\nexport async function GET() {\n  return Response.json({ message: 'Hello from Edge' });\n}",
+      "syntax": "export const runtime = 'edge';"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you use placeholders with the next/image component?",
+    "answer": {
+      "definition": "The placeholder='blur' option displays a blurred preview while the image is loading.",
+      "points": [
+        "Uses placeholder='blur'.",
+        "Improves user experience.",
+        "Shows a low-quality preview.",
+        "Works with imported static images.",
+        "Reduces layout shift."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import profilePic from '../public/profile.jpg';\n\n<Image\n  src={profilePic}\n  alt='Profile'\n  placeholder='blur'\n/>",
+      "syntax": "<Image placeholder='blur' />"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you enable ISR (revalidation) in the App Router?",
+    "answer": {
+      "definition": "In the App Router, ISR is enabled by passing the revalidate option inside the next property of the fetch() API.",
+      "points": [
+        "Uses fetch().",
+        "Configure next.revalidate.",
+        "Automatically refreshes cached data.",
+        "No full rebuild required.",
+        "Improves performance while keeping data fresh."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const res = await fetch('https://api.example.com/data', {\n  next: {\n    revalidate: 10\n  }\n});\n\nconst data = await res.json();",
+      "syntax": "fetch(url, {\n  next: {\n    revalidate: 10\n  }\n})"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the Pages Router in Next.js?",
+    "answer": {
+      "definition": "The Pages Router is the traditional routing system in Next.js. It automatically creates routes based on the files inside the pages directory.",
+      "points": [
+        "Uses file-based routing.",
+        "Each file inside the pages folder becomes a route.",
+        "No manual route configuration is required.",
+        "Supports static and dynamic routes.",
+        "Easy to organize application pages."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "pages/index.js → /\npages/about.js → /about\npages/contact.js → /contact",
+      "syntax": "pages/\n ├── index.js\n ├── about.js\n └── contact.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you create a route in the Pages Router?",
+    "answer": {
+      "definition": "You create routes by adding files inside the pages directory. The file name becomes the URL path.",
+      "points": [
+        "Each file represents one route.",
+        "Folders create nested routes.",
+        "No routing library is needed.",
+        "Supports index pages.",
+        "Supports dynamic routes."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "pages/index.js → /\npages/about.js → /about\npages/blog/index.js → /blog\npages/blog/[slug].js → /blog/react",
+      "syntax": "pages/\n ├── index.js\n ├── about.js\n └── blog/[slug].js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you create a dynamic route in Next.js?",
+    "answer": {
+      "definition": "Dynamic routes are created by wrapping the file name with square brackets []. The value in the URL becomes a route parameter.",
+      "points": [
+        "Uses square brackets [].",
+        "Creates dynamic URLs.",
+        "Route parameters are available in the page.",
+        "Supports nested dynamic routes.",
+        "Supports catch-all routes."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "pages/posts/[id].js → /posts/1\npages/[username]/settings.js → /john/settings",
+      "syntax": "pages/posts/[id].js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is a catch-all segment in Next.js?",
+    "answer": {
+      "definition": "A catch-all segment matches one or more URL segments using [...param] or optional catch-all using [[...param]].",
+      "points": [
+        "Matches multiple URL segments.",
+        "Useful for nested routes.",
+        "Uses [...param] syntax.",
+        "Optional catch-all uses [[...param]].",
+        "Returns parameters as an array."
+      ],
+      "comparisonTitle1": "[...slug]",
+      "comparisonTitle2": "[[...slug]]",
+      "comparison": [
+        {
+          "feature": "Matches Empty Path",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Optional",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Use Case",
+          "first": "Required nested routes",
+          "second": "Optional nested routes"
+        }
+      ],
+      "example": "// pages/docs/[[...slug]].js\nexport default function Docs({ params }) {\n  return <div>{params.slug?.join('/')}</div>;\n}",
+      "syntax": "pages/docs/[...slug].js\npages/docs/[[...slug]].js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the _app.js file in Next.js?",
+    "answer": {
+      "definition": "The _app.js file is a special file used to initialize all pages. It is commonly used for layouts, global state, providers, and global CSS.",
+      "points": [
+        "Wraps every page.",
+        "Used for global layouts.",
+        "Loads global CSS.",
+        "Provides application-wide state.",
+        "Adds common providers like Redux or Context."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "function MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />;\n}\n\nexport default MyApp;",
+      "syntax": "pages/_app.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the _document.js file in Next.js?",
+    "answer": {
+      "definition": "The _document.js file customizes the HTML document structure such as the html, head, body, and main tags.",
+      "points": [
+        "Customizes HTML structure.",
+        "Runs only on the server.",
+        "Used for adding custom attributes.",
+        "Can customize the body tag.",
+        "Cannot add React event handlers."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "import { Html, Head, Main, NextScript } from 'next/document';",
+      "syntax": "pages/_document.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the difference between _app.js and _document.js?",
+    "answer": {
+      "definition": "_app.js customizes page rendering and global state, while _document.js customizes the HTML document generated by the server.",
+      "points": [
+        "_app.js wraps all pages.",
+        "_document.js customizes HTML.",
+        "_app.js runs on client and server.",
+        "_document.js runs only on the server.",
+        "_app.js is used for layouts and providers."
+      ],
+      "comparisonTitle1": "_app.js",
+      "comparisonTitle2": "_document.js",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Initialize pages",
+          "second": "Customize HTML document"
+        },
+        {
+          "feature": "Runs On",
+          "first": "Client and Server",
+          "second": "Server only"
+        },
+        {
+          "feature": "Global Layout",
+          "first": "Yes",
+          "second": "No"
+        },
+        {
+          "feature": "Modify HTML",
+          "first": "No",
+          "second": "Yes"
+        }
+      ],
+      "example": "_app.js → Layouts\n_document.js → <html>, <body>",
+      "syntax": "pages/_app.js\npages/_document.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "What is the _error.js file in Next.js?",
+    "answer": {
+      "definition": "The _error.js file allows you to create a custom error page for handling application errors such as 404 and 500.",
+      "points": [
+        "Creates custom error pages.",
+        "Handles application errors.",
+        "Can display custom messages.",
+        "Improves user experience.",
+        "Used in the Pages Router."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "pages/_error.js",
+      "syntax": "pages/_error.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you create a custom 404 page in Next.js?",
+    "answer": {
+      "definition": "Create a pages/404.js file. Next.js automatically displays this page when a route is not found.",
+      "points": [
+        "Create pages/404.js.",
+        "Automatically used for missing pages.",
+        "Improves user experience.",
+        "Supports custom design.",
+        "No extra configuration required."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "export default function Custom404() {\n  return <h1>404 - Page Not Found</h1>;\n}",
+      "syntax": "pages/404.js"
+    }
+  },
+  {
+    "category": "Next.js",
+    "question": "How do you fetch data in a Next.js page?",
+    "answer": {
+      "definition": "In the Pages Router, data can be fetched using getStaticProps() for static pages or getServerSideProps() for server-side rendering.",
+      "points": [
+        "Use getStaticProps() for Static Site Generation (SSG).",
+        "Use getServerSideProps() for Server-Side Rendering (SSR).",
+        "Runs before the page is rendered.",
+        "Passes data as props.",
+        "Supports asynchronous data fetching."
+      ],
+      "comparisonTitle1": "getStaticProps()",
+      "comparisonTitle2": "getServerSideProps()",
+      "comparison": [
+        {
+          "feature": "Rendering",
+          "first": "Build Time",
+          "second": "Every Request"
+        },
+        {
+          "feature": "Performance",
+          "first": "Very Fast",
+          "second": "Slightly Slower"
+        },
+        {
+          "feature": "Fresh Data",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Best For",
+          "first": "Blogs, Docs",
+          "second": "Dashboards, User Data"
+        }
+      ],
+      "example": "export async function getStaticProps() {\n  return { props: {} };\n}\n\nexport async function getServerSideProps() {\n  return { props: {} };\n}",
+      "syntax": "getStaticProps()\ngetServerSideProps()"
+    }
+  },
+  {
+  "category": "Next.js",
+  "question": "Are there any limitations of the Pages Router?",
+  "answer": {
+    "definition": "Yes. The Pages Router has some limitations compared to the App Router. It provides fewer built-in features for layouts, routing, and modern React capabilities.",
+    "points": [
+      "Limited support for nested layouts.",
+      "Less flexible routing compared to the App Router.",
+      "Does not support React Server Components.",
+      "Uses older data fetching methods like getStaticProps() and getServerSideProps().",
+      "Less suitable for modern Next.js applications.",
+      "App Router is recommended for new projects."
+    ],
+    "comparisonTitle1": "Pages Router",
+    "comparisonTitle2": "App Router",
+    "comparison": [
+      {
+        "feature": "Nested Layouts",
+        "first": "Limited support",
+        "second": "Built-in support"
+      },
+      {
+        "feature": "React Server Components",
+        "first": "Not supported",
+        "second": "Supported"
+      },
+      {
+        "feature": "Routing",
+        "first": "File-based routing",
+        "second": "Advanced file-based routing"
+      },
+      {
+        "feature": "Data Fetching",
+        "first": "getStaticProps(), getServerSideProps()",
+        "second": "fetch(), Server Components, Route Handlers"
+      },
+      {
+        "feature": "Recommended For",
+        "first": "Legacy or existing projects",
+        "second": "New Next.js applications"
+      }
+    ],
+    "example": "Pages Router:\npages/about.js\n\nApp Router:\napp/about/page.js\napp/about/layout.js",
+    "syntax": "pages/\napp/"
+  }
+},
+{
+  "category": "Next.js",
+  "question": "Are there any performance optimizations available in the Pages Router?",
+  "answer": {
+    "definition": "Yes. The Pages Router provides built-in performance optimization features such as Static Site Generation (SSG), Server-Side Rendering (SSR), and Incremental Static Regeneration (ISR).",
+    "points": [
+      "Use Static Site Generation (SSG) to pre-render pages at build time.",
+      "Use Server-Side Rendering (SSR) to render pages on every request.",
+      "Use Incremental Static Regeneration (ISR) to update static pages after deployment.",
+      "Choose the rendering strategy based on your application requirements.",
+      "These features improve performance, SEO, and user experience."
+    ],
+    "comparisonTitle1": "SSG",
+    "comparisonTitle2": "SSR / ISR",
+    "comparison": [
+      {
+        "feature": "Rendering Time",
+        "first": "Build Time",
+        "second": "Request Time / Revalidation Time"
+      },
+      {
+        "feature": "Performance",
+        "first": "Fastest",
+        "second": "Fast"
+      },
+      {
+        "feature": "Data Freshness",
+        "first": "Fixed until rebuild",
+        "second": "Always fresh (SSR) or periodically updated (ISR)"
+      },
+      {
+        "feature": "Best For",
+        "first": "Blogs, Documentation, Landing Pages",
+        "second": "Dashboards, User Data, Frequently Updated Content"
+      }
+    ],
+    "example": "// Static Site Generation (SSG)\nexport async function getStaticProps() {\n  return {\n    props: {},\n  };\n}\n\n// Server-Side Rendering (SSR)\nexport async function getServerSideProps() {\n  return {\n    props: {},\n  };\n}\n\n// Incremental Static Regeneration (ISR)\nexport async function getStaticProps() {\n  return {\n    props: {},\n    revalidate: 10,\n  };\n}",
+    "syntax": "getStaticProps()\ngetServerSideProps()\nrevalidate: 10"
+  }
+}
+]

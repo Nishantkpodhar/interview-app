@@ -4,6 +4,7 @@ import nextjsData from "./nextjs.json";
 import cssData from "./css.json";
 import nodeData from "./node.json";
 import pythonData from "./python.json";
+import typescriptData from "./typescript.json";
 
 const addCategory = (data, category) =>
   data.map((item) => ({ ...item, category }));
@@ -14,6 +15,7 @@ const nextjsItems = addCategory(nextjsData, "nextjs");
 const cssItems = addCategory(cssData, "css");
 const nodeItems = addCategory(nodeData, "node");
 const pythonItems = addCategory(pythonData, "python");
+const typescriptItems = addCategory(typescriptData, "typescript");
 
 const jsonFiles = {
   all: [
@@ -23,6 +25,7 @@ const jsonFiles = {
     ...cssItems,
     ...nodeItems,
     ...pythonItems,
+    ...typescriptItems,
   ],
 
   react: reactItems,
@@ -35,6 +38,7 @@ const jsonFiles = {
 
   node: nodeItems,
   python: pythonItems,
+  typescript: typescriptItems,
 };
 
 export default jsonFiles;

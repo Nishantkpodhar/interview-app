@@ -14,7 +14,7 @@ import QuestionTable from "./components/QuestionTable";
 import TestReport from "./components/TestReport";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
-import LastProject from "./components/LastProject";
+import LastProject from "./components/LastProject/LastProject";
 
 function App() {
   const [selectedFile, setSelectedFile] = useState("all");

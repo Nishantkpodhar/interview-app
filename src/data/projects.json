@@ -1,0 +1,304 @@
+[
+  {
+    "id": 1,
+    "title": "Wells Fargo Enterprise Onboarding Platform",
+    "icon": "🏦",
+    "badge": "Current Project",
+
+    "overview": [
+      "The Enterprise Onboarding Platform is an internal banking application developed for Wells Fargo to simplify and automate customer onboarding and document management processes.",
+      "The application enables relationship managers and operations teams to onboard customers, upload and verify KYC documents, manage document workflows, and track onboarding status through a secure, scalable, and user-friendly interface.",
+      "The application is developed using React.js, TypeScript, Redux Toolkit, REST APIs, and Micro Frontend Architecture, allowing multiple teams to independently develop and deploy different business modules."
+    ],
+
+    "businessFlow": [
+      {
+        "icon": "👤",
+        "title": "Customer Search",
+        "description": "Search existing customers using Customer ID, Business Name, Account Number, or Tax ID."
+      },
+      {
+        "icon": "📝",
+        "title": "Create Onboarding",
+        "description": "Relationship managers create new onboarding requests by filling customer and business information."
+      },
+      {
+        "icon": "📂",
+        "title": "Document Upload",
+        "description": "Upload multiple KYC and business documents with validation, preview, delete, replace, and progress tracking."
+      },
+      {
+        "icon": "✔️",
+        "title": "Verification",
+        "description": "Documents are validated and verified before moving to the approval workflow."
+      },
+      {
+        "icon": "📋",
+        "title": "Approval Workflow",
+        "description": "Business users review applications, approve or reject requests, and provide comments."
+      },
+      {
+        "icon": "🎉",
+        "title": "Customer Onboarded",
+        "description": "Once approved, the customer onboarding process is completed and the application status is updated."
+      }
+    ],
+
+    "responsibilities": [
+      "Developed enterprise React.js applications using TypeScript.",
+      "Built reusable UI components for multiple business modules.",
+      "Developed dynamic onboarding forms.",
+      "Implemented reusable document upload components.",
+      "Integrated multiple REST APIs using Axios.",
+      "Managed application state using Redux Toolkit and RTK Query.",
+      "Implemented lazy loading and code splitting.",
+      "Optimized rendering using React.memo, useMemo, and useCallback.",
+      "Migrated legacy RIA-3 components to Pioneer Design System.",
+      "Wrote unit tests using Jest and React Testing Library.",
+      "Participated in code reviews and Agile sprint ceremonies.",
+      "Worked closely with backend developers, QA, and business teams."
+    ],
+
+    "technology": [
+      {
+        "name": "React.js",
+        "percentage": 95
+      },
+      {
+        "name": "TypeScript",
+        "percentage": 95
+      },
+      {
+        "name": "Redux Toolkit",
+        "percentage": 90
+      },
+      {
+        "name": "RTK Query",
+        "percentage": 88
+      },
+      {
+        "name": "REST APIs",
+        "percentage": 95
+      },
+      {
+        "name": "Micro Frontend",
+        "percentage": 90
+      },
+      {
+        "name": "Jest",
+        "percentage": 85
+      },
+      {
+        "name": "React Testing Library",
+        "percentage": 85
+      }
+    ],
+
+    "modules": [
+      {
+        "title": "Dashboard",
+        "description": "Customer Overview"
+      },
+      {
+        "title": "Onboarding",
+        "description": "Dynamic Forms"
+      },
+      {
+        "title": "Documents",
+        "description": "Multi Upload"
+      },
+      {
+        "title": "Approval",
+        "description": "Workflow Management"
+      },
+      {
+        "title": "Notifications",
+        "description": "Status Updates"
+      },
+      {
+        "title": "Reports",
+        "description": "Tracking & Audit"
+      }
+    ],
+
+    "challenges": [
+      "Built reusable components to reduce duplicate code.",
+      "Optimized application performance using lazy loading and memoization.",
+      "Integrated multiple backend REST APIs efficiently.",
+      "Handled large document uploads with validation and error handling.",
+      "Migrated legacy UI components to the Pioneer Design System.",
+      "Improved application maintainability using Micro Frontend Architecture."
+    ],
+
+    "highlights": [
+      "Enterprise Banking Application",
+      "Micro Frontend Architecture",
+      "Reusable Component Library",
+      "Dynamic Form Builder",
+      "Multi Document Upload Workflow",
+      "REST API Integration",
+      "Redux Toolkit & RTK Query",
+      "Performance Optimization",
+      "Jest & React Testing Library",
+      "CI/CD, Docker & AWS",
+      "Agile Scrum Development",
+      "Migration to Pioneer Design System"
+    ]
+  },
+
+  {
+    "id": 2,
+    "title": "HDFC MyCards Portal",
+    "icon": "💳",
+    "badge": "Reward360 Project",
+
+    "overview": [
+      "HDFC MyCards is a digital banking platform that allows customers to manage their Credit Cards, Debit Cards and card-related services from a single web application.",
+      "The portal provides features like card summary, transaction history, reward points, statement download, authentication, profile management, card controls and multiple banking services through a secure user experience.",
+      "Worked as a React Developer at Reward360 where multiple enterprise banking modules were developed using React.js, Next.js, Redux Toolkit, REST APIs and reusable UI components."
+    ],
+
+    "businessFlow": [
+      {
+        "icon": "📱",
+        "title": "Login",
+        "description": "Customer enters registered mobile number and verifies using OTP authentication."
+      },
+      {
+        "icon": "🏠",
+        "title": "Dashboard",
+        "description": "Displays credit limit, outstanding balance, due date, reward points and recent activities."
+      },
+      {
+        "icon": "💳",
+        "title": "Card Management",
+        "description": "View card details, enable or disable online transactions, manage limits and control card usage."
+      },
+      {
+        "icon": "💰",
+        "title": "Transactions",
+        "description": "View recent transactions, filter records, download statements and check payment history."
+      },
+      {
+        "icon": "🎁",
+        "title": "Reward Points",
+        "description": "View accumulated reward points, eligible rewards and redemption options."
+      },
+      {
+        "icon": "⚙️",
+        "title": "Profile Management",
+        "description": "Update profile, contact details, communication preferences and card settings."
+      }
+    ],
+
+    "modules": [
+      "Customer Dashboard",
+      "Authentication (OTP Login)",
+      "Credit Card Summary",
+      "Transaction History",
+      "Reward Points Module",
+      "Statement Download",
+      "Card Management",
+      "Profile Management",
+      "REST API Integration"
+    ],
+
+    "responsibilities": [
+      "Developed reusable React.js components.",
+      "Built responsive banking screens using React.js and Next.js.",
+      "Managed application state using Redux Toolkit.",
+      "Integrated multiple REST APIs using Axios.",
+      "Developed reward points and transaction modules.",
+      "Implemented authentication and authorization flows.",
+      "Improved application performance through memoization, lazy loading and code optimization.",
+      "Fixed production bugs and enhanced existing features.",
+      "Participated in sprint planning, code reviews and Agile ceremonies."
+    ],
+
+    "technology": [
+      {
+        "name": "React.js",
+        "percentage": 95
+      },
+      {
+        "name": "Next.js",
+        "percentage": 90
+      },
+      {
+        "name": "TypeScript",
+        "percentage": 90
+      },
+      {
+        "name": "Redux Toolkit",
+        "percentage": 92
+      },
+      {
+        "name": "REST APIs",
+        "percentage": 95
+      },
+      {
+        "name": "Axios",
+        "percentage": 90
+      },
+      {
+        "name": "Jest",
+        "percentage": 85
+      },
+      {
+        "name": "React Testing Library",
+        "percentage": 85
+      }
+    ],
+
+    "applicationModules": [
+      {
+        "title": "Dashboard",
+        "description": "Account Summary"
+      },
+      {
+        "title": "Cards",
+        "description": "Card Management"
+      },
+      {
+        "title": "Rewards",
+        "description": "Reward Points"
+      },
+      {
+        "title": "History",
+        "description": "Transactions"
+      },
+      {
+        "title": "Statements",
+        "description": "PDF Download"
+      },
+      {
+        "title": "Profile",
+        "description": "User Settings"
+      }
+    ],
+
+    "challenges": [
+      "Reduced unnecessary re-rendering using React.memo, useMemo and useCallback.",
+      "Optimized API calls using Redux Toolkit and caching.",
+      "Built reusable UI components shared across banking modules.",
+      "Improved page load time through lazy loading and code splitting.",
+      "Implemented responsive UI for desktop, tablet and mobile.",
+      "Fixed production issues and improved overall application stability."
+    ],
+
+    "highlights": [
+      "Enterprise Banking Application",
+      "Credit Card Management Portal",
+      "Reward Points Dashboard",
+      "Transaction Management",
+      "Statement Download",
+      "Redux Toolkit State Management",
+      "REST API Integration",
+      "Reusable Component Architecture",
+      "Performance Optimization",
+      "Responsive Design",
+      "Agile Scrum Development",
+      "Production Support & Bug Fixing"
+    ]
+  }
+]

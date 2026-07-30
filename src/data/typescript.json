@@ -1,0 +1,546 @@
+[
+  {
+    "category": "TypeScript",
+    "question": "What is TypeScript and how does it differ from JavaScript?",
+    "answer": {
+      "definition": "TypeScript is a statically typed superset of JavaScript developed by Microsoft. It adds static typing and other advanced features, then compiles into browser-compatible JavaScript.",
+      "points": [
+        "TypeScript is a superset of JavaScript.",
+        "Supports static typing with type annotations.",
+        "Compiles (transpiles) to standard JavaScript.",
+        "Provides better tooling, autocomplete, and refactoring.",
+        "Detects many errors during development.",
+        "Supports modern ECMAScript features.",
+        "Works with existing JavaScript code.",
+        "Improves code maintainability and readability.",
+        "Can target different ECMAScript versions.",
+        "Widely used for small and large applications."
+      ],
+      "comparisonTitle1": "TypeScript",
+      "comparisonTitle2": "JavaScript",
+      "comparison": [
+        {
+          "feature": "Typing",
+          "first": "Static typing",
+          "second": "Dynamic typing"
+        },
+        {
+          "feature": "Compilation",
+          "first": "Compiles to JavaScript",
+          "second": "Runs directly"
+        },
+        {
+          "feature": "Error Detection",
+          "first": "Compile-time",
+          "second": "Mostly runtime"
+        },
+        {
+          "feature": "Tooling",
+          "first": "Better IDE support",
+          "second": "Basic support"
+        }
+      ],
+      "example": "let age: number = 25;",
+      "syntax": "let variable: type = value;"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "What does it mean that TypeScript is a superset of JavaScript?",
+    "answer": {
+      "definition": "TypeScript is called a superset of JavaScript because every valid JavaScript program is also valid TypeScript. It extends JavaScript by adding features like static typing.",
+      "points": [
+        "All JavaScript code is valid TypeScript.",
+        "TypeScript adds optional type annotations.",
+        "Supports modern ECMAScript features.",
+        "Provides compile-time type checking.",
+        "Allows gradual migration from JavaScript."
+      ],
+      "comparisonTitle1": "JavaScript",
+      "comparisonTitle2": "TypeScript",
+      "comparison": [
+        {
+          "feature": "Compatibility",
+          "first": "Base language",
+          "second": "Includes all JavaScript"
+        },
+        {
+          "feature": "Type Checking",
+          "first": "No static types",
+          "second": "Static type checking"
+        }
+      ],
+      "example": "let num: number = 5;\nnum = \"text\"; // Type error",
+      "syntax": "let value: type = initialValue;"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "What are the basic types available in TypeScript?",
+    "answer": {
+      "definition": "TypeScript provides several built-in data types for defining variables, function parameters, return values, and object structures.",
+      "points": [
+        "boolean",
+        "number",
+        "string",
+        "array",
+        "tuple",
+        "enum",
+        "any",
+        "void",
+        "null",
+        "undefined",
+        "never",
+        "object",
+        "function"
+      ],
+      "comparisonTitle1": "Primitive Types",
+      "comparisonTitle2": "Special Types",
+      "comparison": [
+        {
+          "feature": "Primitive",
+          "first": "boolean, number, string",
+          "second": "Basic values"
+        },
+        {
+          "feature": "Special",
+          "first": "any, void, never",
+          "second": "Special-purpose types"
+        },
+        {
+          "feature": "Collections",
+          "first": "array, tuple, enum",
+          "second": "Structured data"
+        }
+      ],
+      "example": "let age: number = 30;\nlet isActive: boolean = true;\nlet name: string = \"John\";",
+      "syntax": "let variable: type = value;"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "How do you declare variables in TypeScript?",
+    "answer": {
+      "definition": "Variables in TypeScript can be declared using var, let, or const with optional type annotations. TypeScript also supports type inference.",
+      "points": [
+        "var has function scope.",
+        "let has block scope.",
+        "const creates constants.",
+        "Variables should be declared before use.",
+        "Type annotations improve readability.",
+        "Type inference automatically determines types.",
+        "Prefer let over var.",
+        "Use const whenever possible."
+      ],
+      "comparisonTitle1": "let",
+      "comparisonTitle2": "const / var",
+      "comparison": [
+        {
+          "feature": "Scope",
+          "first": "Block scope",
+          "second": "const: Block, var: Function"
+        },
+        {
+          "feature": "Reassignment",
+          "first": "Allowed",
+          "second": "const: Not allowed, var: Allowed"
+        },
+        {
+          "feature": "Recommendation",
+          "first": "Preferred",
+          "second": "Use const when possible; avoid var"
+        }
+      ],
+      "example": "let count: number = 10;\nconst apiKey: string = \"123\";",
+      "syntax": "let name: string = \"John\";\nconst age: number = 25;"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "What are Interfaces in TypeScript and how do they work?",
+    "answer": {
+      "definition": "An interface defines the structure of an object by specifying the properties and methods it must contain. It acts as a contract for objects and classes.",
+      "points": [
+        "Defines object structure.",
+        "Ensures type consistency.",
+        "Supports optional properties using ?.",
+        "Supports readonly properties.",
+        "Can define method signatures.",
+        "Supports index signatures.",
+        "Improves maintainability.",
+        "Used for contract enforcement."
+      ],
+      "comparisonTitle1": "Interface",
+      "comparisonTitle2": "Object",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Defines structure",
+          "second": "Stores data"
+        },
+        {
+          "feature": "Validation",
+          "first": "Compile-time checking",
+          "second": "Must match interface"
+        }
+      ],
+      "example": "interface Point {\n  x: number;\n  y: number;\n}\n\nlet point = { x: 3, y: 7 };",
+      "syntax": "interface Name {\n  property: type;\n}"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "Describe the Enum type and when you might use it.",
+    "answer": {
+      "definition": "An Enum is a TypeScript data type that represents a fixed set of named constants. It improves code readability, type safety, and avoids using magic values.",
+      "points": [
+        "Represents a collection of named constants.",
+        "Improves code readability.",
+        "Avoids magic numbers and strings.",
+        "Provides compile-time type safety.",
+        "Useful for HTTP methods, user roles, order status, and days of the week.",
+        "Supports numeric enums.",
+        "Supports string enums.",
+        "Heterogeneous enums exist but are generally not recommended."
+      ],
+      "comparisonTitle1": "Numeric Enum",
+      "comparisonTitle2": "String Enum",
+      "comparison": [
+        {
+          "feature": "Value",
+          "first": "Numbers",
+          "second": "Strings"
+        },
+        {
+          "feature": "Default Values",
+          "first": "Starts from 0",
+          "second": "Must be assigned"
+        },
+        {
+          "feature": "Common Use",
+          "first": "Indexes, status codes",
+          "second": "Readable API values"
+        }
+      ],
+      "example": "enum HttpMethods {\n  GET,\n  POST,\n  PUT,\n  DELETE\n}\n\nconst requestType = HttpMethods.GET;",
+      "syntax": "enum EnumName {\n  KEY,\n  VALUE\n}"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "How do you define and use a function in TypeScript?",
+    "answer": {
+      "definition": "Functions in TypeScript define parameter types and return types, providing compile-time type checking and better code safety.",
+      "points": [
+        "Supports function declarations.",
+        "Supports function expressions.",
+        "Supports optional parameters using ?.",
+        "Supports default parameters.",
+        "Supports rest parameters.",
+        "Supports function overloads.",
+        "Supports call signatures.",
+        "Return types can be explicitly defined."
+      ],
+      "comparisonTitle1": "Function Declaration",
+      "comparisonTitle2": "Function Expression",
+      "comparison": [
+        {
+          "feature": "Definition",
+          "first": "Named function",
+          "second": "Assigned to variable"
+        },
+        {
+          "feature": "Usage",
+          "first": "General functions",
+          "second": "Callbacks and dynamic functions"
+        }
+      ],
+      "example": "function greet(name: string): void {\n  console.log(`Hello ${name}`);\n}",
+      "syntax": "function functionName(param: type): returnType {\n  // code\n}"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "What does type inference mean in TypeScript?",
+    "answer": {
+      "definition": "Type inference is the ability of TypeScript to automatically determine the type of a variable, function return value, or expression without requiring explicit type annotations.",
+      "points": [
+        "Automatically detects variable types.",
+        "Reduces unnecessary type annotations.",
+        "Improves code readability.",
+        "Uses assigned values to determine types.",
+        "Infers function return types.",
+        "Provides compile-time type safety."
+      ],
+      "comparisonTitle1": "Explicit Type",
+      "comparisonTitle2": "Type Inference",
+      "comparison": [
+        {
+          "feature": "Type Declaration",
+          "first": "Developer specifies type",
+          "second": "Compiler determines type"
+        },
+        {
+          "feature": "Code Length",
+          "first": "More verbose",
+          "second": "Shorter and cleaner"
+        }
+      ],
+      "example": "let age = 25; // inferred as number\nlet name = \"John\"; // inferred as string",
+      "syntax": "let variable = value;"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "Explain the use of let and const in TypeScript.",
+    "answer": {
+      "definition": "TypeScript uses let for mutable variables and const for variables whose references should not be reassigned. Both are block-scoped.",
+      "points": [
+        "let creates mutable variables.",
+        "const creates immutable references.",
+        "Both are block scoped.",
+        "const improves code safety.",
+        "Object and array contents can still be modified with const.",
+        "Prefer const unless reassignment is required."
+      ],
+      "comparisonTitle1": "let",
+      "comparisonTitle2": "const",
+      "comparison": [
+        {
+          "feature": "Reassignment",
+          "first": "Allowed",
+          "second": "Not allowed"
+        },
+        {
+          "feature": "Scope",
+          "first": "Block",
+          "second": "Block"
+        },
+        {
+          "feature": "Recommended For",
+          "first": "Changing values",
+          "second": "Fixed references"
+        }
+      ],
+      "example": "let count = 1;\ncount = 2;\n\nconst apiUrl = \"https://api.com\";",
+      "syntax": "let variable = value;\nconst variable = value;"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "How do you compile TypeScript files into JavaScript?",
+    "answer": {
+      "definition": "TypeScript files are compiled into JavaScript using the TypeScript compiler (tsc). Compiler behavior is configured through the tsconfig.json file.",
+      "points": [
+        "Write .ts files.",
+        "Install the TypeScript compiler.",
+        "Configure tsconfig.json.",
+        "Run the tsc command.",
+        "JavaScript files are generated.",
+        "Supports watch mode and incremental builds.",
+        "Can target different ECMAScript versions.",
+        "Supports module configuration and output directories."
+      ],
+      "comparisonTitle1": "TypeScript Source",
+      "comparisonTitle2": "Compiled JavaScript",
+      "comparison": [
+        {
+          "feature": "File Extension",
+          "first": ".ts",
+          "second": ".js"
+        },
+        {
+          "feature": "Contains Types",
+          "first": "Yes",
+          "second": "No"
+        },
+        {
+          "feature": "Browser Executable",
+          "first": "No",
+          "second": "Yes"
+        }
+      ],
+      "example": "tsc\n\n// Generates JavaScript files based on tsconfig.json",
+      "syntax": "tsc\n\ntsc --watch"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "Explain classes in TypeScript. How are they different from ES6 classes?",
+    "answer": {
+      "definition": "TypeScript classes extend ES6 classes by adding strong typing and additional object-oriented features such as access modifiers, abstract classes, readonly properties, parameter properties, and static members.",
+      "points": [
+        "Supports inheritance.",
+        "Supports polymorphism.",
+        "Supports encapsulation.",
+        "Allows field declarations without initialization.",
+        "Supports abstract classes.",
+        "Supports readonly properties.",
+        "Supports static members.",
+        "Supports getter and setter accessors.",
+        "Supports parameter properties.",
+        "Provides compile-time type checking."
+      ],
+      "comparisonTitle1": "TypeScript Classes",
+      "comparisonTitle2": "ES6 Classes",
+      "comparison": [
+        {
+          "feature": "Typing",
+          "first": "Strongly typed",
+          "second": "No static typing"
+        },
+        {
+          "feature": "Access Modifiers",
+          "first": "Supported",
+          "second": "Not supported"
+        },
+        {
+          "feature": "Abstract Classes",
+          "first": "Supported",
+          "second": "Not supported"
+        },
+        {
+          "feature": "Readonly Properties",
+          "first": "Supported",
+          "second": "Not supported"
+        }
+      ],
+      "example": "class Person {\n  constructor(public name: string) {}\n}",
+      "syntax": "class ClassName {\n  constructor() {}\n}"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "How do you implement inheritance in TypeScript?",
+    "answer": {
+      "definition": "Inheritance allows a child class to extend a parent class and inherit its properties and methods using the extends keyword.",
+      "points": [
+        "Uses the extends keyword.",
+        "Child classes inherit parent members.",
+        "super() calls the parent constructor.",
+        "Methods can be overridden.",
+        "Supports class-based inheritance."
+      ],
+      "comparisonTitle1": "Parent Class",
+      "comparisonTitle2": "Child Class",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Provides common functionality",
+          "second": "Extends and customizes behavior"
+        },
+        {
+          "feature": "Constructor",
+          "first": "Initialized first",
+          "second": "Calls super()"
+        }
+      ],
+      "example": "class Animal {}\n\nclass Dog extends Animal {}",
+      "syntax": "class Child extends Parent {\n  constructor() {\n    super();\n  }\n}"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "What are access modifiers and how do they work in TypeScript?",
+    "answer": {
+      "definition": "Access modifiers control the visibility of class members and help implement encapsulation.",
+      "points": [
+        "public is accessible everywhere.",
+        "private is accessible only inside the class.",
+        "protected is accessible inside the class and its subclasses.",
+        "Improves encapsulation.",
+        "Helps protect sensitive data."
+      ],
+      "comparisonTitle1": "Access Modifier",
+      "comparisonTitle2": "Visibility",
+      "comparison": [
+        {
+          "feature": "public",
+          "first": "Inside class",
+          "second": "Outside class and subclasses"
+        },
+        {
+          "feature": "private",
+          "first": "Inside class only",
+          "second": "Not accessible elsewhere"
+        },
+        {
+          "feature": "protected",
+          "first": "Inside class and subclasses",
+          "second": "Not accessible outside"
+        }
+      ],
+      "example": "class Person {\n  public name: string;\n  private age: number;\n  protected contact: string;\n}",
+      "syntax": "public property: type;\nprivate property: type;\nprotected property: type;"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "Discuss abstract classes and their purposes in TypeScript.",
+    "answer": {
+      "definition": "An abstract class is a blueprint for other classes. It cannot be instantiated directly and can contain both abstract methods and implemented methods.",
+      "points": [
+        "Cannot create objects directly.",
+        "Can contain abstract methods.",
+        "Can contain implemented methods.",
+        "Provides common functionality.",
+        "Enforces implementation in derived classes.",
+        "Supports constructors.",
+        "Supports static members."
+      ],
+      "comparisonTitle1": "Abstract Class",
+      "comparisonTitle2": "Regular Class",
+      "comparison": [
+        {
+          "feature": "Instantiation",
+          "first": "Not allowed",
+          "second": "Allowed"
+        },
+        {
+          "feature": "Abstract Methods",
+          "first": "Supported",
+          "second": "Not required"
+        },
+        {
+          "feature": "Purpose",
+          "first": "Blueprint",
+          "second": "Concrete implementation"
+        }
+      ],
+      "example": "abstract class Shape {\n  abstract getArea(): number;\n}",
+      "syntax": "abstract class ClassName {\n  abstract method(): returnType;\n}"
+    }
+  },
+  {
+    "category": "TypeScript",
+    "question": "Can you describe the use of constructors within TypeScript classes?",
+    "answer": {
+      "definition": "A constructor is a special method that is automatically called when a class object is created. It initializes the object's properties.",
+      "points": [
+        "Called automatically during object creation.",
+        "Used to initialize class properties.",
+        "A class can have only one constructor.",
+        "Supports constructor overloads.",
+        "Supports parameter properties with access modifiers.",
+        "Works with readonly properties."
+      ],
+      "comparisonTitle1": "Constructor",
+      "comparisonTitle2": "Regular Method",
+      "comparison": [
+        {
+          "feature": "Invocation",
+          "first": "Automatic",
+          "second": "Manual"
+        },
+        {
+          "feature": "Purpose",
+          "first": "Initialize object",
+          "second": "Perform operations"
+        }
+      ],
+      "example": "class Person {\n  constructor(public name: string, public age: number) {}\n}",
+      "syntax": "constructor(parameter: type) {\n  this.property = parameter;\n}"
+    }
+  }
+
+]

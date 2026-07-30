@@ -1,1 +1,2416 @@
-[]
+[
+    {
+    "category": "Node.js",
+    "question": "What is Node.js?",
+    "answer": {
+      "definition": "Node.js is an open-source, cross-platform JavaScript runtime environment built on Chrome's V8 engine. It is used to build fast and scalable server-side applications.",
+      "points": [
+        "Built on Chrome's V8 JavaScript engine.",
+        "Runs JavaScript outside the browser.",
+        "Open-source and cross-platform.",
+        "Uses an event-driven, non-blocking I/O model.",
+        "Suitable for scalable server-side applications."
+      ],
+      "comparisonTitle1": "Node.js",
+      "comparisonTitle2": "Browser JavaScript",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Runs on the server",
+          "second": "Runs in the browser"
+        },
+        {
+          "feature": "File System Access",
+          "first": "Yes",
+          "second": "No"
+        },
+        {
+          "feature": "Purpose",
+          "first": "Backend development",
+          "second": "Frontend development"
+        }
+      ],
+      "example": "console.log('Hello Node.js');",
+      "syntax": "node app.js"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the Node.js Process Model?",
+    "answer": {
+      "definition": "Node.js uses a single-threaded process model with an event loop to handle multiple client requests asynchronously.",
+      "points": [
+        "Runs on a single thread.",
+        "Uses an event loop.",
+        "Handles I/O operations asynchronously.",
+        "Does not block while waiting for responses.",
+        "Efficiently manages multiple requests."
+      ],
+      "comparisonTitle1": "Node.js",
+      "comparisonTitle2": "Traditional Server",
+      "comparison": [
+        {
+          "feature": "Thread Model",
+          "first": "Single thread",
+          "second": "Multiple threads"
+        },
+        {
+          "feature": "Request Handling",
+          "first": "Asynchronous",
+          "second": "Often synchronous"
+        },
+        {
+          "feature": "Scalability",
+          "first": "High",
+          "second": "Lower"
+        }
+      ],
+      "example": "Node.js processes I/O operations asynchronously while continuing to serve other requests.",
+      "syntax": "Event Loop → Callback → Response"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are the key features of Node.js?",
+    "answer": {
+      "definition": "Node.js provides features that make it fast, scalable, and efficient for backend development.",
+      "points": [
+        "Asynchronous and event-driven architecture.",
+        "Built on the fast V8 JavaScript engine.",
+        "Single-threaded with an event loop.",
+        "Highly scalable.",
+        "Uses JavaScript for backend development.",
+        "Large and active community.",
+        "Streams data without buffering."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const fs = require('fs');\n\nfs.readFile('data.txt', (err, data) => {\n  console.log(data.toString());\n});",
+      "syntax": "callback => {}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain how Node.js works.",
+    "answer": {
+      "definition": "Node.js works using a single thread, an event loop, and asynchronous callbacks to process multiple requests efficiently.",
+      "points": [
+        "Creates a single thread.",
+        "Uses an event loop to manage requests.",
+        "Performs I/O operations asynchronously.",
+        "Registers callback functions.",
+        "Executes callbacks when operations complete."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "fs.readFile('file.txt', (err, data) => {\n  console.log(data);\n});",
+      "syntax": "Request → Event Loop → Async Operation → Callback → Response"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you create a simple server in Node.js that returns Hello World?",
+    "answer": {
+      "definition": "A simple Node.js server can be created using the Express framework by defining a route and starting the server.",
+      "points": [
+        "Create a project folder.",
+        "Initialize the project using npm.",
+        "Install Express.",
+        "Create the server file.",
+        "Run the application using Node.js."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello World!');\n});\n\napp.listen(3000);",
+      "syntax": "npm init\nnpm install express\nnode app.js"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain the URL module in Node.js.",
+    "answer": {
+      "definition": "The URL module is used to parse and work with URLs by splitting them into readable parts such as host, pathname, and query parameters.",
+      "points": [
+        "Built-in Node.js module.",
+        "Parses URLs into individual parts.",
+        "Extracts host, pathname, search, and query.",
+        "Useful for processing request URLs.",
+        "No external package required."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const url = require('url');\n\nconst adr = 'http://localhost:8080/default.htm?year=2022&month=september';\nconst q = url.parse(adr, true);\n\nconsole.log(q.host);\nconsole.log(q.pathname);\nconsole.log(q.query.month);",
+      "syntax": "const url = require('url');\nurl.parse(urlString, true);"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are the data types in Node.js?",
+    "answer": {
+      "definition": "Node.js uses JavaScript data types, which are divided into two categories: Primitive and Object data types.",
+      "points": [
+        "Primitive data types are immutable values.",
+        "Object data types store collections of values.",
+        "Primitive types include String, Number, BigInt, Boolean, Undefined, Null, and Symbol.",
+        "Object types include Function, Array, Buffer, and Object."
+      ],
+      "comparisonTitle1": "Primitive",
+      "comparisonTitle2": "Object",
+      "comparison": [
+        {
+          "feature": "Stores",
+          "first": "Single value",
+          "second": "Collection of values"
+        },
+        {
+          "feature": "Mutable",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Examples",
+          "first": "String, Number, Boolean",
+          "second": "Array, Function, Buffer"
+        }
+      ],
+      "example": "const name = 'John';\nconst age = 25;\nconst arr = [1, 2, 3];",
+      "syntax": "String | Number | BigInt | Boolean | Undefined | Null | Symbol | Object"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain String data type in Node.js.",
+    "answer": {
+      "definition": "A String is a sequence of Unicode characters used to store text.",
+      "points": [
+        "Can use single or double quotes.",
+        "Immutable data type.",
+        "Supports many built-in methods.",
+        "Common methods include charAt(), concat(), indexOf(), split(), and match().",
+        "Used to store textual data."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const str1 = 'Hello';\nconst str2 = 'World';\n\nconsole.log(str1 + ' ' + str2);\nconsole.log(str1.concat(' ', str2));",
+      "syntax": "const str = 'Hello';"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain Number data type in Node.js.",
+    "answer": {
+      "definition": "The Number data type stores both integer and floating-point numbers using 64-bit floating-point representation.",
+      "points": [
+        "Stores integers and decimal numbers.",
+        "Supports positive and negative values.",
+        "Uses parseInt() and parseFloat() for conversion.",
+        "Returns NaN if conversion fails.",
+        "Supports Infinity and -Infinity."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const num1 = 10;\nconst num2 = 20;\n\nconsole.log(num1 + num2);\nconsole.log(parseInt('32'));\nconsole.log(parseFloat('8.24'));",
+      "syntax": "parseInt(value)\nparseFloat(value)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain BigInt data type in Node.js.",
+    "answer": {
+      "definition": "BigInt is a primitive data type used to store integers larger than Number.MAX_SAFE_INTEGER.",
+      "points": [
+        "Stores very large integers.",
+        "Created by adding 'n' to an integer.",
+        "Can also use the BigInt() function.",
+        "Type is bigint.",
+        "Used for high-precision integer calculations."
+      ],
+      "comparisonTitle1": "Number",
+      "comparisonTitle2": "BigInt",
+      "comparison": [
+        {
+          "feature": "Large Integers",
+          "first": "Limited",
+          "second": "Supported"
+        },
+        {
+          "feature": "Decimal Values",
+          "first": "Supported",
+          "second": "Not Supported"
+        }
+      ],
+      "example": "const num1 = 99n;\nconst num2 = BigInt('99');\n\nconsole.log(typeof num1);",
+      "syntax": "123n\nBigInt('123')"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain Boolean data type in Node.js.",
+    "answer": {
+      "definition": "Boolean represents a logical value with only two possible values: true or false.",
+      "points": [
+        "Has only true or false values.",
+        "Used in conditions and decision making.",
+        "Supports logical operators.",
+        "Boolean() converts values to true or false.",
+        "Falsy values include false, 0, '', null, undefined, and NaN."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const isValid = true;\n\nconsole.log(isValid);\nconsole.log(true && false);\nconsole.log(!true);",
+      "syntax": "Boolean(value)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain Undefined and Null data types in Node.js.",
+    "answer": {
+      "definition": "Undefined means a variable has been declared but not assigned a value, while Null represents an intentional empty value.",
+      "points": [
+        "Undefined is the default value of uninitialized variables.",
+        "Null is assigned manually.",
+        "Both represent absence of value.",
+        "Undefined is a primitive value.",
+        "Null is commonly used to reset object references."
+      ],
+      "comparisonTitle1": "Undefined",
+      "comparisonTitle2": "Null",
+      "comparison": [
+        {
+          "feature": "Assigned Automatically",
+          "first": "Yes",
+          "second": "No"
+        },
+        {
+          "feature": "Assigned by Developer",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Meaning",
+          "first": "Value not assigned",
+          "second": "Empty value"
+        }
+      ],
+      "example": "let x;\nconsole.log(x); // undefined\n\nlet y = null;\nconsole.log(y);",
+      "syntax": "let x;\nlet y = null;"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain Symbol data type in Node.js.",
+    "answer": {
+      "definition": "Symbol is a unique and immutable primitive data type used to create unique object property keys.",
+      "points": [
+        "Every Symbol is unique.",
+        "Immutable value.",
+        "Used as object property keys.",
+        "Prevents property name conflicts.",
+        "Created using Symbol()."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "const ID = Symbol();\n\nconst user = {\n  [ID]: 'John'\n};\n\nconsole.log(user[ID]);",
+      "syntax": "const sym = Symbol();"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain Function in Node.js.",
+    "answer": {
+      "definition": "A Function is a reusable block of code that performs a specific task. Functions are first-class objects in Node.js.",
+      "points": [
+        "Can be assigned to variables.",
+        "Can be passed as arguments.",
+        "Can return values.",
+        "Can be used as callbacks.",
+        "Support synchronous and asynchronous programming."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "function message(name) {\n  console.log('Hello ' + name);\n}\n\nmessage('World');",
+      "syntax": "function functionName() {\n  // code\n}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain Buffer data type in Node.js.",
+    "answer": {
+      "definition": "Buffer is a built-in Node.js object used to store and manipulate binary data such as files, images, and network packets.",
+      "points": [
+        "Available only in Node.js, not in browsers.",
+        "Used to store binary data.",
+        "Commonly used with file system and network operations.",
+        "Modern code should use Buffer.alloc() or Buffer.from().",
+        "Buffer() constructor is deprecated."
+      ],
+      "comparisonTitle1": "Buffer",
+      "comparisonTitle2": "String",
+      "comparison": [
+        {
+          "feature": "Stores",
+          "first": "Binary data",
+          "second": "Text data"
+        },
+        {
+          "feature": "Use Case",
+          "first": "Files, images, streams",
+          "second": "Text content"
+        },
+        {
+          "feature": "Available In",
+          "first": "Node.js",
+          "second": "JavaScript"
+        }
+      ],
+      "example": "const buffer = Buffer.alloc(10);\n\nbuffer.write('Hello');\nconsole.log(buffer);",
+      "syntax": "Buffer.alloc(size)\nBuffer.from(data)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does Node.js work?",
+    "answer": {
+      "definition": "Node.js uses a single-threaded event loop with asynchronous I/O to efficiently process multiple client requests.",
+      "points": [
+        "Receives client requests.",
+        "Places requests into the event queue.",
+        "The Event Loop processes requests one by one.",
+        "Blocking I/O tasks are handled by the internal thread pool.",
+        "Callbacks execute when I/O operations finish.",
+        "Responses are sent back to clients without blocking other requests."
+      ],
+      "comparisonTitle1": "Node.js",
+      "comparisonTitle2": "Traditional Server",
+      "comparison": [
+        {
+          "feature": "Thread Model",
+          "first": "Single-threaded event loop",
+          "second": "Multi-threaded"
+        },
+        {
+          "feature": "I/O",
+          "first": "Asynchronous",
+          "second": "Often synchronous"
+        },
+        {
+          "feature": "Scalability",
+          "first": "High",
+          "second": "Moderate"
+        }
+      ],
+      "example": "Client Request → Event Queue → Event Loop → Thread Pool (if needed) → Callback → Response",
+      "syntax": "Request → Event Loop → Async I/O → Callback → Response"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are the core modules of Node.js?",
+    "answer": {
+      "definition": "Core modules are built-in Node.js modules that provide common functionality without installing external packages.",
+      "points": [
+        "Included with Node.js installation.",
+        "Loaded using require() or import.",
+        "No npm installation required.",
+        "Provide networking, file system, security, and utility features.",
+        "Improve application development."
+      ],
+      "comparisonTitle1": "Core Module",
+      "comparisonTitle2": "Third-Party Module",
+      "comparison": [
+        {
+          "feature": "Installation",
+          "first": "Built-in",
+          "second": "Install using npm"
+        },
+        {
+          "feature": "Availability",
+          "first": "Always available",
+          "second": "Must be downloaded"
+        },
+        {
+          "feature": "Example",
+          "first": "fs, http, path",
+          "second": "express, mongoose"
+        }
+      ],
+      "example": "const fs = require('fs');\nconst http = require('http');\nconst path = require('path');",
+      "syntax": "const module = require('module_name');"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the Reactor Pattern in Node.js?",
+    "answer": {
+      "definition": "The Reactor Pattern is an event-driven design pattern that allows Node.js to handle many I/O operations asynchronously without blocking the main thread.",
+      "points": [
+        "Avoids blocking I/O operations.",
+        "Uses the Event Loop to process events.",
+        "Supports asynchronous programming.",
+        "Handles multiple client requests efficiently.",
+        "Improves application scalability."
+      ],
+      "comparisonTitle1": "Blocking I/O",
+      "comparisonTitle2": "Non-Blocking I/O",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Waits for completion",
+          "second": "Continues immediately"
+        },
+        {
+          "feature": "Performance",
+          "first": "Lower",
+          "second": "Higher"
+        },
+        {
+          "feature": "Node.js",
+          "first": "Rarely used",
+          "second": "Default approach"
+        }
+      ],
+      "example": "Request → Event Loop → Async I/O → Event Queue → Callback → Response",
+      "syntax": "Event Loop + Event Queue + Callback"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are the global objects in Node.js?",
+    "answer": {
+      "definition": "Global objects are built-in objects that are available throughout a Node.js application without importing any module.",
+      "points": [
+        "global",
+        "process",
+        "console",
+        "setTimeout() and setInterval()",
+        "__dirname",
+        "__filename"
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "console.log(__dirname);\nconsole.log(__filename);\nconsole.log(process.version);\nconsole.log(global);",
+      "syntax": "__dirname\n__filename\nprocess\nconsole"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the Chrome V8 Engine?",
+    "answer": {
+      "definition": "V8 is Google's open-source JavaScript engine written in C++. It executes JavaScript code and powers both Google Chrome and Node.js.",
+      "points": [
+        "Developed by Google.",
+        "Written in C++.",
+        "Executes JavaScript code.",
+        "Used by Chrome and Node.js.",
+        "Provides high-performance JavaScript execution."
+      ],
+      "comparisonTitle1": "V8 Engine",
+      "comparisonTitle2": "Browser Runtime",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Executes JavaScript",
+          "second": "Provides DOM and Web APIs"
+        },
+        {
+          "feature": "Used By",
+          "first": "Chrome and Node.js",
+          "second": "Web Browsers"
+        },
+        {
+          "feature": "DOM Support",
+          "first": "No",
+          "second": "Yes"
+        }
+      ],
+      "example": "console.log('Running on V8 Engine');",
+      "syntax": "node app.js"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Why is libuv needed in Node.js?",
+    "answer": {
+      "definition": "libuv is a cross-platform C library used by Node.js to provide asynchronous, non-blocking I/O operations and manage the event loop.",
+      "points": [
+        "Provides non-blocking I/O operations.",
+        "Implements the Node.js event loop.",
+        "Manages file system, networking, DNS, and child processes.",
+        "Uses a thread pool for blocking operations.",
+        "Improves performance and resource utilization.",
+        "Works across multiple operating systems."
+      ],
+      "comparisonTitle1": "Without libuv",
+      "comparisonTitle2": "With libuv",
+      "comparison": [
+        {
+          "feature": "I/O Operations",
+          "first": "Blocking",
+          "second": "Non-blocking"
+        },
+        {
+          "feature": "Concurrency",
+          "first": "Limited",
+          "second": "High"
+        },
+        {
+          "feature": "Thread Pool",
+          "first": "Not available",
+          "second": "Available"
+        }
+      ],
+      "example": "fs.readFile('file.txt', (err, data) => {\n  console.log(data.toString());\n});",
+      "syntax": "libuv → Event Loop → Thread Pool → Callback"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does V8 compile JavaScript code?",
+    "answer": {
+      "definition": "The V8 engine uses Just-In-Time (JIT) compilation, combining an interpreter and a compiler to execute JavaScript efficiently.",
+      "points": [
+        "Parses JavaScript source code.",
+        "Uses an interpreter for quick execution.",
+        "Uses a compiler to optimize frequently executed code.",
+        "Applies Just-In-Time (JIT) compilation.",
+        "Improves execution speed."
+      ],
+      "comparisonTitle1": "Interpreter",
+      "comparisonTitle2": "Compiler",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Line by line",
+          "second": "Entire code"
+        },
+        {
+          "feature": "Speed",
+          "first": "Fast startup",
+          "second": "Optimized execution"
+        },
+        {
+          "feature": "Used in V8",
+          "first": "Yes",
+          "second": "Yes"
+        }
+      ],
+      "example": "JavaScript Code → Parser → Interpreter → JIT Compiler → Machine Code",
+      "syntax": "JavaScript → V8 → Machine Code"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is EventEmitter in Node.js?",
+    "answer": {
+      "definition": "EventEmitter is a built-in class that allows objects to create, emit, and listen for custom events.",
+      "points": [
+        "Part of the events module.",
+        "Supports event-driven programming.",
+        "Uses emit() to trigger events.",
+        "Uses on() to register listeners.",
+        "Uses once() to listen only once."
+      ],
+      "comparisonTitle1": "on()",
+      "comparisonTitle2": "once()",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Runs every time",
+          "second": "Runs only once"
+        },
+        {
+          "feature": "Listener Removal",
+          "first": "Manual",
+          "second": "Automatic"
+        }
+      ],
+      "example": "const EventEmitter = require('events');\nconst emitter = new EventEmitter();\n\nemitter.on('greet', () => {\n  console.log('Hello');\n});\n\nemitter.emit('greet');",
+      "syntax": "emitter.on(event, callback)\nemitter.emit(event)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does the Event Loop work in Node.js?",
+    "answer": {
+      "definition": "The Event Loop continuously checks the call stack and event queue to execute asynchronous callbacks without blocking the main thread.",
+      "points": [
+        "Runs continuously.",
+        "Processes tasks from the event queue.",
+        "Executes callbacks when the call stack is empty.",
+        "Handles asynchronous operations.",
+        "Enables non-blocking I/O."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Request → Call Stack → Async API → Event Queue → Event Loop → Callback",
+      "syntax": "Call Stack → Event Queue → Event Loop"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the difference between process.nextTick() and setImmediate()?",
+    "answer": {
+      "definition": "process.nextTick() executes its callback before the next event loop cycle, while setImmediate() executes after the current event loop iteration completes.",
+      "points": [
+        "process.nextTick() has higher priority.",
+        "setImmediate() executes during the check phase.",
+        "Both schedule asynchronous callbacks.",
+        "nextTick() runs before I/O events.",
+        "setImmediate() runs after I/O callbacks."
+      ],
+      "comparisonTitle1": "process.nextTick()",
+      "comparisonTitle2": "setImmediate()",
+      "comparison": [
+        {
+          "feature": "Execution Time",
+          "first": "Before next event loop",
+          "second": "After current event loop"
+        },
+        {
+          "feature": "Priority",
+          "first": "Higher",
+          "second": "Lower"
+        },
+        {
+          "feature": "Queue",
+          "first": "Next Tick Queue",
+          "second": "Check Phase Queue"
+        }
+      ],
+      "example": "process.nextTick(() => console.log('Next Tick'));\nsetImmediate(() => console.log('Immediate'));",
+      "syntax": "process.nextTick(callback)\nsetImmediate(callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is a callback function in Node.js?",
+    "answer": {
+      "definition": "A callback is a function passed as an argument to another function and is executed after an asynchronous task completes.",
+      "points": [
+        "Executed after a task finishes.",
+        "Supports asynchronous programming.",
+        "Prevents blocking operations.",
+        "Commonly used with file system and network APIs.",
+        "Improves application scalability."
+      ],
+      "comparisonTitle1": "Synchronous",
+      "comparisonTitle2": "Callback (Asynchronous)",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Waits for completion",
+          "second": "Continues immediately"
+        },
+        {
+          "feature": "Performance",
+          "first": "Lower",
+          "second": "Higher"
+        },
+        {
+          "feature": "Blocking",
+          "first": "Yes",
+          "second": "No"
+        }
+      ],
+      "example": "function add(a, b, callback) {\n  setTimeout(() => {\n    callback(a + b);\n  }, 1000);\n}\n\nadd(10, 20, (result) => {\n  console.log(result);\n});",
+      "syntax": "function task(callback) {\n  callback();\n}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the difference between Events and Callbacks?",
+    "answer": {
+      "definition": "Callbacks are functions passed to another function and executed after a task completes, whereas Events use the EventEmitter pattern to notify one or more listeners when an event occurs.",
+      "points": [
+        "Callbacks are passed as function arguments.",
+        "Events use the EventEmitter class.",
+        "One callback is typically executed for one operation.",
+        "An event can trigger multiple listeners.",
+        "Events follow the Observer pattern."
+      ],
+      "comparisonTitle1": "Events",
+      "comparisonTitle2": "Callbacks",
+      "comparison": [
+        {
+          "feature": "Pattern",
+          "first": "Observer Pattern",
+          "second": "Function Callback"
+        },
+        {
+          "feature": "Listeners",
+          "first": "Multiple",
+          "second": "Usually One"
+        },
+        {
+          "feature": "Trigger",
+          "first": "emit()",
+          "second": "Function Call"
+        },
+        {
+          "feature": "Best For",
+          "first": "Event-driven applications",
+          "second": "Async operations"
+        }
+      ],
+      "example": "// Event\nconst EventEmitter = require('events');\nconst emitter = new EventEmitter();\n\nemitter.on('sum', (a, b) => {\n  console.log(a + b);\n});\n\nemitter.emit('sum', 10, 20);\n\n// Callback\nfunction add(a, b, callback) {\n  callback(a + b);\n}\n\nadd(10, 20, console.log);",
+      "syntax": "emitter.on(event, callback)\ncallback(result)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is an error-first callback in Node.js?",
+    "answer": {
+      "definition": "An error-first callback is a Node.js convention where the first callback parameter is an error object. If no error occurs, the first parameter is null.",
+      "points": [
+        "First parameter is always an error.",
+        "Error is null when the operation succeeds.",
+        "Second parameter contains the result.",
+        "Commonly used in asynchronous APIs.",
+        "Makes error handling consistent."
+      ],
+      "comparisonTitle1": "Success",
+      "comparisonTitle2": "Failure",
+      "comparison": [
+        {
+          "feature": "Error Parameter",
+          "first": "null",
+          "second": "Error Object"
+        },
+        {
+          "feature": "Data Parameter",
+          "first": "Contains result",
+          "second": "Usually undefined"
+        }
+      ],
+      "example": "const fs = require('fs');\n\nfs.readFile('data.txt', (err, data) => {\n  if (err) {\n    console.error(err);\n    return;\n  }\n\n  console.log(data.toString());\n});",
+      "syntax": "function(err, data) { }"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is callback hell in Node.js?",
+    "answer": {
+      "definition": "Callback hell is a situation where multiple nested callbacks make the code difficult to read, maintain, and debug.",
+      "points": [
+        "Contains deeply nested callbacks.",
+        "Reduces code readability.",
+        "Makes debugging difficult.",
+        "Error handling becomes complicated.",
+        "Can be avoided using Promises or Async/Await."
+      ],
+      "comparisonTitle1": "Callback Hell",
+      "comparisonTitle2": "Async/Await",
+      "comparison": [
+        {
+          "feature": "Readability",
+          "first": "Poor",
+          "second": "High"
+        },
+        {
+          "feature": "Error Handling",
+          "first": "Complex",
+          "second": "Simple"
+        },
+        {
+          "feature": "Maintainability",
+          "first": "Difficult",
+          "second": "Easy"
+        }
+      ],
+      "example": "getData((a) => {\n  getMoreData(a, (b) => {\n    getMoreData(b, (c) => {\n      console.log(c);\n    });\n  });\n});",
+      "syntax": "callback(callback(callback()))"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you avoid callback hell in Node.js?",
+    "answer": {
+      "definition": "Callback hell can be avoided by using Promises, Async/Await, or libraries such as Async.js to write cleaner asynchronous code.",
+      "points": [
+        "Use Promises.",
+        "Use Async/Await.",
+        "Use Async.js for complex async workflows.",
+        "Write modular functions.",
+        "Handle errors using try/catch with Async/Await."
+      ],
+      "comparisonTitle1": "Promises",
+      "comparisonTitle2": "Async/Await",
+      "comparison": [
+        {
+          "feature": "Readability",
+          "first": "Good",
+          "second": "Excellent"
+        },
+        {
+          "feature": "Syntax",
+          "first": ".then() and .catch()",
+          "second": "async/await"
+        },
+        {
+          "feature": "Error Handling",
+          "first": ".catch()",
+          "second": "try/catch"
+        }
+      ],
+      "example": "async function getData() {\n  try {\n    const result = await fetchData();\n    console.log(result);\n  } catch (err) {\n    console.error(err);\n  }\n}",
+      "syntax": "async function() {\n  const result = await promise;\n}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is typically the first argument passed to a callback handler?",
+    "answer": {
+      "definition": "In Node.js, the first argument passed to a callback is usually an Error object. If no error occurs, the value is null.",
+      "points": [
+        "Follows the error-first callback pattern.",
+        "The first parameter contains an Error object or null.",
+        "The second parameter usually contains the result.",
+        "Used by most asynchronous Node.js APIs.",
+        "Provides consistent error handling."
+      ],
+      "comparisonTitle1": "Success",
+      "comparisonTitle2": "Failure",
+      "comparison": [
+        {
+          "feature": "First Argument",
+          "first": "null",
+          "second": "Error object"
+        },
+        {
+          "feature": "Second Argument",
+          "first": "Contains result",
+          "second": "Usually undefined"
+        },
+        {
+          "feature": "Execution",
+          "first": "Continue processing",
+          "second": "Handle the error"
+        }
+      ],
+      "example": "function divide(a, b, callback) {\n  if (b === 0) {\n    callback(new Error('Divide by zero'));\n  } else {\n    callback(null, a / b);\n  }\n}",
+      "syntax": "callback(error, result)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are the timing features of Node.js?",
+    "answer": {
+      "definition": "Node.js provides built-in timer functions to execute code after a delay, immediately after the current event loop, or repeatedly at fixed intervals.",
+      "points": [
+        "setTimeout() executes code after a specified delay.",
+        "setImmediate() executes after the current event loop iteration.",
+        "setInterval() executes code repeatedly after a fixed interval.",
+        "clearTimeout() stops a timeout.",
+        "clearInterval() stops an interval."
+      ],
+      "comparisonTitle1": "setTimeout()",
+      "comparisonTitle2": "setImmediate() / setInterval()",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Runs once after delay",
+          "second": "Runs immediately after current loop / Repeats at intervals"
+        },
+        {
+          "feature": "Repeat",
+          "first": "No",
+          "second": "Only setInterval repeats"
+        },
+        {
+          "feature": "Use Case",
+          "first": "Delayed execution",
+          "second": "Immediate execution or repeated tasks"
+        }
+      ],
+      "example": "setTimeout(() => {\n  console.log('Runs after 1 second');\n}, 1000);\n\nsetImmediate(() => {\n  console.log('Runs after current event loop');\n});\n\nsetInterval(() => {\n  console.log('Runs every second');\n}, 1000);",
+      "syntax": "setTimeout(callback, delay)\nsetImmediate(callback)\nsetInterval(callback, delay)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does Node.js read the content of a file?",
+    "answer": {
+      "definition": "Node.js reads files using the built-in fs (File System) module. The most common approach is the asynchronous fs.readFile() method.",
+      "points": [
+        "Uses the built-in fs module.",
+        "Reads files asynchronously by default.",
+        "Does not block the event loop.",
+        "Returns data through a callback.",
+        "Common file operations include read, write, update, delete, and rename."
+      ],
+      "comparisonTitle1": "readFile()",
+      "comparisonTitle2": "readFileSync()",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Asynchronous",
+          "second": "Synchronous"
+        },
+        {
+          "feature": "Blocks Event Loop",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Recommended",
+          "first": "Production applications",
+          "second": "Simple scripts"
+        }
+      ],
+      "example": "const fs = require('fs');\n\nfs.readFile('index.html', 'utf8', (err, data) => {\n  if (err) {\n    console.error(err);\n    return;\n  }\n\n  console.log(data);\n});",
+      "syntax": "fs.readFile(path, encoding, callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Is Node.js entirely based on a single thread?",
+    "answer": {
+      "definition": "Node.js executes JavaScript on a single main thread, but it uses the Event Loop, libuv, and a background thread pool to perform asynchronous operations efficiently.",
+      "points": [
+        "JavaScript runs on a single thread.",
+        "Uses the Event Loop for asynchronous execution.",
+        "libuv manages background I/O operations.",
+        "Background thread pool handles file system, DNS, and other blocking tasks.",
+        "Can process many requests concurrently."
+      ],
+      "comparisonTitle1": "Main Thread",
+      "comparisonTitle2": "Background Threads",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Execute JavaScript",
+          "second": "Handle asynchronous I/O"
+        },
+        {
+          "feature": "Managed By",
+          "first": "Event Loop",
+          "second": "libuv Thread Pool"
+        },
+        {
+          "feature": "Blocking",
+          "first": "Avoided",
+          "second": "Handles blocking operations"
+        }
+      ],
+      "example": "Request → Event Loop → libuv Thread Pool → Callback → Response",
+      "syntax": "Event Loop + libuv"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does Node.js handle child threads?",
+    "answer": {
+      "definition": "Node.js uses worker threads, the libuv thread pool, and child processes to perform CPU-intensive or asynchronous tasks without blocking the main thread.",
+      "points": [
+        "JavaScript runs on a single thread.",
+        "libuv uses a background thread pool.",
+        "Supports Worker Threads for CPU-intensive tasks.",
+        "Supports child_process for separate processes.",
+        "Processes communicate using IPC."
+      ],
+      "comparisonTitle1": "Worker Threads",
+      "comparisonTitle2": "Child Processes",
+      "comparison": [
+        {
+          "feature": "Memory",
+          "first": "Shared",
+          "second": "Separate"
+        },
+        {
+          "feature": "Best For",
+          "first": "CPU-intensive work",
+          "second": "Independent processes"
+        },
+        {
+          "feature": "Communication",
+          "first": "Shared memory & messaging",
+          "second": "IPC messages"
+        }
+      ],
+      "example": "const { Worker } = require('worker_threads');",
+      "syntax": "new Worker('./worker.js')"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does Node.js support multi-processor platforms?",
+    "answer": {
+      "definition": "Node.js supports multi-core processors through the Cluster module, which creates multiple worker processes that share the same server port.",
+      "points": [
+        "Uses the Cluster module.",
+        "Creates multiple worker processes.",
+        "Each worker runs on a separate CPU core.",
+        "Workers share the same port.",
+        "Improves scalability and throughput."
+      ],
+      "comparisonTitle1": "Single Process",
+      "comparisonTitle2": "Cluster",
+      "comparison": [
+        {
+          "feature": "CPU Usage",
+          "first": "One core",
+          "second": "Multiple cores"
+        },
+        {
+          "feature": "Performance",
+          "first": "Lower",
+          "second": "Higher"
+        },
+        {
+          "feature": "Scalability",
+          "first": "Limited",
+          "second": "High"
+        }
+      ],
+      "example": "const cluster = require('cluster');\nconst os = require('os');\n\nif (cluster.isPrimary) {\n  for (let i = 0; i < os.cpus().length; i++) {\n    cluster.fork();\n  }\n}",
+      "syntax": "cluster.fork()"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Since Node.js is single-threaded, how can it use all CPU cores?",
+    "answer": {
+      "definition": "Node.js uses the Cluster module or Worker Threads to utilize all CPU cores while keeping each JavaScript process single-threaded.",
+      "points": [
+        "Uses the Cluster module.",
+        "Creates one worker per CPU core.",
+        "Workers share incoming requests.",
+        "Worker Threads handle CPU-intensive tasks.",
+        "Improves overall application performance."
+      ],
+      "comparisonTitle1": "Cluster",
+      "comparisonTitle2": "Worker Threads",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Multiple processes",
+          "second": "Multiple threads"
+        },
+        {
+          "feature": "Memory",
+          "first": "Separate",
+          "second": "Shared"
+        },
+        {
+          "feature": "Use Case",
+          "first": "Web servers",
+          "second": "CPU-intensive tasks"
+        }
+      ],
+      "example": "const cluster = require('cluster');\ncluster.fork();",
+      "syntax": "cluster.fork()"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "If Node.js is single-threaded, how does it handle concurrency?",
+    "answer": {
+      "definition": "Node.js handles concurrency using the Event Loop, asynchronous APIs, and non-blocking I/O instead of creating multiple JavaScript threads.",
+      "points": [
+        "Uses an Event Loop.",
+        "Processes asynchronous operations without blocking.",
+        "Maintains an Event Queue.",
+        "Executes callbacks when tasks complete.",
+        "Supports thousands of concurrent connections."
+      ],
+      "comparisonTitle1": "Synchronous",
+      "comparisonTitle2": "Asynchronous",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Blocks execution",
+          "second": "Non-blocking"
+        },
+        {
+          "feature": "Performance",
+          "first": "Lower",
+          "second": "Higher"
+        },
+        {
+          "feature": "Concurrency",
+          "first": "Limited",
+          "second": "High"
+        }
+      ],
+      "example": "const fs = require('fs');\n\nfs.readFile('file.txt', () => {\n  console.log('File loaded');\n});\n\nconsole.log('Application continues...');",
+      "syntax": "Event Loop → Event Queue → Callback"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you kill child processes that spawn their own child processes in Node.js?",
+    "answer": {
+      "definition": "Start the child process in a detached process group and terminate the entire group using process.kill() with a negative process ID.",
+      "points": [
+        "Use child_process.spawn().",
+        "Set detached: true.",
+        "Kill the process group instead of a single process.",
+        "Use a negative PID with process.kill().",
+        "Useful when child processes create additional child processes."
+      ],
+      "comparisonTitle1": "child.kill()",
+      "comparisonTitle2": "process.kill(-pid)",
+      "comparison": [
+        {
+          "feature": "Kills Child",
+          "first": "Yes",
+          "second": "Yes"
+        },
+        {
+          "feature": "Kills Child's Children",
+          "first": "No",
+          "second": "Yes"
+        }
+      ],
+      "example": "const { spawn } = require('child_process');\n\nconst child = spawn('my-command', {\n  detached: true\n});\n\nprocess.kill(-child.pid);",
+      "syntax": "process.kill(-child.pid)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you synchronize data between multiple clients on a Node.js server?",
+    "answer": {
+      "definition": "The provided source marks this topic as 'ToDo' and does not include an explanation or implementation.",
+      "points": [
+        "The source does not provide an answer.",
+        "No implementation details are included.",
+        "No example is available.",
+        "No recommended approach is described."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Not provided in the source.",
+      "syntax": "Not provided."
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you use JSON Web Token (JWT) for authentication in Node.js?",
+    "answer": {
+      "definition": "JSON Web Token (JWT) is an open standard used to securely transmit user information between a client and server as a digitally signed JSON object for authentication and authorization.",
+      "points": [
+        "JWT is stateless and does not require server-side sessions.",
+        "Consists of Header, Payload, and Signature.",
+        "Tokens are created using jwt.sign().",
+        "Commonly used for authentication and authorization.",
+        "Can be shared across multiple services."
+      ],
+      "comparisonTitle1": "JWT Authentication",
+      "comparisonTitle2": "Session Authentication",
+      "comparison": [
+        {
+          "feature": "State",
+          "first": "Stateless",
+          "second": "Stateful"
+        },
+        {
+          "feature": "Storage",
+          "first": "Client stores token",
+          "second": "Server stores session"
+        },
+        {
+          "feature": "Scalability",
+          "first": "High",
+          "second": "Moderate"
+        },
+        {
+          "feature": "Cross-Service Support",
+          "first": "Easy",
+          "second": "Limited"
+        }
+      ],
+      "example": "const jwt = require('jsonwebtoken');\n\nconst token = jwt.sign(\n  { id: user._id },\n  'supersecret',\n  { expiresIn: '24h' }\n);\n\nconsole.log(token);",
+      "syntax": "jwt.sign(payload, secret, options)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you build a microservices architecture with Node.js?",
+    "answer": {
+      "definition": "Microservices architecture divides an application into small, independent services that communicate using lightweight protocols such as HTTP APIs.",
+      "points": [
+        "Each service has a single responsibility.",
+        "Services can be developed and deployed independently.",
+        "Each service exposes REST APIs.",
+        "Improves scalability and maintainability.",
+        "Supports independent testing and deployment.",
+        "Service failures affect only a specific functionality."
+      ],
+      "comparisonTitle1": "Monolithic Architecture",
+      "comparisonTitle2": "Microservices Architecture",
+      "comparison": [
+        {
+          "feature": "Deployment",
+          "first": "Single application",
+          "second": "Independent services"
+        },
+        {
+          "feature": "Scalability",
+          "first": "Entire application",
+          "second": "Individual service"
+        },
+        {
+          "feature": "Maintainability",
+          "first": "Difficult",
+          "second": "Easy"
+        },
+        {
+          "feature": "Fault Isolation",
+          "first": "Low",
+          "second": "High"
+        }
+      ],
+      "example": "Client → API Gateway → User Service\n                    → Product Service\n                    → Order Service",
+      "syntax": "Express Server → Routes → Controller → Service"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do microservices communicate with each other in Node.js?",
+    "answer": {
+      "definition": "The provided source includes only the question and does not contain an explanation or implementation for how microservices communicate with each other.",
+      "points": [
+        "No explanation is provided in the source.",
+        "No communication mechanism is described.",
+        "No example is included.",
+        "No implementation details are available."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Not provided in the source.",
+      "syntax": "Not provided."
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are middleware functions in Node.js?",
+    "answer": {
+      "definition": "Middleware functions are functions that have access to the request (req), response (res), and next() function. They execute during the request-response cycle in an Express application.",
+      "points": [
+        "Can execute any code.",
+        "Can modify request and response objects.",
+        "Can end the request-response cycle.",
+        "Can pass control to the next middleware using next().",
+        "Promise-based middleware automatically forwards errors using next(error)."
+      ],
+      "comparisonTitle1": "Middleware",
+      "comparisonTitle2": "Route Handler",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Process request before response",
+          "second": "Send final response"
+        },
+        {
+          "feature": "Calls next()",
+          "first": "Yes",
+          "second": "Usually No"
+        },
+        {
+          "feature": "Execution",
+          "first": "Before route handler",
+          "second": "End of request"
+        }
+      ],
+      "example": "app.use((req, res, next) => {\n  console.log('Middleware');\n  next();\n});",
+      "syntax": "function(req, res, next) {\n  next();\n}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain the use of next() in Node.js.",
+    "answer": {
+      "definition": "next() is a function in Express middleware that passes control to the next middleware or route handler in the request-response cycle.",
+      "points": [
+        "Moves execution to the next middleware.",
+        "Prevents requests from hanging.",
+        "Can forward errors using next(error).",
+        "Used in Express middleware.",
+        "Usually called after completing middleware logic."
+      ],
+      "comparisonTitle1": "next() Called",
+      "comparisonTitle2": "next() Not Called",
+      "comparison": [
+        {
+          "feature": "Request Flow",
+          "first": "Continues",
+          "second": "Stops"
+        },
+        {
+          "feature": "Application",
+          "first": "Works correctly",
+          "second": "Request hangs"
+        }
+      ],
+      "example": "app.use((req, res, next) => {\n  console.log('Request received');\n  next();\n});",
+      "syntax": "next()\nnext(error)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Why use Express.js?",
+    "answer": {
+      "definition": "Express.js is a lightweight Node.js web framework used to build web applications and REST APIs quickly with routing and middleware support.",
+      "points": [
+        "Fast web application development.",
+        "Built-in routing support.",
+        "Supports middleware.",
+        "Easy API development.",
+        "Supports templating engines.",
+        "Simplifies debugging."
+      ],
+      "comparisonTitle1": "Node.js",
+      "comparisonTitle2": "Express.js",
+      "comparison": [
+        {
+          "feature": "Level",
+          "first": "Runtime Environment",
+          "second": "Web Framework"
+        },
+        {
+          "feature": "Routing",
+          "first": "Manual",
+          "second": "Built-in"
+        },
+        {
+          "feature": "Middleware",
+          "first": "Not available",
+          "second": "Built-in support"
+        }
+      ],
+      "example": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello World');\n});",
+      "syntax": "app.get(path, handler)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Why should you separate Express app and server?",
+    "answer": {
+      "definition": "Separating the Express app from the server configuration improves testing, deployment flexibility, and code maintainability.",
+      "points": [
+        "Makes API testing easier.",
+        "Separates application logic from network configuration.",
+        "Supports different deployment environments.",
+        "Improves code organization.",
+        "Simplifies maintenance."
+      ],
+      "comparisonTitle1": "app.js",
+      "comparisonTitle2": "server.js",
+      "comparison": [
+        {
+          "feature": "Responsibility",
+          "first": "Application routes and middleware",
+          "second": "HTTP server and port configuration"
+        },
+        {
+          "feature": "Testing",
+          "first": "Easy",
+          "second": "Not required"
+        }
+      ],
+      "example": "// app.js\nconst app = express();\n\n// server.js\nconst http = require('http');\nhttp.createServer(app);",
+      "syntax": "app.js → Express App\nserver.js → HTTP Server"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are some of the most popular Node.js packages?",
+    "answer": {
+      "definition": "Node.js has many popular npm packages that simplify web development, database access, authentication, logging, testing, and utility functions.",
+      "points": [
+        "Express - Web framework.",
+        "Mongoose - MongoDB ODM.",
+        "Socket.io - Real-time communication.",
+        "Passport - Authentication.",
+        "Nodemailer - Email sending.",
+        "Lodash - Utility library.",
+        "Async - Asynchronous utilities.",
+        "Winston - Logging library.",
+        "Nodemon - Development auto-restart.",
+        "Validator - Data validation."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "npm install express mongoose nodemailer",
+      "syntax": "npm install <package-name>"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How can you make sure your dependencies are safe?",
+    "answer": {
+      "definition": "Dependency safety can be improved by regularly checking for outdated packages, running security audits, and applying security fixes.",
+      "points": [
+        "Use npm audit.",
+        "Run npm audit fix.",
+        "Check outdated packages using npm outdated.",
+        "Use tools like Snyk.",
+        "Use Trace by RisingStack.",
+        "Use NSP or GreenKeeper."
+      ],
+      "comparisonTitle1": "npm audit",
+      "comparisonTitle2": "npm audit fix",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Detect vulnerabilities",
+          "second": "Automatically fix vulnerabilities"
+        },
+        {
+          "feature": "Changes Packages",
+          "first": "No",
+          "second": "Yes"
+        }
+      ],
+      "example": "npm audit\nnpm audit fix\nnpm outdated",
+      "syntax": "npm audit\nnpm audit fix\nnpm outdated"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are the security mechanisms available in Node.js?",
+    "answer": {
+      "definition": "Node.js applications can be secured using security middleware, input validation, safe regular expressions, and security disclosure standards to protect against common web attacks. :contentReference[oaicite:0]{index=0}",
+      "points": [
+        "Helmet secures HTTP headers.",
+        "Joi validates user input.",
+        "Avoid Evil Regular Expressions (ReDoS attacks).",
+        "Use security.txt for vulnerability reporting.",
+        "Protect against XSS, Clickjacking, and Injection attacks."
+      ],
+      "comparisonTitle1": "Helmet",
+      "comparisonTitle2": "Joi",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Secures HTTP headers",
+          "second": "Validates user input"
+        },
+        {
+          "feature": "Prevents",
+          "first": "XSS, Clickjacking",
+          "second": "Invalid or malicious input"
+        }
+      ],
+      "example": "const helmet = require('helmet');\napp.use(helmet());",
+      "syntax": "app.use(helmet())"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is npm in Node.js?",
+    "answer": {
+      "definition": "NPM (Node Package Manager) is the default package manager for Node.js. It is used to install, manage, and update packages and their dependencies. :contentReference[oaicite:1]{index=1}",
+      "points": [
+        "Online repository for Node.js packages.",
+        "Installs packages using npm install.",
+        "Manages package versions.",
+        "Handles project dependencies.",
+        "Comes bundled with Node.js."
+      ],
+      "comparisonTitle1": "NPM",
+      "comparisonTitle2": "Node.js",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Package Manager",
+          "second": "JavaScript Runtime"
+        },
+        {
+          "feature": "Usage",
+          "first": "Install dependencies",
+          "second": "Execute JavaScript"
+        }
+      ],
+      "example": "npm install express",
+      "syntax": "npm install <package-name>"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Why is npm shrinkwrap useful?",
+    "answer": {
+      "definition": "npm shrinkwrap locks dependency versions so that every environment installs the exact same package versions. :contentReference[oaicite:2]{index=2}",
+      "points": [
+        "Creates npm-shrinkwrap.json.",
+        "Locks dependency versions.",
+        "Ensures consistent environments.",
+        "Improves installation reliability.",
+        "Helps avoid version conflicts."
+      ],
+      "comparisonTitle1": "Without Shrinkwrap",
+      "comparisonTitle2": "With Shrinkwrap",
+      "comparison": [
+        {
+          "feature": "Package Versions",
+          "first": "May vary",
+          "second": "Fixed"
+        },
+        {
+          "feature": "Environment Consistency",
+          "first": "Low",
+          "second": "High"
+        }
+      ],
+      "example": "npm shrinkwrap",
+      "syntax": "npm shrinkwrap"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you handle file uploads in Node.js?",
+    "answer": {
+      "definition": "File uploads in Node.js are commonly handled using the Multer middleware, which processes multipart/form-data requests. :contentReference[oaicite:3]{index=3}",
+      "points": [
+        "Uses the Multer middleware.",
+        "Supports single and multiple file uploads.",
+        "Stores files on disk or memory.",
+        "Works with multipart/form-data.",
+        "Can customize file name and destination."
+      ],
+      "comparisonTitle1": "Single Upload",
+      "comparisonTitle2": "Multiple Upload",
+      "comparison": [
+        {
+          "feature": "Method",
+          "first": "upload.single()",
+          "second": "upload.array()"
+        },
+        {
+          "feature": "Files",
+          "first": "One",
+          "second": "Many"
+        }
+      ],
+      "example": "const multer = require('multer');\nconst upload = multer({ dest: 'uploads/' });\n\napp.post('/upload', upload.single('photo'), (req, res) => {\n  res.send('File Uploaded');\n});",
+      "syntax": "upload.single(fieldName)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain body-parser, cookie-parser, morgan, nodemon, pm2, serve-favicon, cors, dotenv, fs-extra, and moment in Express.js.",
+    "answer": {
+      "definition": "These are commonly used Express.js middleware and utility packages that simplify request handling, logging, configuration, deployment, file operations, and date manipulation. :contentReference[oaicite:4]{index=4}",
+      "points": [
+        "body-parser - Parses request body.",
+        "cookie-parser - Parses browser cookies.",
+        "morgan - HTTP request logger.",
+        "nodemon - Auto restarts server during development.",
+        "pm2 - Production process manager.",
+        "serve-favicon - Serves website favicon.",
+        "cors - Enables Cross-Origin Resource Sharing.",
+        "dotenv - Loads environment variables from .env.",
+        "fs-extra - Extended file system utilities.",
+        "moment - Date parsing and formatting library."
+      ],
+      "comparisonTitle1": "Development Tools",
+      "comparisonTitle2": "Runtime Middleware",
+      "comparison": [
+        {
+          "feature": "Examples",
+          "first": "nodemon, pm2",
+          "second": "body-parser, cors, cookie-parser, morgan"
+        },
+        {
+          "feature": "Purpose",
+          "first": "Development & deployment",
+          "second": "Handle HTTP requests"
+        }
+      ],
+      "example": "app.use(bodyParser.json());\napp.use(cookieParser());\napp.use(cors());\nrequire('dotenv').config();",
+      "syntax": "app.use(middleware)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain RESTful Web Services in Node.js.",
+    "answer": {
+      "definition": "RESTful Web Services follow the REST architectural style and use the HTTP protocol to create, read, update, and delete resources. In Node.js, REST APIs are commonly built using Express.js. :contentReference[oaicite:0]{index=0}",
+      "points": [
+        "REST stands for Representational State Transfer.",
+        "Uses standard HTTP methods.",
+        "Resources are identified using URLs.",
+        "Supports CRUD operations.",
+        "Commonly implemented using Express.js."
+      ],
+      "comparisonTitle1": "HTTP Method",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "GET",
+          "first": "Read resource",
+          "second": "Retrieve data"
+        },
+        {
+          "feature": "POST",
+          "first": "Create resource",
+          "second": "Add new data"
+        },
+        {
+          "feature": "PUT",
+          "first": "Update or replace",
+          "second": "Modify existing resource"
+        },
+        {
+          "feature": "PATCH",
+          "first": "Partial update",
+          "second": "Modify selected fields"
+        },
+        {
+          "feature": "DELETE",
+          "first": "Delete resource",
+          "second": "Remove data"
+        }
+      ],
+      "example": "app.get('/users', handler);\napp.post('/users', handler);\napp.put('/users/:id', handler);\napp.patch('/users/:id', handler);\napp.delete('/users/:id', handler);",
+      "syntax": "app.get(path, handler)\napp.post(path, handler)\napp.put(path, handler)\napp.patch(path, handler)\napp.delete(path, handler)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the difference between req.params and req.query?",
+    "answer": {
+      "definition": "req.params contains route parameters from the URL path, while req.query contains query string parameters from the URL after the '?'. :contentReference[oaicite:1]{index=1}",
+      "points": [
+        "req.params reads route parameters.",
+        "req.query reads query string values.",
+        "req.params is used for resource identifiers.",
+        "req.query is used for filtering, sorting, pagination, and searching."
+      ],
+      "comparisonTitle1": "req.params",
+      "comparisonTitle2": "req.query",
+      "comparison": [
+        {
+          "feature": "Location",
+          "first": "URL path",
+          "second": "Query string"
+        },
+        {
+          "feature": "Example URL",
+          "first": "/users/10",
+          "second": "/users?page=2"
+        },
+        {
+          "feature": "Access",
+          "first": "req.params.id",
+          "second": "req.query.page"
+        }
+      ],
+      "example": "app.get('/users/:id', (req, res) => {\n  console.log(req.params.id);\n});\n\napp.get('/users', (req, res) => {\n  console.log(req.query.page);\n});",
+      "syntax": "req.params.name\nreq.query.name"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you make a POST request in Node.js?",
+    "answer": {
+      "definition": "A POST request sends data to a server to create or submit a resource. The provided source demonstrates using the request package. :contentReference[oaicite:2]{index=2}",
+      "points": [
+        "Uses the request module in the source.",
+        "Sends data using the form property.",
+        "Receives response through a callback.",
+        "Checks response status before processing."
+      ],
+      "comparisonTitle1": "GET Request",
+      "comparisonTitle2": "POST Request",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Retrieve data",
+          "second": "Send/Create data"
+        },
+        {
+          "feature": "Request Body",
+          "first": "Usually no",
+          "second": "Yes"
+        }
+      ],
+      "example": "const request = require('request');\n\nrequest.post('http://localhost:3000/action', {\n  form: { key: 'value' }\n}, (err, response, body) => {\n  console.log(body);\n});",
+      "syntax": "request.post(url, options, callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are Promises in Node.js?",
+    "answer": {
+      "definition": "A Promise represents the eventual result of an asynchronous operation. It can be pending, fulfilled, or rejected. :contentReference[oaicite:3]{index=3}",
+      "points": [
+        "Represents an asynchronous operation.",
+        "Has three states: pending, fulfilled, rejected.",
+        "Supports success and failure handling.",
+        "Can be chained for dependent operations.",
+        "Becomes immutable after fulfillment or rejection."
+      ],
+      "comparisonTitle1": "Promise",
+      "comparisonTitle2": "Callback",
+      "comparison": [
+        {
+          "feature": "Readability",
+          "first": "Better",
+          "second": "Can become nested"
+        },
+        {
+          "feature": "Error Handling",
+          "first": ".catch()",
+          "second": "Error-first callback"
+        },
+        {
+          "feature": "Chaining",
+          "first": "Supported",
+          "second": "Difficult"
+        }
+      ],
+      "example": "const promise = new Promise((resolve, reject) => {\n  resolve('Success');\n});\n\npromise.then(result => console.log(result));",
+      "syntax": "new Promise((resolve, reject) => { })"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How can you secure your HTTP cookies against XSS attacks?",
+    "answer": {
+      "definition": "HTTP cookies can be protected against XSS attacks by using security-related cookie attributes and HTTP response headers. :contentReference[oaicite:4]{index=4}",
+      "points": [
+        "Use the HttpOnly cookie attribute.",
+        "Use the Secure cookie attribute.",
+        "Enable the X-XSS-Protection header.",
+        "Use the Content-Security-Policy (CSP) header.",
+        "Restrict cookie access to trusted contexts."
+      ],
+      "comparisonTitle1": "HttpOnly",
+      "comparisonTitle2": "Secure",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Blocks JavaScript access",
+          "second": "Allows HTTPS only"
+        },
+        {
+          "feature": "Protection",
+          "first": "XSS",
+          "second": "Network interception"
+        }
+      ],
+      "example": "Set-Cookie: sessionId=abc123; HttpOnly; Secure\n\nContent-Security-Policy: default-src 'self'",
+      "syntax": "Set-Cookie: name=value; HttpOnly; Secure"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you make an HTTP POST request using Node.js?",
+    "answer": {
+      "definition": "An HTTP POST request sends data to a server. The provided source demonstrates using Node.js's built-in https module to send JSON data in the request body. :contentReference[oaicite:0]{index=0}",
+      "points": [
+        "Uses the built-in https module.",
+        "Converts JavaScript object to JSON.",
+        "Sets HTTP headers like Content-Type and Content-Length.",
+        "Sends data using req.write().",
+        "Completes the request using req.end()."
+      ],
+      "comparisonTitle1": "GET Request",
+      "comparisonTitle2": "POST Request",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Retrieve data",
+          "second": "Send data"
+        },
+        {
+          "feature": "Request Body",
+          "first": "Usually absent",
+          "second": "Contains data"
+        }
+      ],
+      "example": "const https = require('https');\n\nconst data = JSON.stringify({\n  userId: 1,\n  title: 'Test'\n});\n\nconst req = https.request(options, res => {\n  console.log(res.statusCode);\n});\n\nreq.write(data);\nreq.end();",
+      "syntax": "https.request(options, callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is asynchronous programming in Node.js?",
+    "answer": {
+      "definition": "Asynchronous programming allows a task to execute separately from the main application thread. Once completed, it notifies the main thread with the result or an error. :contentReference[oaicite:1]{index=1}",
+      "points": [
+        "Does not block the main thread.",
+        "Improves responsiveness.",
+        "Supports parallel execution of tasks.",
+        "Notifies the application when work completes.",
+        "Improves overall performance."
+      ],
+      "comparisonTitle1": "Synchronous",
+      "comparisonTitle2": "Asynchronous",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "One task at a time",
+          "second": "Tasks execute independently"
+        },
+        {
+          "feature": "Blocking",
+          "first": "Yes",
+          "second": "No"
+        }
+      ],
+      "example": "fs.readFile('data.txt', (err, data) => {\n  console.log(data);\n});\n\nconsole.log('Application continues...');",
+      "syntax": "asyncOperation(callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the difference between Asynchronous and Non-blocking?",
+    "answer": {
+      "definition": "Asynchronous programming performs work separately and notifies when complete, whereas non-blocking operations immediately return control without waiting for the operation to finish. :contentReference[oaicite:2]{index=2}",
+      "points": [
+        "Asynchronous focuses on task completion later.",
+        "Non-blocking immediately returns execution.",
+        "Node.js uses non-blocking I/O.",
+        "Callbacks are commonly used with non-blocking operations."
+      ],
+      "comparisonTitle1": "Asynchronous",
+      "comparisonTitle2": "Non-blocking",
+      "comparison": [
+        {
+          "feature": "Response",
+          "first": "Returned later",
+          "second": "Returns immediately"
+        },
+        {
+          "feature": "Execution",
+          "first": "Independent task",
+          "second": "Does not block caller"
+        },
+        {
+          "feature": "Typical Usage",
+          "first": "Background operations",
+          "second": "I/O operations"
+        }
+      ],
+      "example": "fs.readFile('file.txt', callback);",
+      "syntax": "asyncFunction(callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does Node.js prevent blocking code?",
+    "answer": {
+      "definition": "Node.js prevents blocking by using asynchronous, non-blocking APIs so the event loop can continue executing other tasks while I/O operations complete. :contentReference[oaicite:3]{index=3}",
+      "points": [
+        "Uses asynchronous APIs.",
+        "Non-blocking I/O allows concurrent operations.",
+        "Blocking methods execute synchronously.",
+        "Event Loop continues processing other tasks.",
+        "Improves throughput and responsiveness."
+      ],
+      "comparisonTitle1": "Blocking",
+      "comparisonTitle2": "Non-blocking",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Waits for completion",
+          "second": "Continues immediately"
+        },
+        {
+          "feature": "Method Example",
+          "first": "readFileSync()",
+          "second": "readFile()"
+        },
+        {
+          "feature": "Performance",
+          "first": "Lower",
+          "second": "Higher"
+        }
+      ],
+      "example": "fs.readFile('file.txt', (err, data) => {\n  console.log(data);\n});",
+      "syntax": "fs.readFile(path, callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Name the types of API functions in Node.js.",
+    "answer": {
+      "definition": "Node.js provides two types of API functions: synchronous (blocking) and asynchronous (non-blocking). :contentReference[oaicite:4]{index=4}",
+      "points": [
+        "Synchronous functions are blocking.",
+        "Asynchronous functions are non-blocking.",
+        "Blocking functions wait until completion.",
+        "Non-blocking functions continue execution immediately.",
+        "Asynchronous APIs improve application throughput."
+      ],
+      "comparisonTitle1": "Blocking API",
+      "comparisonTitle2": "Non-blocking API",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Synchronous",
+          "second": "Asynchronous"
+        },
+        {
+          "feature": "Waits",
+          "first": "Yes",
+          "second": "No"
+        },
+        {
+          "feature": "Example",
+          "first": "fs.readFileSync()",
+          "second": "fs.readFile()"
+        }
+      ],
+      "example": "fs.readFileSync('file.txt');\nfs.readFile('file.txt', callback);",
+      "syntax": "Blocking: functionSync()\nNon-blocking: function(callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the difference between PUT and PATCH?",
+    "answer": {
+      "definition": "PUT replaces an entire resource, whereas PATCH updates only the specified fields of an existing resource. :contentReference[oaicite:5]{index=5}",
+      "points": [
+        "PUT replaces the complete resource.",
+        "PATCH updates only selected fields.",
+        "PUT requires the full request payload.",
+        "PATCH requires only changed fields.",
+        "Both are HTTP methods for updating resources."
+      ],
+      "comparisonTitle1": "PUT",
+      "comparisonTitle2": "PATCH",
+      "comparison": [
+        {
+          "feature": "Update Type",
+          "first": "Full update",
+          "second": "Partial update"
+        },
+        {
+          "feature": "Payload",
+          "first": "Entire resource",
+          "second": "Modified fields only"
+        },
+        {
+          "feature": "Use Case",
+          "first": "Replace resource",
+          "second": "Modify specific properties"
+        }
+      ],
+      "example": "PUT /users/1\n{\n  \"name\": \"John\",\n  \"age\": 30\n}\n\nPATCH /users/1\n{\n  \"age\": 31\n}",
+      "syntax": "PUT /resource/{id}\nPATCH /resource/{id}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "List the types of HTTP requests supported by Node.js.",
+    "answer": {
+      "definition": "The Node.js HTTP core module supports multiple HTTP request methods and provides constants for HTTP methods and status codes. :contentReference[oaicite:0]{index=0}",
+      "points": [
+        "HTTP methods are available through http.METHODS.",
+        "HTTP status codes are available through http.STATUS_CODES.",
+        "Common methods include GET, POST, PUT, PATCH, DELETE, OPTIONS, and HEAD.",
+        "The request module can be used to make HTTP requests.",
+        "Requests can include URL, method, headers, and form data."
+      ],
+      "comparisonTitle1": "HTTP Method",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "GET",
+          "first": "Retrieve resource",
+          "second": "Read data"
+        },
+        {
+          "feature": "POST",
+          "first": "Create resource",
+          "second": "Send data"
+        },
+        {
+          "feature": "PUT",
+          "first": "Replace resource",
+          "second": "Full update"
+        },
+        {
+          "feature": "PATCH",
+          "first": "Modify resource",
+          "second": "Partial update"
+        },
+        {
+          "feature": "DELETE",
+          "first": "Remove resource",
+          "second": "Delete data"
+        }
+      ],
+      "example": "const request = require('request');\n\nrequest({\n  url: 'https://example.com',\n  method: 'GET'\n}, (err, res, body) => {\n  console.log(body);\n});",
+      "syntax": "http.METHODS\nhttp.STATUS_CODES"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the difference between Promises and Async/Await in Node.js?",
+    "answer": {
+      "definition": "Promises represent the result of an asynchronous operation, while async/await provides a cleaner syntax for working with Promises. :contentReference[oaicite:1]{index=1}",
+      "points": [
+        "Promises use .then() and .catch().",
+        "Async/await is syntactic sugar over Promises.",
+        "Async functions always return a Promise.",
+        "Await pauses execution until the Promise settles.",
+        "Async/await makes asynchronous code easier to read."
+      ],
+      "comparisonTitle1": "Promises",
+      "comparisonTitle2": "Async/Await",
+      "comparison": [
+        {
+          "feature": "Syntax",
+          "first": ".then() and .catch()",
+          "second": "async and await"
+        },
+        {
+          "feature": "Readability",
+          "first": "Moderate",
+          "second": "High"
+        },
+        {
+          "feature": "Error Handling",
+          "first": ".catch()",
+          "second": "try...catch"
+        },
+        {
+          "feature": "Based On",
+          "first": "Promise object",
+          "second": "Promises"
+        }
+      ],
+      "example": "// Promise\nfetch(url)\n  .then(res => console.log(res))\n  .catch(err => console.error(err));\n\n// Async/Await\nasync function getData() {\n  try {\n    const res = await fetch(url);\n    console.log(res);\n  } catch (err) {\n    console.error(err);\n  }\n}",
+      "syntax": "async function name() {\n  const result = await promise;\n}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Mention the steps by which you can use async in Node.js.",
+    "answer": {
+      "definition": "Async functions, introduced in ES2017, provide a cleaner way to write asynchronous code using the async and await keywords. :contentReference[oaicite:2]{index=2}",
+      "points": [
+        "Declare a function using the async keyword.",
+        "Async functions always return a Promise.",
+        "Use await inside async functions.",
+        "Await pauses execution until the Promise resolves.",
+        "Use try...catch to handle errors."
+      ],
+      "comparisonTitle1": "async",
+      "comparisonTitle2": "await",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Declares asynchronous function",
+          "second": "Waits for Promise result"
+        },
+        {
+          "feature": "Usage",
+          "first": "Function declaration",
+          "second": "Inside async function only"
+        }
+      ],
+      "example": "async function addAsync(x) {\n  const a = await doubleAfter2Seconds(10);\n  const b = await doubleAfter2Seconds(20);\n  const c = await doubleAfter2Seconds(30);\n  return x + a + b + c;\n}",
+      "syntax": "async function name() {\n  const result = await promise;\n}"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you use Q Promise in Node.js?",
+    "answer": {
+      "definition": "Q is a Promise library for Node.js that simplifies asynchronous programming by replacing deeply nested callbacks with Promise chaining. A Promise represents the eventual result or failure of an asynchronous operation. :contentReference[oaicite:0]{index=0}",
+      "points": [
+        "Q provides Promise-based asynchronous programming.",
+        "Helps avoid Callback Hell (Pyramid of Doom).",
+        "Supports Promise chaining using .then().",
+        "Provides centralized error handling using .catch().",
+        "Promises can be Pending, Fulfilled, Rejected, or Settled."
+      ],
+      "comparisonTitle1": "Callbacks",
+      "comparisonTitle2": "Q Promises",
+      "comparison": [
+        {
+          "feature": "Code Structure",
+          "first": "Nested callbacks",
+          "second": "Promise chaining"
+        },
+        {
+          "feature": "Error Handling",
+          "first": "Multiple callbacks",
+          "second": "Single .catch()"
+        },
+        {
+          "feature": "Readability",
+          "first": "Lower",
+          "second": "Higher"
+        }
+      ],
+      "example": "Q.fcall(promisedStep1)\n  .then(promisedStep2)\n  .then(promisedStep3)\n  .then(promisedStep4)\n  .catch(error => {\n    console.error(error);\n  })\n  .done();",
+      "syntax": "Q.fcall(function)\n  .then(nextFunction)\n  .catch(errorHandler)\n  .done()"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What are async functions in Node.js?",
+    "answer": {
+      "definition": "The provided source contains only the question and marks this topic as 'ToDo'. No explanation is provided. :contentReference[oaicite:1]{index=1}",
+      "points": [
+        "The source does not provide an explanation.",
+        "No implementation details are included.",
+        "No example is available.",
+        "Topic is marked as 'ToDo'."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Not provided in the source.",
+      "syntax": "Not provided."
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How do you convert an existing callback API to promises?",
+    "answer": {
+      "definition": "The provided source contains only the question and marks this topic as 'ToDo'. No explanation is provided. :contentReference[oaicite:2]{index=2}",
+      "points": [
+        "The source does not provide an explanation.",
+        "No conversion steps are included.",
+        "No example is available.",
+        "Topic is marked as 'ToDo'."
+      ],
+      "comparisonTitle1": "",
+      "comparisonTitle2": "",
+      "comparison": [],
+      "example": "Not provided in the source.",
+      "syntax": "Not provided."
+    }
+  },
+  {
+    "category": "Node.js Routing",
+    "question": "How does routing work in Node.js?",
+    "answer": {
+      "definition": "Routing determines how client requests are handled by application endpoints. In Express.js, routes are defined using methods such as app.get(), app.post(), app.all(), and app.use(). :contentReference[oaicite:3]{index=3}",
+      "points": [
+        "Routes map URLs to handler functions.",
+        "Each HTTP method has a corresponding routing method.",
+        "Supports route methods, route paths, and route parameters.",
+        "Middleware can be attached using app.use().",
+        "Express Router allows modular routing."
+      ],
+      "comparisonTitle1": "Route Method",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "GET",
+          "first": "Read resource",
+          "second": "Retrieve data"
+        },
+        {
+          "feature": "POST",
+          "first": "Create resource",
+          "second": "Submit data"
+        },
+        {
+          "feature": "PUT",
+          "first": "Replace resource",
+          "second": "Update data"
+        },
+        {
+          "feature": "DELETE",
+          "first": "Delete resource",
+          "second": "Remove data"
+        },
+        {
+          "feature": "ALL",
+          "first": "All HTTP methods",
+          "second": "Common middleware"
+        }
+      ],
+      "example": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Home Page');\n});\n\napp.post('/login', (req, res) => {\n  res.send('Login');\n});",
+      "syntax": "app.METHOD(PATH, HANDLER)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is REPL?",
+    "answer": {
+      "definition": "REPL stands for Read, Eval, Print, Loop. It is an interactive Node.js environment that allows users to execute JavaScript code line by line for testing and debugging. :contentReference[oaicite:0]{index=0}",
+      "points": [
+        "Read: Reads user input.",
+        "Eval: Evaluates JavaScript code.",
+        "Print: Displays the result.",
+        "Loop: Waits for the next command.",
+        "Useful for learning, testing, and debugging."
+      ],
+      "comparisonTitle1": "REPL",
+      "comparisonTitle2": "JavaScript File",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Interactive",
+          "second": "Runs entire file"
+        },
+        {
+          "feature": "Best For",
+          "first": "Testing expressions",
+          "second": "Application development"
+        }
+      ],
+      "example": "$ node\n> 10 + 20\n30\n> 10 + (20 * 30) - 40\n570",
+      "syntax": "node"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What does the runtime environment mean in Node.js?",
+    "answer": {
+      "definition": "The Node.js runtime environment is the software and hardware environment responsible for installing dependencies and executing a Node.js application. :contentReference[oaicite:1]{index=1}",
+      "points": [
+        "Runs Node.js applications.",
+        "Includes Node.js version.",
+        "Includes operating system information.",
+        "Includes CPU and memory resources.",
+        "Loads application dependencies."
+      ],
+      "comparisonTitle1": "Development Environment",
+      "comparisonTitle2": "Runtime Environment",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Write code",
+          "second": "Execute application"
+        },
+        {
+          "feature": "Includes",
+          "first": "Editor and tools",
+          "second": "Node.js, OS, CPU, RAM"
+        }
+      ],
+      "example": "runtime: nodejs10",
+      "syntax": "runtime: nodejs10"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "Explain the usage of NODE_ENV.",
+    "answer": {
+      "definition": "NODE_ENV is an environment variable used to distinguish between different application environments such as development and production. :contentReference[oaicite:2]{index=2}",
+      "points": [
+        "Identifies the current environment.",
+        "Supports development and production modes.",
+        "Can enable or disable features.",
+        "Commonly used for caching and configuration.",
+        "Accessible through process.env.NODE_ENV."
+      ],
+      "comparisonTitle1": "Development",
+      "comparisonTitle2": "Production",
+      "comparison": [
+        {
+          "feature": "Caching",
+          "first": "Usually disabled",
+          "second": "Usually enabled"
+        },
+        {
+          "feature": "Purpose",
+          "first": "Development and debugging",
+          "second": "Optimized deployment"
+        }
+      ],
+      "example": "if (process.env.NODE_ENV === 'development') {\n  useCaching = false;\n}",
+      "syntax": "process.env.NODE_ENV"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "How does assert work in Node.js?",
+    "answer": {
+      "definition": "The assert module is used to test expressions. If an assertion evaluates to false, it throws an AssertionError and terminates the program unless handled. :contentReference[oaicite:3]{index=3}",
+      "points": [
+        "Used for testing conditions.",
+        "Throws AssertionError on failure.",
+        "Commonly used in testing.",
+        "Part of the Node.js core modules.",
+        "Helps validate program behavior."
+      ],
+      "comparisonTitle1": "Assertion Pass",
+      "comparisonTitle2": "Assertion Fail",
+      "comparison": [
+        {
+          "feature": "Result",
+          "first": "Program continues",
+          "second": "Throws AssertionError"
+        }
+      ],
+      "example": "const assert = require('assert');\nassert(50 > 70, '50 is less than 70.');",
+      "syntax": "assert(expression, message)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is the use of the DNS module in Node.js?",
+    "answer": {
+      "definition": "The DNS module provides DNS name resolution and lookup functionality, allowing applications to resolve domain names and IP addresses. :contentReference[oaicite:4]{index=4}",
+      "points": [
+        "Performs DNS lookups.",
+        "Resolves domain names to IP addresses.",
+        "Supports reverse DNS lookups.",
+        "Provides lookup(), resolve4(), reverse(), and lookupService() methods.",
+        "Works asynchronously."
+      ],
+      "comparisonTitle1": "lookup()",
+      "comparisonTitle2": "resolve4()",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Hostname lookup",
+          "second": "IPv4 DNS resolution"
+        },
+        {
+          "feature": "Returns",
+          "first": "Address and family",
+          "second": "IPv4 addresses"
+        }
+      ],
+      "example": "const dns = require('dns');\n\ndns.lookup('www.google.com', (err, address, family) => {\n  console.log(address);\n});",
+      "syntax": "dns.lookup(hostname, callback)"
+    }
+  },
+  {
+    "category": "Node.js",
+    "question": "What is JIT and how is it related to Node.js?",
+    "answer": {
+      "definition": "JIT (Just-In-Time) compilation is a feature of the V8 JavaScript engine that compiles JavaScript into machine code during execution, improving runtime performance. Node.js uses the V8 engine for JavaScript execution. :contentReference[oaicite:5]{index=5}",
+      "points": [
+        "JIT stands for Just-In-Time compilation.",
+        "Implemented by the V8 engine.",
+        "Compiles JavaScript during execution.",
+        "Produces optimized machine code.",
+        "Improves application performance."
+      ],
+      "comparisonTitle1": "Interpreter",
+      "comparisonTitle2": "JIT Compiler",
+      "comparison": [
+        {
+          "feature": "Execution",
+          "first": "Line-by-line interpretation",
+          "second": "Machine code compilation"
+        },
+        {
+          "feature": "Performance",
+          "first": "Lower",
+          "second": "Higher"
+        }
+      ],
+      "example": "JavaScript → V8 JIT Compiler → Optimized Machine Code → CPU",
+      "syntax": "V8 JIT Compilation"
+    }
+  }
+]

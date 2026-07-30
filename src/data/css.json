@@ -1,1 +1,1727 @@
-[]
+[{
+    "category": "CSS",
+    "question": "What does CSS stand for and what is its primary use?",
+    "answer": {
+      "definition": "CSS stands for Cascading Style Sheets. It is used to separate the content of a web page from its visual presentation, allowing consistent and reusable styling across multiple web pages.",
+      "points": [
+        "Separates content from presentation.",
+        "Provides consistent styling across pages.",
+        "Uses selectors to target HTML elements.",
+        "Uses properties like color, font-size, and background.",
+        "Uses values to define property settings."
+      ],
+      "comparisonTitle1": "HTML",
+      "comparisonTitle2": "CSS",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Defines page structure",
+          "second": "Defines page styling"
+        },
+        {
+          "feature": "Content",
+          "first": "Text and elements",
+          "second": "Colors, layout, fonts"
+        }
+      ],
+      "example": "body {\n  font-family: Arial, sans-serif;\n  color: #333;\n  background-color: #f4f4f4;\n}",
+      "syntax": "selector {\n  property: value;\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How do you include CSS in your HTML document?",
+    "answer": {
+      "definition": "CSS can be included in an HTML document using inline styles, embedded styles, external style sheets, or imported style sheets.",
+      "points": [
+        "Inline CSS uses the style attribute.",
+        "Embedded CSS is written inside the <style> tag.",
+        "External CSS is linked using the <link> tag.",
+        "Imported CSS uses the @import rule.",
+        "External CSS is the preferred method for maintainability."
+      ],
+      "comparisonTitle1": "Inline CSS",
+      "comparisonTitle2": "External CSS",
+      "comparison": [
+        {
+          "feature": "Reuse",
+          "first": "Single element",
+          "second": "Multiple pages"
+        },
+        {
+          "feature": "Maintainability",
+          "first": "Low",
+          "second": "High"
+        }
+      ],
+      "example": "<link rel=\"stylesheet\" href=\"styles.css\">",
+      "syntax": "<link rel=\"stylesheet\" href=\"style.css\">"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is the difference between class and ID selectors?",
+    "answer": {
+      "definition": "A class selector styles multiple elements that share the same class, while an ID selector targets a single unique element using its ID attribute.",
+      "points": [
+        "Class selector begins with a dot (.).",
+        "ID selector begins with a hash (#).",
+        "A class can be reused on multiple elements.",
+        "An ID should be unique within a page.",
+        "IDs are commonly used for unique elements and JavaScript."
+      ],
+      "comparisonTitle1": "Class Selector",
+      "comparisonTitle2": "ID Selector",
+      "comparison": [
+        {
+          "feature": "Syntax",
+          "first": ".className",
+          "second": "#idName"
+        },
+        {
+          "feature": "Usage",
+          "first": "Multiple elements",
+          "second": "Single unique element"
+        },
+        {
+          "feature": "Reusability",
+          "first": "Reusable",
+          "second": "Unique"
+        }
+      ],
+      "example": ".content {\n  color: blue;\n}\n\n#uniqueContent {\n  color: red;\n}",
+      "syntax": ".className {}\n#idName {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are pseudo-classes in CSS?",
+    "answer": {
+      "definition": "Pseudo-classes are special CSS keywords that apply styles to elements based on their state, position, or user interaction.",
+      "points": [
+        "Used for user interaction states.",
+        "Can target element position.",
+        "Can style form controls.",
+        "Can target enabled and disabled elements.",
+        "Examples include :hover, :checked, :first-child, :valid, and :disabled."
+      ],
+      "comparisonTitle1": "Pseudo-class",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": ":hover",
+          "first": "Mouse over element",
+          "second": "Interactive styling"
+        },
+        {
+          "feature": ":first-child",
+          "first": "First child element",
+          "second": "Structural styling"
+        },
+        {
+          "feature": ":checked",
+          "first": "Selected input",
+          "second": "Form styling"
+        }
+      ],
+      "example": "button:hover {\n  background-color: blue;\n}",
+      "syntax": "selector:pseudo-class {\n  property: value;\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "Describe how to implement a CSS reset and why it is useful.",
+    "answer": {
+      "definition": "A CSS reset removes browser default styles such as margins and paddings to provide a consistent starting point across different browsers.",
+      "points": [
+        "Removes browser default styling.",
+        "Creates consistent layouts across browsers.",
+        "Provides a predictable box model.",
+        "Makes custom styling easier.",
+        "Commonly implemented using reset.css or normalize.css."
+      ],
+      "comparisonTitle1": "Without Reset",
+      "comparisonTitle2": "With Reset",
+      "comparison": [
+        {
+          "feature": "Browser Consistency",
+          "first": "May vary",
+          "second": "Consistent"
+        },
+        {
+          "feature": "Default Styles",
+          "first": "Browser defaults applied",
+          "second": "Defaults removed or normalized"
+        }
+      ],
+      "example": "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}",
+      "syntax": "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How do you select elements by attribute in CSS?",
+    "answer": {
+      "definition": "Attribute selectors allow you to select HTML elements based on the presence or value of their attributes.",
+      "points": [
+        "Can match an exact attribute value.",
+        "Can match attributes starting with a specific value.",
+        "Supports case-insensitive matching using the i flag.",
+        "Useful for targeting elements without additional classes or IDs.",
+        "Provides flexible element selection."
+      ],
+      "comparisonTitle1": "Selector",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "[attr=\"value\"]",
+          "first": "Exact match",
+          "second": "Matches exact attribute value"
+        },
+        {
+          "feature": "[attr^=\"value\"]",
+          "first": "Starts with",
+          "second": "Matches beginning of value"
+        },
+        {
+          "feature": "[attr=\"value\" i]",
+          "first": "Case-insensitive",
+          "second": "Ignores letter case"
+        }
+      ],
+      "example": "[class=\"important\"] {\n  color: red;\n}\n\n[href^=\"https\"] {\n  color: green;\n}\n\n[alt=\"home\" i] {\n  background: url('home-icon.png');\n}",
+      "syntax": "[attribute=\"value\"] {}\n[attribute^=\"value\"] {}\n[attribute=\"value\" i] {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is a pseudo-element, and what are they used for?",
+    "answer": {
+      "definition": "Pseudo-elements are virtual elements that allow styling specific parts of an element or inserting generated content without adding extra HTML markup.",
+      "points": [
+        "Can insert content using ::before and ::after.",
+        "Style specific parts of an element.",
+        "Reduce the need for extra HTML elements.",
+        "Useful for decorative content.",
+        "Commonly used for custom UI effects and layout fixes."
+      ],
+      "comparisonTitle1": "::before",
+      "comparisonTitle2": "::after",
+      "comparison": [
+        {
+          "feature": "Position",
+          "first": "Before element content",
+          "second": "After element content"
+        },
+        {
+          "feature": "Usage",
+          "first": "Insert prefix or icon",
+          "second": "Insert suffix or decoration"
+        }
+      ],
+      "example": "button::before {\n  content: \"★ \";\n}\n\nbutton::after {\n  content: \" →\";\n}",
+      "syntax": "selector::before {\n  content: \"\";\n}\n\nselector::after {\n  content: \"\";\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "Explain the difference between the child combinator and the descendant combinator.",
+    "answer": {
+      "definition": "The child combinator (>) selects only direct child elements, while the descendant combinator (space) selects all matching descendants, whether direct or nested.",
+      "points": [
+        "Child combinator selects direct children only.",
+        "Descendant combinator selects all nested descendants.",
+        "Child selectors are more specific.",
+        "Descendant selectors are broader.",
+        "Choose based on the required level of nesting."
+      ],
+      "comparisonTitle1": "Child Combinator (>)",
+      "comparisonTitle2": "Descendant Combinator (space)",
+      "comparison": [
+        {
+          "feature": "Matches",
+          "first": "Direct child only",
+          "second": "Any nested descendant"
+        },
+        {
+          "feature": "Specificity",
+          "first": "More specific",
+          "second": "Less specific"
+        },
+        {
+          "feature": "Example",
+          "first": "nav > ul",
+          "second": "nav ul"
+        }
+      ],
+      "example": "nav > ul > li {\n  color: red;\n}\n\nnav li {\n  color: blue;\n}",
+      "syntax": "parent > child {}\nancestor descendant {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How would you select all direct children elements of a particular type?",
+    "answer": {
+      "definition": "Use the child combinator (>) with the required parent and child element selectors to target only direct children of a specific type.",
+      "points": [
+        "Uses the > combinator.",
+        "Targets direct child elements only.",
+        "Does not match nested descendants.",
+        "Provides more precise styling.",
+        "Improves selector clarity."
+      ],
+      "comparisonTitle1": "Direct Child",
+      "comparisonTitle2": "Nested Descendant",
+      "comparison": [
+        {
+          "feature": "Selector",
+          "first": "ul > li",
+          "second": "ul li"
+        },
+        {
+          "feature": "Matches",
+          "first": "Immediate children",
+          "second": "All descendants"
+        }
+      ],
+      "example": "ul > li {\n  color: blue;\n}",
+      "syntax": "parent > child {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are the universal selector and the sibling combinator, and when would you use them?",
+    "answer": {
+      "definition": "The universal selector (*) targets all elements, while the adjacent sibling combinator (+) targets an element immediately following another specified element.",
+      "points": [
+        "Universal selector applies styles to all matching elements.",
+        "Often used for CSS resets.",
+        "Sibling combinator targets immediate siblings.",
+        "Useful for interactive UI patterns.",
+        "Avoid excessive use of universal selectors for performance."
+      ],
+      "comparisonTitle1": "Universal Selector (*)",
+      "comparisonTitle2": "Sibling Combinator (+)",
+      "comparison": [
+        {
+          "feature": "Targets",
+          "first": "All elements",
+          "second": "Immediate next sibling"
+        },
+        {
+          "feature": "Common Use",
+          "first": "CSS reset",
+          "second": "Adjacent element styling"
+        }
+      ],
+      "example": "* {\n  margin: 0;\n  padding: 0;\n}\n\nli:hover + a {\n  color: red;\n}",
+      "syntax": "* {}\nelement + sibling {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is the CSS Box Model?",
+    "answer": {
+      "definition": "The CSS Box Model is the fundamental layout model that describes how every HTML element is represented as a rectangular box consisting of content, padding, border, and margin.",
+      "points": [
+        "Content is the actual text, image, or element content.",
+        "Padding is the space between the content and the border.",
+        "Border surrounds the padding and content.",
+        "Margin is the outer space around the border.",
+        "Element size is affected by content, padding, border, and margin."
+      ],
+      "comparisonTitle1": "Content-Box",
+      "comparisonTitle2": "Border-Box",
+      "comparison": [
+        {
+          "feature": "Width Calculation",
+          "first": "Width excludes padding and border",
+          "second": "Width includes padding and border"
+        },
+        {
+          "feature": "Default",
+          "first": "Yes",
+          "second": "No"
+        }
+      ],
+      "example": "#boxModelExample {\n  border: 5px solid red;\n  padding: 20px;\n  margin: 20px;\n}",
+      "syntax": "selector {\n  margin: 20px;\n  border: 1px solid black;\n  padding: 20px;\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "Explain margin collapsing.",
+    "answer": {
+      "definition": "Margin collapsing occurs when adjacent vertical margins combine into a single margin. The resulting margin is equal to the larger of the two margins.",
+      "points": [
+        "Occurs only with vertical margins.",
+        "Common between adjacent sibling elements.",
+        "Can occur between parent and child elements.",
+        "Horizontal margins do not collapse.",
+        "Adding padding, borders, or using inline-block/flex prevents collapsing."
+      ],
+      "comparisonTitle1": "Collapsed Margin",
+      "comparisonTitle2": "Non-Collapsed Margin",
+      "comparison": [
+        {
+          "feature": "Vertical Margins",
+          "first": "Can collapse",
+          "second": "Remain separate"
+        },
+        {
+          "feature": "Horizontal Margins",
+          "first": "Do not collapse",
+          "second": "Always remain separate"
+        }
+      ],
+      "example": "<div>\n  <p>Paragraph 1</p>\n  <p>Paragraph 2</p>\n</div>",
+      "syntax": "/* Prevent collapsing */\n.parent {\n  padding: 1px;\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are the different values for the box-sizing property and what do they do?",
+    "answer": {
+      "definition": "The box-sizing property controls how the browser calculates an element's total width and height.",
+      "points": [
+        "content-box is the default value.",
+        "border-box includes padding and border within the specified width and height.",
+        "initial resets the property to its default value.",
+        "border-box simplifies responsive layouts.",
+        "content-box increases total size when padding or border is added."
+      ],
+      "comparisonTitle1": "content-box",
+      "comparisonTitle2": "border-box",
+      "comparison": [
+        {
+          "feature": "Width Includes Padding",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Width Includes Border",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Default",
+          "first": "Yes",
+          "second": "No"
+        }
+      ],
+      "example": "* {\n  box-sizing: border-box;\n}",
+      "syntax": "box-sizing: content-box;\nbox-sizing: border-box;\nbox-sizing: initial;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How do you center a block element with CSS?",
+    "answer": {
+      "definition": "A block element can be centered horizontally using auto margins and can be centered horizontally or vertically using Flexbox or CSS Grid.",
+      "points": [
+        "Use margin: 0 auto for horizontal centering.",
+        "Flexbox uses justify-content for horizontal alignment.",
+        "Flexbox uses align-items for vertical alignment.",
+        "Grid supports centering using align-items or place-items.",
+        "Choose the method based on layout requirements."
+      ],
+      "comparisonTitle1": "Flexbox",
+      "comparisonTitle2": "Grid",
+      "comparison": [
+        {
+          "feature": "Horizontal Center",
+          "first": "justify-content: center",
+          "second": "place-items: center"
+        },
+        {
+          "feature": "Vertical Center",
+          "first": "align-items: center",
+          "second": "align-items: center"
+        }
+      ],
+      "example": ".container {\n  width: 50%;\n  margin: 0 auto;\n}\n\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}",
+      "syntax": "margin: 0 auto;\n\njustify-content: center;\nalign-items: center;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is the difference between block, inline, and inline-block elements?",
+    "answer": {
+      "definition": "Block elements occupy the full available width, inline elements occupy only the required content width, and inline-block elements behave like inline elements while allowing width, height, margin, and padding to be applied.",
+      "points": [
+        "Block elements start on a new line.",
+        "Inline elements stay on the same line.",
+        "Inline elements ignore width and height properties.",
+        "Inline-block elements stay inline but support width and height.",
+        "Inline-block combines features of block and inline elements."
+      ],
+      "comparisonTitle1": "Block",
+      "comparisonTitle2": "Inline / Inline-Block",
+      "comparison": [
+        {
+          "feature": "Starts New Line",
+          "first": "Yes",
+          "second": "No"
+        },
+        {
+          "feature": "Width & Height",
+          "first": "Supported",
+          "second": "Inline: No, Inline-block: Yes"
+        },
+        {
+          "feature": "Occupies Full Width",
+          "first": "Yes",
+          "second": "No"
+        }
+      ],
+      "example": ".block {\n  display: block;\n}\n\n.inline {\n  display: inline;\n}\n\n.inline-block {\n  display: inline-block;\n}",
+      "syntax": "display: block;\ndisplay: inline;\ndisplay: inline-block;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What's the CSS Box Model hierarchy?",
+    "answer": {
+      "definition": "The CSS Box Model describes how an HTML element is rendered. From inside to outside, the hierarchy is: Content → Padding → Border → Margin.",
+      "points": [
+        "Content contains text, images, or other elements.",
+        "Padding is the space between content and border.",
+        "Border surrounds the padding.",
+        "Margin is the outer space around the border.",
+        "The total rendered size depends on the box-sizing property."
+      ],
+      "comparisonTitle1": "Content-Box",
+      "comparisonTitle2": "Border-Box",
+      "comparison": [
+        {
+          "feature": "Width Calculation",
+          "first": "Content + Padding + Border",
+          "second": "Width includes Padding and Border"
+        },
+        {
+          "feature": "Default",
+          "first": "Yes",
+          "second": "No"
+        }
+      ],
+      "example": "Content\n   ↓\nPadding\n   ↓\nBorder\n   ↓\nMargin",
+      "syntax": "content → padding → border → margin"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What does the box-sizing property do?",
+    "answer": {
+      "definition": "The box-sizing property determines how the browser calculates an element's total width and height by controlling whether padding and border are included in the specified dimensions.",
+      "points": [
+        "content-box is the default value.",
+        "border-box includes padding and border in the declared width and height.",
+        "Simplifies layout calculations.",
+        "Makes responsive layouts easier.",
+        "Commonly applied globally using the universal selector."
+      ],
+      "comparisonTitle1": "content-box",
+      "comparisonTitle2": "border-box",
+      "comparison": [
+        {
+          "feature": "Padding Included",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Border Included",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Rendered Width",
+          "first": "Width + Padding + Border",
+          "second": "Specified Width"
+        }
+      ],
+      "example": ".little-box {\n  box-sizing: border-box;\n  width: 120px;\n  padding-left: 20px;\n  padding-right: 20px;\n}",
+      "syntax": "box-sizing: content-box;\nbox-sizing: border-box;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What's the difference between width: auto and width: 100%?",
+    "answer": {
+      "definition": "width: auto adjusts the element's width based on available space, while width: 100% makes the element exactly as wide as its parent container regardless of additional padding, borders, or margins.",
+      "points": [
+        "width: auto adapts to available space.",
+        "width: 100% occupies the full parent width.",
+        "width: 100% may overflow when padding or border is added.",
+        "width: auto usually avoids overflow.",
+        "Choosing the correct value depends on the layout."
+      ],
+      "comparisonTitle1": "width: auto",
+      "comparisonTitle2": "width: 100%",
+      "comparison": [
+        {
+          "feature": "Width",
+          "first": "Adjusts automatically",
+          "second": "Full parent width"
+        },
+        {
+          "feature": "Overflow Risk",
+          "first": "Lower",
+          "second": "Higher"
+        }
+      ],
+      "example": ".box {\n  width: auto;\n}\n\n.box {\n  width: 100%;\n}",
+      "syntax": "width: auto;\nwidth: 100%;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are max-width and min-width used for?",
+    "answer": {
+      "definition": "max-width limits the maximum width an element can grow to, while min-width specifies the minimum width an element can shrink to.",
+      "points": [
+        "max-width prevents excessive expansion.",
+        "min-width prevents excessive shrinking.",
+        "Useful for responsive layouts.",
+        "Commonly used together to define a width range.",
+        "Avoid setting fixed width and max-width to conflicting values."
+      ],
+      "comparisonTitle1": "max-width",
+      "comparisonTitle2": "min-width",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Maximum allowed width",
+          "second": "Minimum allowed width"
+        },
+        {
+          "feature": "Effect",
+          "first": "Prevents expansion",
+          "second": "Prevents shrinking"
+        }
+      ],
+      "example": ".container {\n  width: 100%;\n  max-width: 1200px;\n  min-width: 320px;\n}",
+      "syntax": "max-width: value;\nmin-width: value;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are the main display values an element can take?",
+    "answer": {
+      "definition": "The display property controls how an element is rendered in the document layout. Common values are inline, inline-block, and block.",
+      "points": [
+        "inline elements stay on the same line.",
+        "inline elements ignore width and height.",
+        "inline-block elements stay inline but support width and height.",
+        "block elements start on a new line.",
+        "Block elements occupy the available width."
+      ],
+      "comparisonTitle1": "Inline",
+      "comparisonTitle2": "Inline-Block / Block",
+      "comparison": [
+        {
+          "feature": "New Line",
+          "first": "No",
+          "second": "Inline-block: No, Block: Yes"
+        },
+        {
+          "feature": "Width & Height",
+          "first": "Ignored",
+          "second": "Supported"
+        }
+      ],
+      "example": ".inline { display: inline; }\n.inline-block { display: inline-block; }\n.block { display: block; }",
+      "syntax": "display: inline;\ndisplay: inline-block;\ndisplay: block;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is the difference between display: none and visibility: hidden?",
+    "answer": {
+      "definition": "display: none removes an element from the page layout, whereas visibility: hidden hides the element but preserves its allocated space.",
+      "points": [
+        "display: none removes the element from layout.",
+        "visibility: hidden keeps the element's space.",
+        "Both hide the element visually.",
+        "display: none affects document flow.",
+        "visibility: hidden does not affect layout."
+      ],
+      "comparisonTitle1": "display: none",
+      "comparisonTitle2": "visibility: hidden",
+      "comparison": [
+        {
+          "feature": "Visible",
+          "first": "No",
+          "second": "No"
+        },
+        {
+          "feature": "Layout Space",
+          "first": "Removed",
+          "second": "Reserved"
+        }
+      ],
+      "example": ".hidden1 {\n  display: none;\n}\n\n.hidden2 {\n  visibility: hidden;\n}",
+      "syntax": "display: none;\nvisibility: hidden;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are the different position values an element can take?",
+    "answer": {
+      "definition": "The position property specifies how an element is positioned in a document. Common values are static, relative, absolute, and fixed.",
+      "points": [
+        "static is the default positioning.",
+        "relative moves an element from its original position.",
+        "absolute positions relative to the nearest positioned ancestor.",
+        "fixed positions relative to the viewport.",
+        "top, right, bottom, and left work with positioned elements."
+      ],
+      "comparisonTitle1": "Relative",
+      "comparisonTitle2": "Absolute / Fixed",
+      "comparison": [
+        {
+          "feature": "Reference",
+          "first": "Original position",
+          "second": "Ancestor or viewport"
+        },
+        {
+          "feature": "Moves With Scroll",
+          "first": "Yes",
+          "second": "Absolute: Yes, Fixed: No"
+        }
+      ],
+      "example": ".box {\n  position: relative;\n  top: -10px;\n  left: 20px;\n}",
+      "syntax": "position: static;\nposition: relative;\nposition: absolute;\nposition: fixed;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How does z-index work?",
+    "answer": {
+      "definition": "The z-index property controls the stacking order of overlapping positioned elements. Higher z-index values appear above lower values.",
+      "points": [
+        "Works only on positioned elements.",
+        "Controls vertical stacking order.",
+        "Higher values appear on top.",
+        "Default stacking follows DOM order.",
+        "Useful for modals, tooltips, and overlays."
+      ],
+      "comparisonTitle1": "Lower z-index",
+      "comparisonTitle2": "Higher z-index",
+      "comparison": [
+        {
+          "feature": "Stack Order",
+          "first": "Behind",
+          "second": "In front"
+        }
+      ],
+      "example": ".modal {\n  position: fixed;\n  z-index: 1000;\n}",
+      "syntax": "z-index: number;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What do common CSS selectors do?",
+    "answer": {
+      "definition": "CSS selectors are patterns used to target HTML elements so that styles can be applied to them.",
+      "points": [
+        "* selects all elements.",
+        "element selects all occurrences of an HTML tag.",
+        "parent child selects all descendant elements.",
+        "parent > child selects only direct children.",
+        "#id selects an element by ID.",
+        ".class selects elements by class.",
+        "selector1, selector2 groups multiple selectors.",
+        "+ selects the immediate adjacent sibling.",
+        "~ selects all following sibling elements."
+      ],
+      "comparisonTitle1": "Selector",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "*",
+          "first": "Universal selector",
+          "second": "Matches every element"
+        },
+        {
+          "feature": ">",
+          "first": "Child selector",
+          "second": "Direct children only"
+        },
+        {
+          "feature": "+",
+          "first": "Adjacent sibling",
+          "second": "Next immediate sibling"
+        },
+        {
+          "feature": "~",
+          "first": "General sibling",
+          "second": "All following siblings"
+        }
+      ],
+      "example": "* {}\np {}\nul li {}\nul > li {}\n#menu {}\n.highlight {}",
+      "syntax": "* {}\nelement {}\n#id {}\n.class {}\nparent > child {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What do CSS attribute selectors do?",
+    "answer": {
+      "definition": "Attribute selectors target HTML elements based on the presence or value of their attributes.",
+      "points": [
+        "[attr] selects elements containing an attribute.",
+        "[attr=\"value\"] selects an exact value.",
+        "[attr*=\"text\"] matches values containing text.",
+        "[attr^=\"text\"] matches values starting with text.",
+        "[attr$=\"text\"] matches values ending with text.",
+        "Can target custom data-* attributes.",
+        "Useful for styling forms and links."
+      ],
+      "comparisonTitle1": "Attribute Selector",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "[title]",
+          "first": "Attribute exists",
+          "second": "Matches elements with title"
+        },
+        {
+          "feature": "[href^=\"http\"]",
+          "first": "Starts with",
+          "second": "External links"
+        },
+        {
+          "feature": "[href$=\".jpg\"]",
+          "first": "Ends with",
+          "second": "Image links"
+        },
+        {
+          "feature": "[href*=\"google\"]",
+          "first": "Contains",
+          "second": "Substring match"
+        }
+      ],
+      "example": "a[title] {}\na[href^=\"http\"] {}\na[href$=\".jpg\"] {}\na[data-filetype=\"image\"] {}",
+      "syntax": "[attribute] {}\n[attribute=\"value\"] {}\n[attribute^=\"value\"] {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are conditional selectors in CSS?",
+    "answer": {
+      "definition": "Conditional selectors allow elements to be selected only when they satisfy or exclude specific conditions, such as using :not().",
+      "points": [
+        ":not() excludes matching elements.",
+        "Can target all elements except a specific selector.",
+        "Improves selector flexibility.",
+        "Useful for excluding IDs or element types.",
+        "Helps reduce unnecessary CSS."
+      ],
+      "comparisonTitle1": ":not()",
+      "comparisonTitle2": "Normal Selector",
+      "comparison": [
+        {
+          "feature": "Behavior",
+          "first": "Excludes matches",
+          "second": "Includes matches"
+        }
+      ],
+      "example": "div:not(#container) {}\n*:not(p) {}",
+      "syntax": "selector:not(condition) {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are structural pseudo-classes in CSS?",
+    "answer": {
+      "definition": "Structural pseudo-classes select elements based on their position or relationship within the document structure.",
+      "points": [
+        ":first-child selects the first child.",
+        ":last-child selects the last child.",
+        ":nth-child() selects children by position.",
+        ":only-child selects an element that is the only child.",
+        "::first-line and ::first-letter style parts of text."
+      ],
+      "comparisonTitle1": "Pseudo-class",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": ":first-child",
+          "first": "First child",
+          "second": "Structural selection"
+        },
+        {
+          "feature": ":last-child",
+          "first": "Last child",
+          "second": "Structural selection"
+        },
+        {
+          "feature": ":nth-child(3)",
+          "first": "Third child",
+          "second": "Position-based selection"
+        },
+        {
+          "feature": ":only-child",
+          "first": "Only child",
+          "second": "Single child selection"
+        }
+      ],
+      "example": "li:first-child {}\nli:last-child {}\nli:nth-child(3) {}\nli:nth-child(even) {}\nli:only-child {}",
+      "syntax": ":first-child\n:last-child\n:nth-child(n)\n:only-child"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is the difference between :nth-child() and :nth-of-type()?",
+    "answer": {
+      "definition": ":nth-child() selects an element based on its child position, while :nth-of-type() selects an element based on its type among sibling elements.",
+      "points": [
+        ":nth-child() depends on overall child position.",
+        ":nth-of-type() depends only on element type.",
+        ":nth-of-type() is less restrictive.",
+        "Useful when sibling elements have different tags.",
+        "Both start counting from 1."
+      ],
+      "comparisonTitle1": ":nth-child()",
+      "comparisonTitle2": ":nth-of-type()",
+      "comparison": [
+        {
+          "feature": "Selection",
+          "first": "Position among all children",
+          "second": "Position among same element type"
+        },
+        {
+          "feature": "Condition",
+          "first": "More restrictive",
+          "second": "Less restrictive"
+        }
+      ],
+      "example": "p:nth-child(2) {}\np:nth-of-type(2) {}",
+      "syntax": ":nth-child(n)\n:nth-of-type(n)"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "Why are ::before and ::after useful?",
+    "answer": {
+      "definition": "::before and ::after are pseudo-elements used to insert generated content before or after an element without modifying the HTML document.",
+      "points": [
+        "Insert decorative content.",
+        "Do not modify the DOM.",
+        "Require the content property.",
+        "Useful for icons, badges, and clearfix techniques.",
+        "Cannot be used on self-closing elements like img or input."
+      ],
+      "comparisonTitle1": "::before",
+      "comparisonTitle2": "::after",
+      "comparison": [
+        {
+          "feature": "Position",
+          "first": "Before content",
+          "second": "After content"
+        },
+        {
+          "feature": "Common Use",
+          "first": "Icons or prefixes",
+          "second": "Badges or suffixes"
+        }
+      ],
+      "example": "button::before {\n  content: \"★\";\n}\n\nbutton::after {\n  content: \"→\";\n}",
+      "syntax": "selector::before {\n  content: \"\";\n}\n\nselector::after {\n  content: \"\";\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is a pseudo-class and what is the difference between ':' and '::'?",
+    "answer": {
+      "definition": "A pseudo-class selects an element based on its state or position, while a pseudo-element creates a virtual part of an element. CSS3 introduced :: to distinguish pseudo-elements from pseudo-classes.",
+      "points": [
+        "Pseudo-classes target existing elements.",
+        "Pseudo-elements create virtual content.",
+        ":hover and :checked are pseudo-classes.",
+        "::before and ::after are pseudo-elements.",
+        "Single-colon syntax is supported by older browsers."
+      ],
+      "comparisonTitle1": "Pseudo-class (:)",
+      "comparisonTitle2": "Pseudo-element (::)",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Select element state",
+          "second": "Create virtual element"
+        },
+        {
+          "feature": "Examples",
+          "first": ":hover, :checked",
+          "second": "::before, ::after"
+        },
+        {
+          "feature": "Creates New Content",
+          "first": "No",
+          "second": "Yes"
+        }
+      ],
+      "example": "a:hover {\n  color: red;\n}\n\np::before {\n  content: \"★ \";\n}",
+      "syntax": ":hover\n:checked\n::before\n::after"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What CSS length units are you familiar with?",
+    "answer": {
+      "definition": "CSS provides different length units to define the size of elements, spacing, fonts, and layouts. These include absolute units, font-relative units, viewport units, and percentage units.",
+      "points": [
+        "Absolute units: px, in, cm, mm.",
+        "Font-relative units: em, rem, pt, pc, ex, ch.",
+        "Viewport units: vw, vh, vmin, vmax.",
+        "Percentage (%) is relative to the parent element.",
+        "Choose the unit based on responsiveness and layout requirements."
+      ],
+      "comparisonTitle1": "Unit",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "px",
+          "first": "Absolute",
+          "second": "Fixed pixel value"
+        },
+        {
+          "feature": "em",
+          "first": "Relative",
+          "second": "Relative to parent font size"
+        },
+        {
+          "feature": "rem",
+          "first": "Relative",
+          "second": "Relative to root (html) font size"
+        },
+        {
+          "feature": "vw",
+          "first": "Viewport",
+          "second": "1% of viewport width"
+        },
+        {
+          "feature": "vh",
+          "first": "Viewport",
+          "second": "1% of viewport height"
+        },
+        {
+          "feature": "%",
+          "first": "Relative",
+          "second": "Relative to parent element"
+        }
+      ],
+      "example": ".box {\n  width: 50%;\n  height: 50vh;\n  font-size: 1.2rem;\n  padding: 2em;\n}",
+      "syntax": "px\nem\nrem\nvw\nvh\nvmin\nvmax\n%"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What's the difference between em and rem?",
+    "answer": {
+      "definition": "Both em and rem are relative CSS units. The em unit is relative to the font size of its nearest parent element, while rem is always relative to the root (html) element's font size.",
+      "points": [
+        "em depends on the parent element's font size.",
+        "Nested em values continue scaling through the DOM.",
+        "rem always uses the root (html) font size.",
+        "rem provides more consistent spacing across components.",
+        "Both scale better than fixed pixel units for responsive layouts."
+      ],
+      "comparisonTitle1": "em",
+      "comparisonTitle2": "rem",
+      "comparison": [
+        {
+          "feature": "Reference",
+          "first": "Parent font size",
+          "second": "Root (html) font size"
+        },
+        {
+          "feature": "Inheritance",
+          "first": "Cascades through parents",
+          "second": "Always uses root size"
+        },
+        {
+          "feature": "Consistency",
+          "first": "Can vary with nesting",
+          "second": "Consistent across the page"
+        },
+        {
+          "feature": "Best Use",
+          "first": "Component-level sizing",
+          "second": "Global spacing and typography"
+        }
+      ],
+      "example": "html {\n  font-size: 16px;\n}\n\n.parent {\n  font-size: 20px;\n}\n\n.child {\n  font-size: 1em;   /* 20px */\n  margin: 1rem;     /* 16px */\n}",
+      "syntax": "font-size: 1em;\nfont-size: 1rem;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are CSS filters?",
+    "answer": {
+      "definition": "The CSS filter property applies visual effects to an element before it is rendered, such as blur, brightness, grayscale, contrast, and color adjustments.",
+      "points": [
+        "Applies visual effects to elements.",
+        "Multiple filters can be combined.",
+        "Common effects include blur, grayscale, sepia, and invert.",
+        "Useful for image editing and UI effects.",
+        "Applied using the filter property."
+      ],
+      "comparisonTitle1": "Filter Function",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "blur()",
+          "first": "Blurs content",
+          "second": "Softens appearance"
+        },
+        {
+          "feature": "grayscale()",
+          "first": "Removes colors",
+          "second": "Black-and-white effect"
+        },
+        {
+          "feature": "brightness()",
+          "first": "Adjusts brightness",
+          "second": "Makes element lighter or darker"
+        },
+        {
+          "feature": "contrast()",
+          "first": "Adjusts contrast",
+          "second": "Increases or decreases color difference"
+        }
+      ],
+      "example": ".image {\n  filter: blur(20px) grayscale(20%);\n}",
+      "syntax": "filter: blur(5px);\nfilter: grayscale(100%);\nfilter: brightness(2);"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are CSS transformations?",
+    "answer": {
+      "definition": "The CSS transform property visually changes the appearance or position of an element using operations such as translate, rotate, scale, skew, and matrix transformations.",
+      "points": [
+        "Can move elements using translate().",
+        "Can rotate elements using rotate().",
+        "Can resize elements using scale().",
+        "Can skew elements using skew().",
+        "Supports both 2D and 3D transformations."
+      ],
+      "comparisonTitle1": "2D Transform",
+      "comparisonTitle2": "3D Transform",
+      "comparison": [
+        {
+          "feature": "Examples",
+          "first": "translate, rotate, scale, skew",
+          "second": "rotateX, rotateY, rotateZ"
+        },
+        {
+          "feature": "Dimension",
+          "first": "Two-dimensional",
+          "second": "Three-dimensional"
+        }
+      ],
+      "example": ".box {\n  transform: translate(50px, 100px) rotate(20deg) scale(2);\n}",
+      "syntax": "transform: translate(x, y);\ntransform: rotate(angle);\ntransform: scale(x, y);"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What are CSS transitions?",
+    "answer": {
+      "definition": "CSS transitions animate changes to CSS property values over a specified duration instead of applying them instantly.",
+      "points": [
+        "Creates smooth animations.",
+        "Works when a property value changes.",
+        "Supports duration, delay, and timing functions.",
+        "Can animate one or multiple properties.",
+        "Common timing functions include ease, linear, ease-in, ease-out, and ease-in-out."
+      ],
+      "comparisonTitle1": "Transition",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "Duration",
+          "first": "Controls animation time",
+          "second": "Smooth effect"
+        },
+        {
+          "feature": "Timing Function",
+          "first": "ease, linear, ease-in",
+          "second": "Controls animation speed"
+        },
+        {
+          "feature": "Delay",
+          "first": "Optional wait time",
+          "second": "Starts animation later"
+        }
+      ],
+      "example": "div {\n  transition: background-color 0.5s ease;\n}\n\ndiv:hover {\n  background-color: green;\n}",
+      "syntax": "transition: property duration timing-function delay;\ntransition: all 0.5s ease-out;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is CSS specificity? How do you calculate specificity?",
+    "answer": {
+      "definition": "CSS specificity is the priority system used to determine which CSS rule is applied when multiple selectors target the same element.",
+      "points": [
+        "Inline styles have the highest specificity.",
+        "ID selectors have higher priority than class selectors.",
+        "Class, attribute, and pseudo-class selectors have higher priority than element selectors.",
+        "Element selectors have the lowest specificity.",
+        "If specificity is equal, the last declared rule is applied."
+      ],
+      "comparisonTitle1": "Selector Type",
+      "comparisonTitle2": "Priority",
+      "comparison": [
+        {
+          "feature": "Inline Style",
+          "first": "Highest",
+          "second": "Overrides other selectors"
+        },
+        {
+          "feature": "ID Selector",
+          "first": "Higher",
+          "second": "Beats class selectors"
+        },
+        {
+          "feature": "Class / Attribute / Pseudo-class",
+          "first": "Medium",
+          "second": "Beats element selectors"
+        },
+        {
+          "feature": "Element Selector",
+          "first": "Lowest",
+          "second": "Lowest specificity"
+        }
+      ],
+      "example": "#header {\n  color: red;\n}\n\n.title {\n  color: blue;\n}\n\nh1 {\n  color: green;\n}",
+      "syntax": "Inline Style > ID > Class/Attribute/Pseudo-class > Element"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is Responsive Web Design (RWD)?",
+    "answer": {
+      "definition": "Responsive Web Design (RWD) is an approach to building websites that provide an optimal viewing experience across a wide range of devices by using fluid grids, flexible media, and media queries.",
+      "points": [
+        "Uses fluid grids for flexible layouts.",
+        "Uses flexible media such as responsive images.",
+        "Uses media queries to adapt layouts.",
+        "Supports different screen sizes and resolutions.",
+        "Focuses on progressive enhancement and future-friendly design."
+      ],
+      "comparisonTitle1": "Responsive Web Design",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "Layout",
+          "first": "Fluid and flexible",
+          "second": "Adjusts automatically"
+        },
+        {
+          "feature": "Devices",
+          "first": "Works across multiple devices",
+          "second": "Single responsive experience"
+        }
+      ],
+      "example": "@media (min-width: 768px) {\n  .container {\n    display: flex;\n  }\n}",
+      "syntax": "@media (condition) {\n  /* CSS */\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is the difference between Responsive and Adaptive Web Design?",
+    "answer": {
+      "definition": "Responsive Web Design uses one flexible layout that adjusts to different screen sizes, whereas Adaptive Web Design uses multiple predefined layouts designed for specific screen sizes.",
+      "points": [
+        "Responsive uses a single flexible layout.",
+        "Adaptive uses multiple fixed layouts.",
+        "Responsive automatically adjusts to new screen sizes.",
+        "Adaptive may require new layouts for new devices.",
+        "Responsive is generally more difficult to implement."
+      ],
+      "comparisonTitle1": "Responsive Design",
+      "comparisonTitle2": "Adaptive Design",
+      "comparison": [
+        {
+          "feature": "Layouts",
+          "first": "One flexible layout",
+          "second": "Multiple predefined layouts"
+        },
+        {
+          "feature": "Flexibility",
+          "first": "High",
+          "second": "Limited"
+        },
+        {
+          "feature": "Maintenance",
+          "first": "Less",
+          "second": "More"
+        }
+      ],
+      "example": "Responsive: One layout adapts to all screens.\nAdaptive: Separate layouts for mobile, tablet, and desktop.",
+      "syntax": "Responsive → Fluid Layout\nAdaptive → Multiple Fixed Layouts"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is a media query?",
+    "answer": {
+      "definition": "A media query is a CSS conditional rule that applies styles only when specified conditions, such as screen width, are satisfied.",
+      "points": [
+        "Applies CSS conditionally.",
+        "Supports responsive layouts.",
+        "Can target screen width and height.",
+        "Commonly uses min-width and max-width.",
+        "Helps create device-specific designs."
+      ],
+      "comparisonTitle1": "min-width",
+      "comparisonTitle2": "max-width",
+      "comparison": [
+        {
+          "feature": "Usage",
+          "first": "Styles for larger screens",
+          "second": "Styles for smaller screens"
+        }
+      ],
+      "example": "@media (min-width: 600px) and (max-width: 800px) {\n  .box {\n    background: red;\n  }\n}",
+      "syntax": "@media (condition) {\n  /* CSS */\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What do mobile-first and desktop-first mean? How do you implement them?",
+    "answer": {
+      "definition": "Mobile-first starts with styles for small screens and enhances them using min-width media queries, whereas desktop-first starts with large-screen styles and overrides them using max-width media queries.",
+      "points": [
+        "Mobile-first targets small screens first.",
+        "Uses min-width media queries.",
+        "Desktop-first targets large screens first.",
+        "Uses max-width media queries.",
+        "Both approaches use media queries to adapt layouts."
+      ],
+      "comparisonTitle1": "Mobile-First",
+      "comparisonTitle2": "Desktop-First",
+      "comparison": [
+        {
+          "feature": "Base Styles",
+          "first": "Mobile",
+          "second": "Desktop"
+        },
+        {
+          "feature": "Media Query",
+          "first": "min-width",
+          "second": "max-width"
+        }
+      ],
+      "example": "/* Mobile First */\n@media (min-width: 600px) {\n  body { background: green; }\n}",
+      "syntax": "@media (min-width: value) {}\n@media (max-width: value) {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is a CSS preprocessor?",
+    "answer": {
+      "definition": "A CSS preprocessor extends CSS with features such as variables, mixins, and functions to make stylesheets easier to maintain and reuse.",
+      "points": [
+        "Supports variables.",
+        "Supports mixins.",
+        "Supports functions.",
+        "Improves maintainability.",
+        "Popular preprocessors include Sass, Less, and Stylus."
+      ],
+      "comparisonTitle1": "CSS",
+      "comparisonTitle2": "Preprocessor",
+      "comparison": [
+        {
+          "feature": "Variables",
+          "first": "No",
+          "second": "Yes"
+        },
+        {
+          "feature": "Mixins",
+          "first": "No",
+          "second": "Yes"
+        }
+      ],
+      "example": "$primary: blue;\n.button {\n  color: $primary;\n}",
+      "syntax": "$variable: value;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is Compass?",
+    "answer": {
+      "definition": "Compass is an extension of Sass that provides a compiler along with reusable mixins and functions for generating CSS.",
+      "points": [
+        "Built on top of Sass.",
+        "Provides reusable mixins.",
+        "Helps generate vendor-prefixed CSS.",
+        "Can generate sprite maps.",
+        "Improves CSS development productivity."
+      ],
+      "comparisonTitle1": "Sass",
+      "comparisonTitle2": "Compass",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "CSS preprocessor",
+          "second": "Extension for Sass"
+        }
+      ],
+      "example": "Compass provides mixins for CSS3 properties.",
+      "syntax": "Compass + Sass"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is Lesshat?",
+    "answer": {
+      "definition": "Lesshat is a mixin library for the Less CSS preprocessor.",
+      "points": [
+        "Works with Less.",
+        "Provides reusable mixins.",
+        "Simplifies writing CSS3 properties.",
+        "Reduces repetitive code.",
+        "Improves maintainability."
+      ],
+      "comparisonTitle1": "Less",
+      "comparisonTitle2": "Lesshat",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "CSS preprocessor",
+          "second": "Mixin library"
+        }
+      ],
+      "example": "Lesshat provides CSS mixins for Less projects.",
+      "syntax": "Less + Lesshat"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is a CSS Reset?",
+    "answer": {
+      "definition": "A CSS Reset removes browser default styles to create a consistent baseline across different browsers.",
+      "points": [
+        "Removes browser default styles.",
+        "Creates consistent rendering.",
+        "Improves cross-browser compatibility.",
+        "Reduces browser inconsistencies.",
+        "Provides a clean starting point."
+      ],
+      "comparisonTitle1": "Without Reset",
+      "comparisonTitle2": "With Reset",
+      "comparison": [
+        {
+          "feature": "Browser Defaults",
+          "first": "Different",
+          "second": "Consistent"
+        }
+      ],
+      "example": "* {\n  margin: 0;\n  padding: 0;\n}",
+      "syntax": "* {\n  margin: 0;\n  padding: 0;\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How is Normalize.css different from a CSS Reset?",
+    "answer": {
+      "definition": "A CSS Reset removes most browser default styles, whereas Normalize.css preserves useful defaults while making browser styles consistent.",
+      "points": [
+        "Reset removes nearly all default styles.",
+        "Normalize preserves useful browser defaults.",
+        "Normalize improves cross-browser consistency.",
+        "Reset requires more custom styling afterward.",
+        "Normalize reduces unnecessary CSS."
+      ],
+      "comparisonTitle1": "CSS Reset",
+      "comparisonTitle2": "Normalize.css",
+      "comparison": [
+        {
+          "feature": "Default Styles",
+          "first": "Removed",
+          "second": "Preserved where useful"
+        },
+        {
+          "feature": "Customization",
+          "first": "More",
+          "second": "Less"
+        }
+      ],
+      "example": "Normalize.css keeps useful typography while normalizing browser differences.",
+      "syntax": "normalize.css"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "Why use CSS sprites?",
+    "answer": {
+      "definition": "CSS sprites combine multiple small images into a single image to reduce HTTP requests and improve page loading performance.",
+      "points": [
+        "Reduces HTTP requests.",
+        "Improves loading performance.",
+        "Uses background-position to display images.",
+        "Helpful for icons and UI graphics.",
+        "Can be generated using tools like Compass."
+      ],
+      "comparisonTitle1": "Individual Images",
+      "comparisonTitle2": "CSS Sprites",
+      "comparison": [
+        {
+          "feature": "HTTP Requests",
+          "first": "Many",
+          "second": "One"
+        },
+        {
+          "feature": "Performance",
+          "first": "Lower",
+          "second": "Higher"
+        }
+      ],
+      "example": ".icon {\n  background-image: url(sprite.png);\n  background-position: -32px -16px;\n}",
+      "syntax": "background-image: url(sprite.png);\nbackground-position: x y;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "Why are vendor prefixes used?",
+    "answer": {
+      "definition": "Vendor prefixes were introduced to allow browser vendors to implement experimental CSS features before they became official standards.",
+      "points": [
+        "Supported experimental CSS features.",
+        "Allowed browser-specific implementations.",
+        "Helped test new CSS capabilities.",
+        "Removed as standards became stable.",
+        "Less common in modern browsers."
+      ],
+      "comparisonTitle1": "Vendor Prefix",
+      "comparisonTitle2": "Standard Property",
+      "comparison": [
+        {
+          "feature": "Purpose",
+          "first": "Experimental implementation",
+          "second": "Official standard"
+        }
+      ],
+      "example": "-webkit-transform: rotate(45deg);\ntransform: rotate(45deg);",
+      "syntax": "-webkit-property;\n-moz-property;\nproperty;"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is a CSS Linter?",
+    "answer": {
+      "definition": "A CSS linter is a tool that analyzes CSS code to detect syntax errors, inefficient code, and poor coding practices.",
+      "points": [
+        "Checks CSS syntax.",
+        "Finds coding mistakes.",
+        "Detects inefficient rules.",
+        "Improves code quality.",
+        "Example: CSSLint."
+      ],
+      "comparisonTitle1": "Without Linter",
+      "comparisonTitle2": "With Linter",
+      "comparison": [
+        {
+          "feature": "Error Detection",
+          "first": "Manual",
+          "second": "Automatic"
+        },
+        {
+          "feature": "Code Quality",
+          "first": "Depends on developer",
+          "second": "Validated by rules"
+        }
+      ],
+      "example": "CSSLint reports unused selectors and invalid CSS syntax.",
+      "syntax": "CSSLint"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is a CSS Object?",
+    "answer": {
+      "definition": "A CSS Object is a reusable visual pattern that combines HTML, CSS, and sometimes JavaScript into an independent, modular component that can be reused throughout a website.",
+      "points": [
+        "Represents a reusable UI component.",
+        "Independent of page location.",
+        "Encourages modular CSS.",
+        "Improves code reusability.",
+        "Makes components predictable and maintainable."
+      ],
+      "comparisonTitle1": "Traditional CSS",
+      "comparisonTitle2": "CSS Object",
+      "comparison": [
+        {
+          "feature": "Reusability",
+          "first": "Limited",
+          "second": "High"
+        },
+        {
+          "feature": "Dependency",
+          "first": "Often page-specific",
+          "second": "Independent of location"
+        }
+      ],
+      "example": "<button class=\"button primary\">Save</button>",
+      "syntax": ".button {\n  /* reusable component styles */\n}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How do you separate the structure from the skin?",
+    "answer": {
+      "definition": "Separating structure from skin means keeping layout and positioning styles separate from visual styling so that appearance can be reused across multiple components.",
+      "points": [
+        "Structure includes width, height, margin, position, and overflow.",
+        "Skin includes border, background, color, and box-shadow.",
+        "Avoid mixing layout and appearance in one class.",
+        "Reuse the same skin across different components.",
+        "Reduces duplicate CSS."
+      ],
+      "comparisonTitle1": "Structure",
+      "comparisonTitle2": "Skin",
+      "comparison": [
+        {
+          "feature": "Contains",
+          "first": "Layout and positioning",
+          "second": "Visual appearance"
+        },
+        {
+          "feature": "Examples",
+          "first": "width, margin, overflow",
+          "second": "background, border, box-shadow"
+        }
+      ],
+      "example": ".button {\n  width: 200px;\n}\n\n.skin {\n  border: 1px solid #ccc;\n  background: linear-gradient(#ccc, #222);\n}",
+      "syntax": ".structure {}\n.skin {}"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "How do you separate the container from the content?",
+    "answer": {
+      "definition": "Separating the container from the content means designing components so they are independent of their position in the DOM and can be reused anywhere in the application.",
+      "points": [
+        "Components should not depend on page location.",
+        "Promotes reusable UI components.",
+        "Improves maintainability.",
+        "Allows moving components without changing styles.",
+        "Supports modular CSS architecture."
+      ],
+      "comparisonTitle1": "Container-Dependent",
+      "comparisonTitle2": "Container-Independent",
+      "comparison": [
+        {
+          "feature": "Reusability",
+          "first": "Low",
+          "second": "High"
+        },
+        {
+          "feature": "DOM Dependency",
+          "first": "Yes",
+          "second": "No"
+        }
+      ],
+      "example": "A news widget should work in the sidebar, main content, or footer without changing its CSS.",
+      "syntax": "/* Component styles should not depend on parent location */"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is SMACSS?",
+    "answer": {
+      "definition": "SMACSS (Scalable and Modular Architecture for CSS) is a methodology for organizing CSS into logical categories to improve scalability, modularity, and maintainability.",
+      "points": [
+        "Focuses on scalable CSS architecture.",
+        "Organizes styles into categories.",
+        "Improves maintainability.",
+        "Encourages modular design.",
+        "Works well with large projects."
+      ],
+      "comparisonTitle1": "Traditional CSS",
+      "comparisonTitle2": "SMACSS",
+      "comparison": [
+        {
+          "feature": "Organization",
+          "first": "Unstructured",
+          "second": "Categorized and modular"
+        },
+        {
+          "feature": "Maintainability",
+          "first": "Lower",
+          "second": "Higher"
+        }
+      ],
+      "example": "SMACSS organizes CSS into reusable architecture instead of one large stylesheet.",
+      "syntax": "Base\nLayout\nModule\nState\nTheme"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "What is BEM?",
+    "answer": {
+      "definition": "BEM (Block, Element, Modifier) is a CSS naming methodology that creates clear, reusable, and maintainable class names for UI components.",
+      "points": [
+        "Block represents a standalone component.",
+        "Element represents a part of a block.",
+        "Modifier represents a variation or state.",
+        "Improves readability.",
+        "Reduces CSS naming conflicts."
+      ],
+      "comparisonTitle1": "BEM Part",
+      "comparisonTitle2": "Purpose",
+      "comparison": [
+        {
+          "feature": "Block",
+          "first": ".site-search",
+          "second": "Main component"
+        },
+        {
+          "feature": "Element",
+          "first": ".site-search__field",
+          "second": "Child of block"
+        },
+        {
+          "feature": "Modifier",
+          "first": ".site-search--full",
+          "second": "Variation of block"
+        }
+      ],
+      "example": "<form class=\"site-search site-search--full\">\n  <input class=\"site-search__field\" />\n  <button class=\"site-search__button\">Search</button>\n</form>",
+      "syntax": ".block\n.block__element\n.block--modifier"
+    }
+  },
+  {
+    "category": "CSS",
+    "question": "Can OOCSS, SMACSS, and BEM be used together?",
+    "answer": {
+      "definition": "Yes. OOCSS provides the overall methodology, BEM provides the naming convention, and SMACSS provides the organizational structure, making them complementary approaches.",
+      "points": [
+        "OOCSS focuses on reusable objects.",
+        "BEM provides structured naming.",
+        "SMACSS organizes project styles.",
+        "They work well together.",
+        "Often combined with Sass in large projects."
+      ],
+      "comparisonTitle1": "OOCSS",
+      "comparisonTitle2": "BEM & SMACSS",
+      "comparison": [
+        {
+          "feature": "Focus",
+          "first": "Reusable methodology",
+          "second": "Naming and organization"
+        },
+        {
+          "feature": "Relationship",
+          "first": "Foundation",
+          "second": "Builds on OOCSS concepts"
+        }
+      ],
+      "example": "Use OOCSS for reusable components, BEM for class names, and SMACSS for organizing CSS files.",
+      "syntax": "OOCSS + BEM + SMACSS"
+    }
+  }
+]
