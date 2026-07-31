@@ -1,15 +1,17 @@
 import React, { useMemo } from "react";
-import testReportData from "../../data/testReportData";
 import "./TestReport.css";
 
-function TestReport({ onBack }) {
-  const summary = useMemo(() => {
-    const total = testReportData.length;
-    const passed = testReportData.filter((item) => item.status === "pass").length;
-    const failed = total - passed;
-    const passPercentage = total > 0 ? Math.round((passed / total) * 100) : 0;
-    return { total, passed, failed, passPercentage };
-  }, []);
+export const buildTestReportSummary = (testCases = []) => {
+  const total = testCases.length;
+  const passed = testCases.filter((item) => item.status === "pass").length;
+  const failed = total - passed;
+  const passPercentage = total > 0 ? Math.round((passed / total) * 100) : 0;
+
+  return { total, passed, failed, passPercentage };
+};
+
+function TestReport({ onBack, testCases = [] }) {
+  const summary = useMemo(() => buildTestReportSummary(testCases), [testCases]);
 
   return (
     <div className="test-report-page">
@@ -59,7 +61,7 @@ function TestReport({ onBack }) {
             </tr>
           </thead>
           <tbody>
-            {testReportData.map((item) => (
+            {testCases.map((item) => (
               <tr key={item.id} className={`table-row-${item.status}`}>
                 <td className="table-id">
                   <span className="id-badge">{item.id}</span>

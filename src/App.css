@@ -150,19 +150,108 @@ body {
 
 .sidebar-animation {
   position: relative;
-  flex: 1;
-  min-height: 150px;
+  width: 100%;
+  height: 220px;
   overflow: hidden;
-  border-radius: 12px;
-  background: linear-gradient(145deg, rgba(56, 189, 248, 0.12), rgba(139, 92, 246, 0.08));
+  border-radius: 18px;
+  background: #0f172a;
+  isolation: isolate;
+}
+.gradient-bg {
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 20% 20%, #38bdf8 0%, transparent 35%),
+    radial-gradient(circle at 80% 30%, #8b5cf6 0%, transparent 35%),
+    radial-gradient(circle at 50% 80%, #06b6d4 0%, transparent 40%);
+  filter: blur(70px);
+  animation: gradientMove 10s ease-in-out infinite alternate;
+}
+/* Floating Glass Blobs */
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.15);
 }
 
-.sidebar-orbit,
-.sidebar-spark {
-  position: absolute;
-  display: block;
-  border-radius: 50%;
+.blob-1 {
+  width: 160px;
+  height: 160px;
+  background: rgba(56,189,248,.18);
+  top: -30px;
+  left: -40px;
+  animation: float1 8s ease-in-out infinite;
 }
+
+.blob-2 {
+  width: 130px;
+  height: 130px;
+  background: rgba(139,92,246,.18);
+  bottom: -30px;
+  right: -20px;
+  animation: float2 9s ease-in-out infinite;
+}
+
+.blob-3 {
+  width: 90px;
+  height: 90px;
+  background: rgba(255,255,255,.08);
+  top: 60%;
+  left: 45%;
+  animation: pulseBlob 5s ease infinite;
+}
+
+/* Particles */
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 12px white;
+}
+
+.p1 {
+  top: 15%;
+  left: 20%;
+  animation: particle1 6s infinite linear;
+}
+
+.p2 {
+  top: 70%;
+  left: 35%;
+  animation: particle2 7s infinite linear;
+}
+
+.p3 {
+  top: 40%;
+  right: 25%;
+  animation: particle3 8s infinite linear;
+}
+
+.p4 {
+  bottom: 15%;
+  right: 15%;
+  animation: particle4 9s infinite linear;
+}
+
+/* Grid */
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: .08;
+  background-image:
+      linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px);
+  background-size: 35px 35px;
+  animation: gridMove 8s linear infinite;
+}
+
+
 
 .sidebar-orbit {
   border: 1px solid rgba(125, 211, 252, 0.55);

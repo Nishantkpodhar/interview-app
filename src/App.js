@@ -11,6 +11,7 @@ import jsonFiles, {
   categoryOptionsByTechnology,
   technologyOptions,
 } from "./data/jsonFiles";
+import { filterQuestions } from "./utils/questionUtils";
 import Dropdown from "./components/Dropdown";
 import SearchBar from "./components/SearchBar";
 import QuestionTable from "./components/QuestionTable";
@@ -18,6 +19,7 @@ import TestReport from "./components/TestReport";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
 import LastProject from "./components/LastProject/LastProject";
+import testReportData from "./data/testReportData";
 
 function App() {
   const [selectedFile, setSelectedFile] = useState("all");
@@ -44,37 +46,16 @@ function App() {
     [selectedFile]
   );
 
-  const normalizedSearchText = useMemo(
-    () => searchText.trim().toLowerCase(),
-    [searchText]
+  const filteredData = useMemo(
+    () =>
+      filterQuestions({
+        questions: tableData,
+        selectedCategory,
+        searchText,
+        showComparisonOnly,
+      }),
+    [searchText, selectedCategory, tableData, showComparisonOnly]
   );
-
-  const filteredData = useMemo(() => {
-    const search = normalizedSearchText;
-    const comparisonFilter = (item) =>
-      item.answer?.comparison?.length > 0;
-
-    const categoryData =
-      selectedCategory === "all"
-        ? tableData
-        : tableData.filter((item) => item.category === selectedCategory);
-
-    const normalizedData = showComparisonOnly
-      ? categoryData.filter(comparisonFilter)
-      : categoryData;
-
-    if (!search) {
-      return normalizedData;
-    }
-
-    return normalizedData.filter((item) => {
-      const questionMatch = item.question
-        ?.toLowerCase()
-        .includes(search);
-
-      return questionMatch;
-    });
-  }, [normalizedSearchText, selectedCategory, tableData, showComparisonOnly]);
 
   const handleReportToggle = useCallback(
     () => setShowReport((current) => !current),
@@ -124,7 +105,7 @@ function App() {
   return (
     <div className={`app-container ${darkTheme ? "dark" : "light"}`}>
       {showReport ? (
-        <TestReport onBack={handleReportToggle} />
+        <TestReport onBack={handleReportToggle} testCases={testReportData} />
       ) : (
         <>
           <div className="header-section">
@@ -145,11 +126,19 @@ function App() {
                 View Test Report
               </button>
               <div className="sidebar-animation" aria-hidden="true">
-                <span className="sidebar-orbit orbit-one" />
-                <span className="sidebar-orbit orbit-two" />
-                <span className="sidebar-spark spark-one" />
-                <span className="sidebar-spark spark-two" />
-              </div>
+  <div className="gradient-bg"></div>
+
+  <span className="blob blob-1"></span>
+  <span className="blob blob-2"></span>
+  <span className="blob blob-3"></span>
+
+  <span className="particle p1"></span>
+  <span className="particle p2"></span>
+  <span className="particle p3"></span>
+  <span className="particle p4"></span>
+
+  <div className="grid-overlay"></div>
+</div>
             </aside>
 
             <main className="main-content">

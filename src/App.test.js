@@ -15,7 +15,7 @@ describe('App', () => {
     expect(screen.getByRole('combobox', { name: /question category/i })).toBeDisabled();
     expect(screen.getByText(/react \(\d+\)/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/search question or answer/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /difference between/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^difference between$/i })).toBeInTheDocument();
   });
 
   test('shows categories for the selected technology', () => {
@@ -48,10 +48,10 @@ describe('App', () => {
     render(<App />);
 
     fireEvent.click(screen.getByRole('button', { name: /my introduction/i }));
-    expect(screen.getByRole('heading', { name: /hello, my name is nishant kumar/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /hello, i'm nishant kumar/i })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: /last project/i }));
-    expect(screen.getByText(/interview master platform/i)).toBeInTheDocument();
+    expect(screen.getByText(/Wells Fargo Enterprise Onboarding Platform/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: /all ques & ans/i }));
     expect(screen.getByPlaceholderText(/search question or answer/i)).toBeInTheDocument();
@@ -83,7 +83,7 @@ describe('App', () => {
 
     const input = screen.getByPlaceholderText(/search question or answer/i);
     const button = screen.getByRole('button', {
-      name: /difference between/i,
+      name: /^difference between$/i,
     });
 
     fireEvent.change(input, { target: { value: 'React' } });

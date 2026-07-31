@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
+import QuestionRow from "./QuestionRow";
 import "./QuestionTable.css";
 
 function QuestionTable({ data }) {
   const [activeExample, setActiveExample] = useState(null);
   const [expandedAnswers, setExpandedAnswers] = useState(() => new Set());
 
-  const toggleAnswer = (questionKey) => {
+  const toggleAnswer = useCallback((questionKey) => {
     setExpandedAnswers((current) => {
       const next = new Set(current);
 
@@ -17,7 +18,29 @@ function QuestionTable({ data }) {
 
       return next;
     });
-  };
+  }, []);
+
+  const openExample = useCallback((item) => setActiveExample(item), []);
+  const closeExample = useCallback(() => setActiveExample(null), []);
+
+  const rows = useMemo(
+    () =>
+      (data || []).map((item, index) => {
+        const questionKey = `${item.category}-${item.question}-${index}`;
+        return (
+          <QuestionRow
+            key={questionKey}
+            item={item}
+            index={index}
+            questionKey={questionKey}
+            isExpanded={expandedAnswers.has(questionKey)}
+            onToggle={toggleAnswer}
+            onOpenExample={openExample}
+          />
+        );
+      }),
+    [data, expandedAnswers, openExample, toggleAnswer]
+  );
 
   if (!data || data.length === 0) {
     return <div className="no-data">No Question Found</div>;
@@ -26,141 +49,13 @@ function QuestionTable({ data }) {
   return (
     <div className="table-wrapper">
       <table>
-        <tbody>
-          {data.map((item, index) => {
-            const questionKey = `${item.category}-${item.question}-${index}`;
-            const answer = item.answer ?? {};
-            const points = Array.isArray(answer.points) ? answer.points : [];
-            const comparison = Array.isArray(answer.comparison) ? answer.comparison : [];
-            const isExpanded = expandedAnswers.has(questionKey);
-            const answerId = `answer-${index}`;
-
-            return (
-              <React.Fragment key={questionKey}>
-                <tr className="question-row">
-                  <td className="serial-no">{index + 1}</td>
-                  <td colSpan="2" className="question-cell">
-                    <button
-                      type="button"
-                      className="question-cell-content question-toggle"
-                      aria-expanded={isExpanded}
-                      aria-controls={answerId}
-                      onClick={() => toggleAnswer(questionKey)}
-                    >
-                      <span>{item.question}</span>
-                      {item.category && (
-                        <span className="question-label">
-                          {item.category}
-                        </span>
-                      )}
-                    </button>
-                  </td>
-                </tr>
-
-                {isExpanded && (
-                  <tr className="answer-row" id={answerId}>
-                    <td />
-                    <td colSpan="2" className="answer-cell">
-                    {answer.definition && (
-                      <div className="definition-box">
-                        <h3>Definition</h3>
-                        <p>{answer.definition}</p>
-                      </div>
-                    )}
-
-                    {points.length > 0 && (
-                      <div className="points-box">
-                        <h3>Important Points</h3>
-                        <ol>
-                          {points.map((point, idx) => {
-                            if (typeof point === "string") {
-                              return (
-                                <li key={`${questionKey}-point-${idx}`}>
-                                  {point}
-                                </li>
-                              );
-                            }
-
-                            if (point && typeof point === "object") {
-                              return (
-                                <li key={`${questionKey}-point-${idx}`} className="point-object-item">
-                                  {point.feature && (
-                                    <div className="point-feature">
-                                      {point.feature}
-                                    </div>
-                                  )}
-                                  {point.description && (
-                                    <div className="point-description">
-                                      {point.description}
-                                    </div>
-                                  )}
-                                  {point.example && (
-                                    <div className="point-example">
-                                      {point.example}
-                                    </div>
-                                  )}
-                                </li>
-                              );
-                            }
-
-                            return (
-                              <li key={`${questionKey}-point-${idx}`}>
-                                {String(point)}
-                              </li>
-                            );
-                          })}
-                        </ol>
-                      </div>
-                    )}
-
-                    <button
-                      type="button"
-                      className="example-btn"
-                      onClick={() => setActiveExample(item)}
-                    >
-                      Example
-                    </button>
-
-                    {comparison.length > 0 && (
-                      <div className="comparison-section">
-                        <h3>Differences Table</h3>
-                        <table className="comparison-table">
-                          <thead>
-                            <tr>
-                              <th>Feature</th>
-                              <th>{answer.comparisonTitle1}</th>
-                              <th>{answer.comparisonTitle2}</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {comparison.map((row, idx) => (
-                              <tr key={`${questionKey}-comparison-${idx}`}>
-                                <td>{row.feature}</td>
-                                <td>{row.first}</td>
-                                <td>{row.second}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                    </td>
-                  </tr>
-                )}
-              </React.Fragment>
-            );
-          })}
-        </tbody>
+        <tbody>{rows}</tbody>
       </table>
 
       {activeExample && (
-        <div className="example-modal-overlay" onClick={() => setActiveExample(null)}>
+        <div className="example-modal-overlay" onClick={closeExample}>
           <div className="example-modal" onClick={(event) => event.stopPropagation()}>
-            <button
-              type="button"
-              className="close-modal"
-              onClick={() => setActiveExample(null)}
-            >
+            <button type="button" className="close-modal" onClick={closeExample}>
               ×
             </button>
             <div className="example-modal-content">
